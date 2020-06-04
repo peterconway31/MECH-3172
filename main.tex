@@ -1,0 +1,1001 @@
+\include{preamble}
+\usepackage[title]{appendix}
+\usepackage{pdfpages}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage{geometry}
+
+\usepackage{import}
+
+\usepackage{cleveref}
+
+
+\usepackage{makecell}
+\usepackage{xspace}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{tikz}
+\usetikzlibrary{patterns,arrows}
+\usepackage[english]{babel}
+\usepackage{appendix}
+\usepackage{pdflscape}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{rotating}
+\linespread{1.2} %line spacing
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\usepackage[T1]{fontenc}
+\usepackage{bigfoot} % to allow verbatim in footnote
+\usepackage[numbered,framed]{matlab-prettifier}
+\usepackage{filecontents}
+\usepackage[document]{ragged2e}
+\usepackage{float}
+\usepackage{natbib}
+\usepackage{longtable} % double page table
+\usepackage{multirow}
+\usepackage{blindtext}
+% \usepackage{longtable}
+
+%table packages
+\usepackage{rotating}
+\usepackage{adjustbox}
+\usepackage[table]{xcolor}
+
+\hypersetup{%
+   citecolor=black
+}
+
+\usepackage{tikz}
+\newcommand\diag[4]{%
+  \multicolumn{1}{p{#2}|}{\hskip-\tabcolsep
+  $\vcenter{\begin{tikzpicture}[baseline=0,anchor=south west,inner sep=#1]
+  \path[use as bounding box] (0,0) rectangle (#2+2\tabcolsep,\baselineskip);
+  \node[minimum width={#2+2\tabcolsep-\pgflinewidth},
+        minimum  height=\baselineskip+\extrarowheight-\pgflinewidth] (box) {};
+  \draw[line cap=round] (box.north west) -- (box.south east);
+  \node[anchor=south west] at (box.south west) {#3};
+  \node[anchor=north east] at (box.north east) {#4};
+ \end{tikzpicture}}$\hskip-\tabcolsep}}
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	TITLE PAGE DEFINITION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand*{\titleGP}{\begingroup % Create the command for including the title page in the document
+\centering % Center all text
+%\vspace*{\baselineskip} % White space at the top of the page
+
+\rule{\textwidth}{1.2pt}\vspace*{-\baselineskip}\vspace*{2pt} % Thick horizontal line
+\rule{\textwidth}{0.4pt}\\[\baselineskip] % Thin horizontal line
+
+{\LARGE \textsc{ASRA}\\[0.3\baselineskip]
+\Large \textsc{Aerial Surveillance Response Aircraft}\\[0.3\baselineskip]
+\textsc{Preliminatry Report}}\\[0.2\baselineskip] % Title
+\note{Rhys}{Include Honours number}
+
+\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} % Thin horizontal line
+\rule{\textwidth}{1.2pt}\\[\baselineskip] % Thick horizontal line
+
+\scshape % Small caps
+% Creating a CLTF for a IVHS whilst satisfying numerous design constraints.\\[0.3\baselineskip] % Tagline(s) or further description
+{\scshape\today} \\ % Date published
+
+\vspace*{3.5\baselineskip} % Whitespace between location/year and editors
+
+Written by \\[0.3\baselineskip]
+{\Large Peter Conway, a1703723\par} % Editor list
+{\Large Samuel Drown, a1716243\par} % Editor list
+{\Large Harry Lukasz, a1721127\par} % Editor list
+{\Large Thomas Walker, a1705672\par} % Editor list
+{\Large Jake Williams, a1717794\par} % Editor list
+{\Large Rhys Wilson, a1725922\par} % Editor list
+
+
+
+%\vspace*{6cm} % White space at the top of the page
+
+\vfill
+\includegraphics[width=.3\textwidth]{Figures/logo.pdf}\\
+
+
+\endgroup}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	TITLE PAGE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{empty}
+
+\titleGP % This command includes the title page
+
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	TITLE PAGE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{Preliminary Report}
+
+\fancyfoot[C]{\thepage}
+
+\newpage
+%\phantom{.}
+%\thispagestyle{empty}
+%
+%\newpage
+%\setcounter{page}{2}
+
+
+\section*{Acknowledgements}
+\addcontentsline{toc}{section}{\protect\hphantom{\numberline{\thesection}}Acknowledgements}
+
+% Not sure if people want this
+
+We would like to thank the following organisations and individuals for their contribution to and support of the project thus far.
+
+\begin{itemize}
+    \item The University of Adelaide:
+    \begin{itemize}
+        \item Dr Rey Chin
+    \end{itemize}
+    \item Lockheed Martin STELaRLab:
+    \begin{itemize}
+        \item Dr Tim Payne
+        \item Dr Scott Beinke
+    \end{itemize}
+ 
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{2cm}
+\newpage
+\section*{Glossary}
+\addcontentsline{toc}{section}{\protect\hphantom{\numberline{\thesection}}Glossary}
+
+Table \ref{tab:definitions} defines acronyms and technical jargon used throughout the following document. 
+
+\begin{table}[h!]
+    \centering
+    \caption{Glossary of Terms}
+    \label{tab:definitions}
+    \begin{tabular}{l|l}
+        Concept & Definition\\\hline
+        Airframe & The body of an aircraft as distinct from its engine\\
+        CAD & Computer Aided Design\\
+        CASA & Civil Aviation Safety Authority\\
+        CFD & Computational Fluid Dynamics\\
+        CFS & Country Fire Service\\
+        COTS & Component of the Shelf\\
+        FPV & First Person View\\
+        RPA & Remotely Piloted Aircraft\\
+        UAV & Unmanned Aerial Vehicle \\
+        URAF & Unmanned Research Aircraft Facility\\
+        UART & Universal Asynchronous Receiver Transmitter\\
+        VTOL & Vertical Take Off and Landing\\
+        eVTOL & electric Vertical Take Off and Landing\\
+        ICE & Internal Composition Engine\\
+        BLDC & Brushless Direct Current\\
+        Li-po & Lithium Polymer\\
+        ESC & Electric Speed Controller\\
+        FC & Flight Controller\\
+    \end{tabular}
+\end{table}
+
+\section*{Nomenclature}
+\begin{minipage}{.5\textwidth}
+\noindent\begin{longtable*}{@{}l @{\quad=\quad} l@{} @{}l @{\quad=\quad} l@{}}
+$M$  & Mass \\
+$W$  & Weight \\
+$MF$   & Mass Fraction \\
+$P$ & Power \\
+$T$ & Thrust \\
+$L$ & Lift \\
+$D$ & Drag \\
+$C_l$ & Lift Coefficient \\
+$C_d$ & Drag Coefficient \\
+$PL$ & Power Loading \\
+$S$ & Wing Area \\
+$WS$ & Wing Loading \\
+$A$ & Disk Area \\
+$\rho$ & Air Density \\
+$AR$ & Aspect Ratio \\
+$e_o$ & Oswald efficiency factor\\
+$e_{batt}$ & Battery Specific Energy\\
+
+\end{longtable*}%}
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+\noindent\begin{longtable*}{@{}l @{\quad=\quad} l@{} @{}l @{\quad=\quad} l@{}}
+$E$ & Energy \\
+$q$ & Dynamic Pressure \\
+$RC$ & Rate if Climb \\
+$\eta$ & Efficiency\\
+$F$ & Fraction\\
+$SF$ & Safety Factor\\
+$t$ & time \\
+$v$ & velocity \\
+\end{longtable*}%}
+$Subscripts$  \\
+\noindent\begin{longtable*}{@{}l @{\quad=\quad} l@{} @{}l @{\quad=\quad} l@{}}
+$batt$ & battery \\
+$PL$ & payload \\
+$TOW$ & Take-off Weight \\
+$Req$ & Required \\
+$max$ & Maximum \\
+$i$ & Segment \\
+$\infty$ & Free Stream \\
+\end{longtable*}%}
+\end{minipage}
+
+
+\newpage
+%\phantom{.}
+%\thispagestyle{empty}
+%
+%\newpage
+%\setcounter{page}{3}
+
+\justifying
+\input{ExecSum}
+\newpage
+
+
+
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+\listoffigures
+\listoftables
+\lstlistoflistings
+
+\addcontentsline{TOC}{}{References}
+
+
+\clearpage
+
+% Abstract (Sam)
+% Project Intro (All)  - Jake to Oversee and write background (action after CFS meeting)
+% Objectives (All) - Tom to Oversee
+% Resources Required (Harry, Sam)
+% Work breakdown structure and Gannt chart (Peter, Harry) - Peter to Oversee
+% Risk Assessment (Rhys, Jake, Peter)
+% Budget (Sam, Harry)
+% Conclusion (Tom)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   CONTENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{Preliminary Report}
+\fancyfoot[C]{\thepage}
+
+\justifying
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction} %add a bit of an introduction to the having to design a device thing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Background}
+UAV technology has developed to be highly adaptable to suit a variety of applications, leading to various aircraft configurations falling under the classification of UAV's \citep{thamm2015songbird}, \citep{RN8}. Hybrid VTOL capabilities are highly desired features for UAVs, providing both VTOL and hover advantages in conjunction with long-endurance flight \citep{RN15}. However, existing aircraft featuring VTOL capabilities often suffer reduced capability in both hovering and forward flight when compared to fixed-wing and multi-rotor counterparts due to limitations associated with aerodynamics, flight control, endurance and cost \citep{RN15}. Despite this, the potential benefits of VTOL technology has driven development aiming to achieve comparable flight performance to standard aircraft in both flight configurations.
+
+\subsection{Motivation}
+% Need to include the same sources as the charter
+% Talk about CFS
+The increasing occurrence and intensity of bushfires increases the required response of emergency fire services and therefore heightens opportunities for the use of innovative technology. The Australian Government has identified that UAVs provide numerous strategic bushfire surveillance opportunities, which are becoming more feasible with technological advances \citep{RHYS5}. Such UAVs provide rapid, mobile and (relative) low-cost alternatives for monitoring and assisting in the alleviation of bushfires, in comparison to manned ground systems, manned aerial systems and satellite-based systems. VTOL UAVs are of particular interest as they combine long flight times and endurance with agile hovering capabilities, increasing their range of bushfire applications due to their greater versatility.\\
+\\
+UAV technology has seen extensive use in surveillance-based applications, with successful implementation and promising development for bushfire monitoring and management \citep{RN16}, \citep{RN21}. As outlined by \citeauthor{royo2011uas} (\citeyear{royo2011uas}), the flexibility, precision and low-cost of UAVs provide significant advantages in comparison to current manned aerial systems when integrated with remote sensing capabilities to detect bushfires. \citeauthor{RN17} (\citeyear{RN17}) describes how these systems approve upon existing bushfire management by eliminating manned exposure and increasing response time, serving as a powerful alternative when integrated with spatial, spectral and temporal resolution remote sensing systems.
+
+\subsection{Aims \& Scope}
+The aim of this project is to design and build a high efficiency, long range VTOL UAV intended to be utilised by emergency fire services, including the CFS, to assist in bushfire monitoring and alleviation. The system should predominantly innovate in the integration of existing airframe concepts and designs, as well as the VTOL transition, to improve in efficiencies in flight configurations and thus mission specific capabilities.\\ \note{Rhys}{improve}
+\\
+To demonstrate the value a VTOL UAV may provide emergency fire services and to broaden the device’s usability, the system will be designed to have the capability to perform multiple bushfire applications. The complete list of these applications is detailed in Appendix ???. The overarching application of conducting scans of bushfire burn scars for general impact and damage data collection was chosen due to it's demanding mission profile and dependence on VTOL. \\
+\\
+More on Scope
+\note{Rhys}{Touch on LM and groups scope}
+\note{Rhys}{* Build Minimal Viable Product (MVP) (snapshot in time) with a modular design that will allow additional innovation as we progress}
+\note{Rhys}{*Analysis will continue through project to result in a theoretical optimal design at the end}
+%\note{Sam}{Comparison to current market place design to quantify device capability against commercial devices to comment on the commercial feasibility of system}
+
+\subsection{Objectives}
+\note{Sam}{Rhys to add some text around summarising the objectives}
+
+The following objectives must be achieved to meet the overarching project aims:\\
+\\
+\textbf{Primary Objectives}
+\begin{enumerate}
+    \item Design and Manufacture an Airframe\\
+    *Might need to Summarise each objective
+    \item Formulate Design that Complies with Relevant Standards and Regulations
+    \item Design System Capable of Forward Flight
+    \item Design System Capable of Hovering
+    \item Design a System with Payload Capacity
+    \item Design System to Perform VTOL Transitions
+    \item Design System to Perform Autonomous Operations
+    \end{enumerate}
+\textbf{Secondary Objectives}
+\begin{enumerate}
+    \setcounter{enumi}{7}
+        \item Design System to Meet all Required Mission Pro-files
+        \item Design System to Execute Autonomous Waypoint Following
+        \item Design System to Support First Person View
+    \end{enumerate}
+
+\note{harry}{Don't refer to SMART method, summarise each objective in a sentence or two}
+For further detail of each objective using the SMART (Specific, Measurable, Attainable, Relevance and Time based) structure, refer to Appendix ???. 
+
+%\subsection{Hypothesis}
+
+\subsection{Project Management}
+A variety of project management protocols were implemented throughout this project to achieve the specified aims, objectives and ensure quality. These protocols have been presented/documented in the Charter and further elaborated on in this document. \\
+\\
+%this paragraph might be too long given word limit
+A work breakdown structure (WBS), detailed in Appendix ???, was developed to list and detail objectives, tasks and milestones. From the WBS, a Gantt chart (Appendix ???), generated using Team Gantt, was utilised to plan and control the collaborative work of the team to meet the key dates and deliverables. A quality assurance review approach (Appendix ???) allowed effective resource allocation,and monitoring to ensure the objectives were met to a high standard. The adaptable nature of the Gantt chart also allowed constant modifications and review to ensure increased accuracy and task allocation where needed. Additionally, a project risk assessment was completed using a risk categorisation matrix (Appendix ???), which outlined potential risks with mitigation management plans. A project budget consisting of a Primary Project Budget and a Detailed Budget Estimations was also generated to project likely expenditure and inform stake-holders. 
+
+\subsection{Report Overview}
+\note{Rhys}{Complete}
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Literature Review}
+\note{Jake}{Finish propulsion systems, include a Materials section, write conclusion}
+%Rubric: 
+%Literature review and/or Methodology and/or Theory to demonstrate how work fits into the academic or industrial landscape, and how the design goals and research outcomes will be achieved. Literature review is how others have solved your problem; Methodology is how you are solving yours. Theory provides technical background. 
+
+To understand how to effectively design a VTOL aircraft that achieves the project’s aims, existing VTOL aircraft have been investigated. This was further expanded upon through investigating core subsystems required to achieve the project’s aims. This formed the basis of knowledge to begin development of project ASRA.
+
+\subsection{VTOL Technology}
+%Comparative study of existing vtol technology and systems. -Sam's Industry Study
+%Inherent benefits/negatives of each, with a focus on endurance and efficiency (link back to achieving project aims). 
+%Compound aircraft vs tilt-rotor vs tilt-wing vs tail-sitter vs lift/ducted fans vs vectored thrust etc 
+%Key findings, relate back to suitability and best configuration for achieving aims (compare which vtol technology provide best results for endurance, etc)  
+
+VTOL technology is a highly developed field of aviation due to its unique advantages, resulting in various standardised VTOL configurations and categories (\citeauthor{RN15}, \citeyear{RN15}). Each VTOL configuration provides benefits and negatives inherent in their design, with selection dependent mission requirements (\citeauthor{hirschberg2006overview}, \citeyear{hirschberg2006overview}) (\citeauthor{RN15}, \citeyear{RN15}). Therefore, each VTOL configuration must be investigated to effectively select the most appropriate design to achieve the project’s aims for a high endurance, long range aircraft with efficiency hover capability. As described by \citeauthor{hirschberg2006overview} (\citeyear{hirschberg2006overview}), these configurations are frequently defined by their propulsion systems used to achieve hover and forward flight, divided into five primary categories; compound aircraft, tilt-thrust producer, tilt-wing, tail-sitter, and vectored thrust. \\
+
+Compound aircraft utilise separate propulsion systems to achieve forward and hover flight, encompassing combined helicopter and fixed-wing aircraft such as the Eurocoptor X3, and basic fixed-wing multirotor UAVs such as Mugin EV350 (\citeauthor{RN15}, \citeyear{RN15}) (\citeauthor{Mugin}, \citeyear{Mugin}). As described by \citeauthor{dundar2020design} (\citeyear{dundar2020design}), this configuration does not require complex mechanisms providing design simplicity, reducing potential cost and risk. These designs however will often display reduced performance in one flight mode to improve the other, as illustrated by the Sikorsky S-97 which provides great hover efficiency, but poor cruise efficiency (\citeauthor{RN15}, \citeyear{RN15}). \\
+
+Tilt-thrust producer, tilt-wing and tail-sitter aircraft use a single propulsion system for both modes of flight, encompassing tilt-rotor aircraft such as the V-22 Osprey, NASA’s GL-10 tilt-wing and Lockheed’s XFV-1 tail-sitter (\citeauthor{hirschberg2006overview}, \citeyear{hirschberg2006overview}) (\citeauthor{rothhaar2014nasa}, \citeyear{rothhaar2014nasa}). Tilt-thrust producer and tilt-wing configurations are often desired for the aircraft requiring balanced performance between forward and hover flight \citeauthor{RN15} (\citeyear{RN15}) . These configurations have been proven to be capable of performing long range operations as demonstrated by \citeauthor{rothhaar2014nasa} (\citeyear{rothhaar2014nasa}) and \citeauthor{Bellv280} (\citeyear{Bellv280}). While the principle of flight is identical for both configurations, tilt-wing aircraft are more difficult to control in hover flight as a result of cross-winds and the increased surface area from the vertical wing (\citeauthor{hirschberg2006overview}, \citeyear{hirschberg2006overview}). However, the tilt-wing aircraft are more efficient in VTOL due to less interference between the rotor and the wing as opposed to tilt-rotor aircraft (\citeauthor{paduano2017system}, \citeyear{paduano2017system}). Furthermore, dead weight can be detrimental to these configurations if tilt-mechanisms are not operational in all flight modes (\citeauthor{RN15}, \citeyear{RN15}). Despite these limitations, tilt-thrust producer and tilt-wing configurations provide benefits in propulsive efficiency which align with the project’s aims. \\
+
+Tail-sitter aircraft solve the dead weight problem by tilting the entire airframe to achieve forward and hover flight, performing VTOL upright and forward flight horizontally (\citeauthor{hirschberg2006overview}, \citeyear{hirschberg2006overview}). This configuration provides the inherent benefit of improved cruise speed and efficiency compared to other tilting systems due to decreased drag, as well as being capable of performing fast take-off and landing (\citeauthor{hirschberg2006overview}, \citeyear{hirschberg2006overview}) (\citeauthor{RN15}, \citeyear{RN15}). However, tilting the airframe introduces complexity for various subsystem abilities, such as the payload, often resulting in redundancy in one flight mode. Challenges are also faced with the controller design due to complexities associated with the rotating body (\citeauthor{hochstenbach2015design}, \citeyear{hochstenbach2015design}). These negatives are the primary causes for the tail-sitter configuration being disregard for more practical VTOL configurations (\citeauthor{RN15}, \citeyear{RN15}). \\
+
+Vectored thrust aircraft commonly operate using nozzles or vanes to deflect the exhaust streams produced from turbofan engines, as seen in the Harrier series of aircraft. This configuration prioritises forward flight, improving cruising speed and efficiency compared to other configurations (\citeauthor{RN15}, \citeyear{RN15}). However, this configuration demonstrates the worst hover efficiency, due to the increased disk loading on the minimal disk area as described by \citeauthor{maisel2000history} (\citeyear{maisel2000history}). Vectored thrust aircraft are often limited in their applications, attributed to their inability to scale down to an appropriately sized turbofan engine for small UAV applications (\citeauthor{RN15}, \citeyear{RN15}). 
+
+
+\subsection{Propulsion Systems} 
+%Investigating propulsion systems used for existing vtol aircraft 
+%Which provides best performance in what flight modes (forward flight vs hover/vtol climb) 
+%How other systems/designs altered their systems/designs to improve efficiency for each flight mode (Distributed propulsion, ducted fans, etc) 
+%Aerodynamics coupling (peter)
+
+The propulsion system is a key subsystem to consider throughout the design process for VTOL aircraft, with the propulsion design defining the VTOL configuration and performance for both modes of flight (\citeauthor{RN15}, \citeyear{RN15}). Conventional propulsion systems such as turbojets and piston engines are often considered unsuitable for use in small VTOL UAVs, primarily due to poor scaling of performance factors when decreasing size (\citeauthor{moore2014misconceptions}, \citeyear{moore2014misconceptions}). Whereas, electric propulsion systems see greater use in the small UAV weight category (\citeauthor{rothhaar2014nasa}, \citeyear{rothhaar2014nasa})( \citeauthor{Mugin} \citeyear{Mugin})(\citeauthor{RN8} \citeyear{RN8}). Electric propulsion provides various inherent benefits such as high efficiency over large ranges of motor speeds and six times the power to weight ratio of conventional propulsion systems, (\citeauthor{moore2014misconceptions}, \citeyear{moore2014misconceptions}). However, electric propulsion systems often suffer from reduced endurance due to the low energy density of current battery technology.  As described by \citeauthor{dundar2020design} (\citeyear{dundar2020design}), an electric propulsion system for a conventional VTOL UAV consists of the thrust producer, typically propeller driven for forward flight and rotor for vertical flight, with supporting electronics. The propulsion system’s performance in forward and vertical flight can be influenced by various design considerations, including the number of thrust points, location and size of propellers used. This will dictate the design complexity for the propulsion system and supporting subsystems (\citeauthor{cetinsoy2012design}, \citeyear{cetinsoy2012design}). Therefore, electrical propulsion design considerations must be understood to effectively select and design a propulsion system most suitable to achieve the project objectives for efficient forward and vertical flight. \\
+
+For a propulsion system that is used for both modes of flight, there are key control and design aspects that must be understood prior to design. \citeauthor{cetinsoy2012design} (\citeyear{cetinsoy2012design}) illustrates that propulsion designs using two separate thrust points will require propellers to have cyclic control when used in vertical flight. This introduces design and control complexity, as the propellers will require variable pitch control. While designs with three thrust points will not require variable pitch propellers, additional longitudinal control is required typically achieved by designing one thrust point to rotate (\citeauthor{monterroso2018preliminary}, \citeyear{monterroso2018preliminary}). Further increasing the number of thrust points to four or more greatly simplifies control for vertical flight, requiring only differential speed control of each propeller and is easily achieved using typical multi-rotor control (\citeauthor{cetinsoy2012design}, \citeyear{cetinsoy2012design}). Furthermore, increasing the number and/or size of propellers used in vertical flight will lead to an increase in disk area, and as described by \citeauthor{maisel2000history} (\citeyear{maisel2000history}) this will increase hover efficiency. However, incorporating the increased number of propellers effectively into the propulsion system for forward flight is difficult, often leading to reduced performance (\citeauthor{maisel2000history}, \citeyear{maisel2000history}). To overcome these limitations and maximise the advantages of electric propulsion, \citeauthor{rothhaar2014nasa} (\citeyear{rothhaar2014nasa}) developed an experimental VTOL tilt-wing aircraft utilising a distributed propulsion system. Distributed propulsion draws upon the scalability of electric motors, distributing the propulsion system across the airframe resulting in reduced drag losses while simultaneously improving system redundancy (\citeauthor{rothhaar2014nasa}, \citeyear{rothhaar2014nasa}). Supported by \citeauthor{ma2020sizing} (\citeyear{ma2020sizing}) and \citeauthor{matrone2019performance} (\citeyear{matrone2019performance}), distributed propulsion enables aircraft to benefit from coupling the aerodynamic and propulsive subsystems, their associated efficiency. Alternatively, \citeauthor{RN8} (\citeyear{RN8}) utilised a ducted propeller as the primary lift producer for VTOL to improve vertical flight performance over conventional rotor propulsion systems. This design does however sacrifice forward flight performance due to the becoming dead weight. \\
+\note{Sam}{Jake this sounds great but finish your sentance please : P }
+
+Further described by \citeauthor{yilmaz2015performance} (\citeyear{yilmaz2015performance}), ducted propellers                      
+%Ducted fan: preferred in low speed applications such as VTOL, hovercraft, helicopter tail-rotors
+%Positives: increased thrust, reduced noise (good for uber operation), increased propeller efficiency but removing propeller tip vortices
+%Negatives: increased design complexity, improper design can negatively affect performance, increased weight due to duct, increased induced drag due to duct
+ 
+%\subsection{Material Selection}
+
+\subsection{Control Systems}
+The application of VTOL technology requires accurate control to achieve stable flight often in the  presence of many disturbances including wind gusts, mechanical failures and changes in system dynamics throughout operation. VTOL configurations are fundamentally dynamically unstable, rendering full manual control from a pilot impossible (REF HERE (Vervoost)). While difficult to develop and manufacture, effective control systems are commercially available. Such systems include a GPS module for position control and a digital flight controller (REF HERE (Vervoost)). The digital flight controller has the capability to process control inputs and reject external disturbances. This is achieved via an inertial measurement unit (IMU) to compute the VTOL systems attitude and position in space which is then paired with a closed-loop controller (REF HERE (Vervoost)). The IMU consists of angular rate sensors and acceleration sensors in all three axes (REF HERE (Vervoost)). The level of input required from the ground control station (GCS) is dependent on the control algorithm used. The IMU is commonly paired with a proportional integral derivative (PID) control loop for VTOL aircraft given its applicability to practical scenarios(REF HERE (Kermal)). Inherent with this control algorithm is the ability to intricately tune the control gains such that stability of the UAV can be optimised in various flight scenarios (REF HERE (Kermal)). Other applicable control algorithms exist including linear quadratic regulator (LQR) control and artificial neural networks. While evidence shows these control algorithms can achieve better control, the complexity of their implementation is not feasible for this project (REF HERE (Control Algorithms)). 
+\note{Harry}{commercial flight controllers are available for a broad range of vtol configurations such as the ... which has been used on a ....}
+
+\subsection{Power Electronics}
+
+VTOL systems have a variety of power electronics relative to specific mission objectives. Across typical commercially available VTOL systems, electrical components can be segregated into propulsion and control systems. Propulsion systems include brushless direct current (BLDC) motors, electronic speed controllers (ESCs) and lithium polymer (Lipo) batteries. Control electronics include the data telemetry and control links and cameras. BLDC motors are most applicable to VTOL systems given that their speed and torque can be precisely controlled (DC Motors-REF). This control is possible through ESCs which use two control loops to vary the motors torque and speed output. These outputs are governed by control signals from the digital flight controller(ESC-REF). Servomotors are commonly applied to control surfaces and mechanical systems where a high level of controllability is required. Controllability is achieved through PID control loops which govern the servmotor's velocity and position(servomotors-REF). Many power supplies are available for mobile electric systems; however Lipo batteries provide the highest energy density and are therefore most appropriate for aerial systems (epectec-REF). An example of a commercially available system that integrates these components is the ALTI Transition. This VTOL fixed wing aircraft incorporates a hybrid propulsion system consisting of four BLDC ESC motors for VTOL and an internal combustion engine (ICE) for endurance horizontal flight. The aircraft's control surfaces are actuated via servomotors with the entire electrical component of the hybrid system powered by a Lipo battery (Vitech-REF). The system is controlled using an autopilot flight controller with communication to the ground station through a data telemetry and control link. The system implements multiple sensors depending on the mission profile including multi-spectral systems, dual sensor surveillance cameras, high resolution mapping and photogrammetry (ALTI). 
+%All electrical systems required to design and build an aircraft to satisfy aims 
+%Motors, batteries, ESCs, flight controllers, navigation (GPS, etc), servos, etc  
+%Passive and active control of aircraft airframes (this will need clarification, unsure if needed or could be combined with aerodynamics subsection) 
+
+\subsection{Imaging Systems}
+%Combined sensing and payload sections into one -Sam/Rhys
+
+The progression of imaging system capabilities in recent years has resulted in a diverse and extensive marketplace of cameras, which may be tailored to individual system requirements. Traditional colour camera systems collate an image through the use of red green and blue (RGB) sensors which are able to develop an image as seen by the human eye (\citeauthor{Sam1}, \citeyear{Sam1}). Utilising a Infra-Red (IR) camera which may take the form of a multi spectral camera or modified RGB system, provides increasingly useful data for purposes such as accurately monitoring crop health on farms (\citeauthor{Sam1}, \citeyear{Sam1}). The incorporation of sophisticated multi-spectral and where financial resources permit, hyper-spectral imaging systems, into satellites and aircraft has seen  increased access to valuable data for analysis (\citeauthor{Sam2}, \citeyear{Sam2}). However for the purposes of bushfire monitoring, extensive data collection beyond the visible and near infrared range's is unnecessary. Bushfire monitoring camera systems are readily available through companies such as Fire Flight and currently employed on conventional fixed wing aircraft (\citeauthor{Sam6}, \citeyear{Sam6}). \\
+\\
+Other imaging systems may also be implemented on a drone for uses such as general video recording or sensing. The most common practice in commercial drone flight is to incorporate an OTS camera system, such as a Gorpo which provides high quality video (\citeauthor{Sam3}, \citeyear{Sam3}). Recording flight video has the potential to accelerate pilot competency through analysing their performance and the ability to playback particular events. Imaging systems may also be utilised for sensing and incorporated into autonomous landing procedures; most commonly a LIDAR (Light and Radar) system (\citeauthor{Sam4}, \citeyear{Sam4}). LIDAR systems scan an environment with lasers and through analysis of the time for the light to return to the sensor are able to accumulate data to develop a 3D depiction of the surrounding landscape.\\ %which may be utilised for several tasks such as autonomous operations. \\ 
+
+One major consideration for imaging systems when integrated into drones is how to mount them. With most cameras requiring a gimbal to deliver optimal media, integration of these systems with a UAV airframe is a crucial consideration. For fixed wing drones, cameras fitted to the underside of the UAV system provide unobstructed field of view when collecting data. Other housing positions may experience image obstructions as a result of UAV components in the frame. However, due to the typical lack of landing gear on these drones the camera may be exposed to impacts during landing procedures (\citeauthor{Sam5}, \citeyear{Sam5}). Several companies such as GDU Technology have successfully developed housings to mount camera systems under quad copters but the integration of the imaging system remains highly specific to the drone airframe. (\citeauthor{Sam5}, \citeyear{Sam5}).
+% 
+%Want to discuss the resuffiquirements of a payload for bushfire operations.
+%Fireflight's systems
+
+
+\subsection{Autonomous Procedures} 
+%To potentially discuss all aspects of flight which would benefit from autonomy (landing, vtol transition, control stability, etc) - Tom
+
+% provide motivation 
+% give examples of capabilities 
+% give example of existing technologies 
+% talk about hardware requirements 
+% talk about algorithms 
+% 
+
+% https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7505370&casa_token=f6weVxzxRBEAAAAA:hmPLk1X92-Z4r82ySciXoSGIp8z88e2-Tqr1Gge6wF96ziUXjC2sUlJJ-cUgYZNIbU0467lwAFk&tag=1
+
+% 1  https://www.researchgate.net/profile/Ghozali_Hadi/publication/324588366_Autonomous_UAV_System_Development_for_Payload_Dropping_Mission/links/5b0b5625aca2725783ea59de/Autonomous-UAV-System-Development-for-Payload-Dropping-Mission.pdf
+
+% 2 http://www.dei.unipd.it/~emg/downloads/SIMPAR08-WorkshopProceedings/MiniAndMicroUAV/Lange.pdf
+
+% 3 https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7502574&casa_token=yGa_806mezoAAAAA:YYkvHy7ZON-5GMycoIfekWaYL_sxuG-G0CFUsgfjYKX9y1unT3spDpK1YVeGzyH52-I0GojLiz8
+
+\note{Tom}{Reference formatting needs work}
+
+To minimise the operational oversight required by end users, many UAVs have autonomous capabilities. Systems which can fly autonomously using GPS waypoint following such as that developed by \citeauthor{Tom1} (\citeyear{Tom1}) are becoming increasingly common due to the desire for drone based delivery systems. This system uses Mission Planner, an open source software package by ArduPilot, as an interface to monitor and send route information to the system. Another aspect of automation embedded in UAVs is the ability to autonomously detect suitable landing sites and safely descend and land. \citeauthor{Tom2} (\citeyear{Tom2}) use C++ and OpenCV to develop a system that can autonomously detect and land on a predefined target shape using a greyscale image feed from an onboard camera. They identified that the target shape must be designed such that the drone can orient itself even if the target is only partially visible. This is achieved by designing a target comprising of a set of concentric circles each with inner and outer diameters of a unique ratio. \citeauthor{Tom3} (\citeyear{Tom3}) demonstrate that with onboard image processing, a similar approach can be used to detect and land on moving targets. They successfully landed their UAV on a moving vehicle, suggesting potential applications for quick system recovery with emergency services. Research by \citeauthor{Tom4} (\citeyear{Tom4}) shows that by using machine learning methods such as support vector machines, suitable landing sites in regional and suburban areas can be detected from aerial imagery with an accuracy of up to 88\%. 300 satellite images from Google Earth were used as the data, with two thirds used for training and the remainder for testing. To minimise the computing power required to perform the autonomous landing procedures, \citeauthor{Tom5} (\citeyear{Tom5}) suggest using an object tracking algorithm such as Camshift to avoid the need to constantly run more costly detection algorithms. This therefore defines the three processes required to detect and land on a target; detect the target, track the target and calculate displacement vectors. 
+
+
+
+
+
+
+\subsection{Summary}
+
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{Technical Task}
+
+\section{Technical Requirements}
+intro 
+
+% \subsection{Performance Criteria - Tom}
+% 
+% \subsubsection{Design for Objectives}
+% %explain selection criteria
+% %include large selection criteria table
+% \newpage
+% \newgeometry{left=1.5cm, right=0.5cm, bottom=0.5cm, top=0.5cm}
+% \begin{landscape}
+% \pagestyle{empty}
+
+% \input{Criteria}
+
+% \end{landscape}
+% \restoregeometry
+% \clearpage
+
+% \subsubsection{Weightings - Tom}
+
+% Put a table in showing weightings for both objectives and sub criteria
+
+\subsection{Mission Specification}
+
+To do: add in details about mission profiles and how they were derived.
+
+\begin{table}[H]
+\begin{center}
+    \caption{Major Performance Parameters}
+    \label{fig:MPP}
+\begin{tabular}{|l|c|c|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Parameter}} & \multicolumn{2}{c|}{\textbf{Value}}       \\ \hline \hline
+Aircraft Class                           & \multicolumn{2}{c|}{VTOL Aircraft - Small RPA} \\ \hline
+Weight Range                               & \multicolumn{2}{c|}{2.01 kg to 25 kg}                    \\ \hline
+Conventional Rate of Climb                            & 2 m/s                 &  400  ft/min              \\ \hline
+Hover Rate of Climb                            & 3 m/s                 &  600  ft/min              \\ \hline
+Max Range                                    & 100 km             & 54 nm             \\ \hline
+Conventional Loiter Time                              & \multicolumn{2}{c|}{0.5 hrs}                  \\ \hline
+Hover Loiter Time                              & \multicolumn{2}{c|}{0.25 hrs}                  \\ \hline
+Cruise Speed                             & \multicolumn{2}{c|}{28 m/s}             \\ \hline
+Cruise Altitude                          & 1000 m              & 3300 ft            \\ \hline
+Max Take-Off and Landing Temperature         & ISA + 26  \textdegree C                   & ISA + 79  \textdegree F                   \\ \hline
+Additional Payload                       & 3 kg              & 6.6 lbs             \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsubsection{Missions}
+\note{Rhys}{Peter to do aprox 5 mission profiles}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{PrelimSizing/mission2.png}
+    \caption{Basic Mission}
+    \label{fig:my_label}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{misison5.png}
+    \caption{Pure Hover Mission}
+    \label{fig:my_label}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{PrelimSizing/mission1.png}
+    \caption{Mission with Extended Loiter}
+    \label{fig:my_label}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{mission4.png}
+    \caption{Mission with Extended Loiter and Decent to Hover Loiter}
+    \label{fig:my_label}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{PrelimSizing/mission3.png}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure}
+
+\note{Peter}{Add table for WCMP Also talk about assume decent has no power requirements future work for regenerative charging}
+
+\begin{table}[H]
+\begin{center}
+    \caption{Mission Profile Parameters}
+    \label{fig:PP}
+\begin{tabular}{|c|l|c|c|c|}
+\hline
+\textbf{Stage} & \multicolumn{1}{c|}{\textbf{Description}} & \textbf{Speed} & \textbf{Altitude} & \textbf{Range / Time} \\ \hline \hline
+1-2            & Vertical Take-off                    &  3 m/s              & Sea level - 100 ft        &       -                \\ \hline
+2            & Transition to FW Flight                  & -              & 100 ft        &       -                \\ \hline
+2-3            & Conventional Climb 1                                 & -              & 22 m/s         &       100ft - 3300 ft                 \\ \hline
+3-4            & Conventional Cruise 1                    & 28 m/s       &      3300 ft              &      54 nm                 \\ \hline
+4-5            & Conventional Loiter 1                                  &  3300 ft           & .5 hrs     & -          \\ \hline
+5-6            & Decent 1                                  & -              & 3300 ft - 100 ft           & -             \\ \hline
+6            & Transition to Hover Flight                                   & -              & 100 ft           & -             \\ \hline
+6-7            & Hover Cruise 1                                    & 10 m/s              & 100 ft           &  < 1 km             \\ \hline
+7-8            & Hover Loiter 1                                    & 10 m/s              & 100 ft           &  0.25 hrs             \\ \hline
+8            & Transition to FW Flight                  & -              & 100 ft        &       -                \\ \hline
+8-9            & Conventional Climb 2                                 &22 m/s         &       100ft - 3300 ft & - \\ \hline
+9-10            & Conventional Cruise 2                    & 28 m/s       &      3300 ft              &      54 nm                 \\ \hline
+10-11            & Decent 2                                  & -              & 3300 ft - 100 ft           & -             \\ \hline
+11-12            & Conventional Climb 3                                 & 22 m/s         &       100ft - 3300 ft & - \\\hline
+12-13            & Conventional Cruise 3                    & 25 m/s       &      1000 ft              &      5 nm                 \\ \hline
+13-14            & Conventional Loiter 2                                  & -              & 1000 ft           & .5 hrs               \\ \hline
+14-15            & Decent 3                                  & -              & 1000 ft - 100 ft           & -             \\ \hline
+15            & Transition to Hover Flight                                   & -              & 100 ft           & -             \\ \hline
+15-16            & Vertical Landing                                &  - 3 m/s              & 100 ft - Sea level          & -             \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\subsubsection{Mission Requirements}
+\note{Rhys}{Video/Camera resolutions}
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conceptual Designs}
+
+As many design decisions depend on the airframe of the system, a process of ideation and concept generation was identified as a priority for the project. The following section outlines the approach taken to ensure innovation was facilitated while adhearing to the timeline.
+
+\subsection{Concept Generation Approach}
+\label{sec:Concept_Generation_Approach}
+
+% What are we doing
+% Approach to what
+% How does this impact the project
+% Why is it important
+% What order were things conducted
+% what were the outcomes
+
+To effectively develop concepts that would have potential to push the flight efficiency technology curve, existing literature and aircraft designs were studied. Based on this research, design gaps pertaining to efficient VTOL aircraft design were identified and explored. With the existing technology in mind, a first principles approach to airframe design was conducted. This method allowed the team to eliminate any assumptions and propositions that had the potential to constrain the creativity of the concept generation.
+
+\subsubsection{Methodology}
+
+A set of specific, relevant, measurable and scalable performance criteria were derived from the primary objectives to ensure the concepts aligned with the project requirements. These criteria are detailed in Section \ref{perfcrit}.\\
+
+The first round of concepts were assessed against the performance criteria, using theoretical analysis based on literature and qualitative reasoning. The concepts were then ranked based on their score for each objective, and the top scoring concepts were analysed. This process allowed the team to rapidly identify the most relevant and successful technologies when considering the specific domains defined by the project objectives. This information allowed the team to focus the concept generation ideation for the second iteration embed synergies within the design.\\
+
+This approach is summarised below.
+\begin{enumerate}
+    \item Review the existing literature and designs in the aircraft design field.
+    \item Identify the main characteristics of existing designs.
+    \item Generate performance criteria from project objectives.
+    \item Creatively theorise potential concepts using first principles.
+    \item Rank concepts based on performance criteria.
+    \item Further iterate top ranked concepts and generate additional concepts by designing for objectives.
+    \item Assess modified/new concepts against the performance criteria and further develop the top ranked concepts.
+\end{enumerate}
+
+\subsubsection{Desired Outcomes}
+
+This approach is designed to eliminate concepts that do not align with the project aim and converge on a concept that broadly does. To ensure scope for innovation was maintained, a wide variety of concepts were developed. To desired outcome of this process was to give the team a broad understanding of the advantages and disadvantages associated with particular designs and decide on an airframe concept that could then be further developed and refined. The decided concept would then be used as base design upon which tests could be conducted and improvements could be made. As the concept was not intended to be the final product, the process was not designed find the optimal system, but instead act as a method to decide on a system worthy of further investigation.
+
+
+% \begin{itemize}
+%     \item Find a design that's suitable
+%     \item Not necessarily finding an optimal design
+%     \item Not a critical evaluation of concepts
+%     \item Only aimed at deciding on a design for further analysis
+% \end{itemize}
+
+\subsubsection{Limitations}
+
+Given the number of concepts developed and the constrained timeframe, it was deemed appropriate to take a somewhat qualitative approach to scoring the concepts against some of the performance criteria. With more time and resources, prototyping could be conducted to achieve definitive results upon which to base the concept assessments.
+
+\subsection{Performance Criteria}\label{perfcrit}
+
+
+Table \ref{tab:objectives} attributes each objective with its respective numerical identifier used throughout this section.
+
+\begin{table}[H]
+\caption{Project Objectives}
+\label{tab:objectives}
+\centering
+\begin{tabular}{|c|p{10cm}|}
+\hline
+             \#                       & \multicolumn{1}{c|}{\textbf{Description}} \\\hline
+1 & Design and Manufacture an Airframe                                    \\
+2 & Design Complies with Standards and Regulations                                     \\
+3 & Design System Capable of Forward Flight                                                \\
+4 & Design System Capable of Hovering                                                \\
+5 & Design System with Payload Capacity                                                                   \\
+6 & Design System to Perform VTOL Transitions                                                               \\
+7 & Design System to Perform Autonomous Operations                                                              \\\hline
+\end{tabular}
+\end{table}
+
+
+
+\subsubsection{Assessed Attributes for Objectives}
+%explain selection criteria
+%include large selection criteria table
+
+% Tod do: discuss and justify criteria within each objective.\\
+In order to achieve the project aims, each objective was broken down into its key capabilities and characteristics that would be required to achieve it. These are summarised in Table \ref{tab:objective-attributes-weightings} and further detailed in Appendix \ref{app_performance_criteria}.
+
+% Tables \ref{tab:obj_1_criteria} to \ref{tab:obj_6_criteria} in Appendix  show the performance criteria that were developed to compare airframe designs. 
+
+
+
+\note{}{Rey - how much detail do you think is required here?}
+
+
+
+
+
+% \newgeometry{left=1.5cm, right=0.5cm, bottom=0.5cm, top=0.5cm}
+% % \begin{landscape}
+% \pagestyle{empty}
+
+
+\note{Harry}{Does this need to go in the Appendix or here??}
+\note{Rhys}{Split up for each objective}
+
+% \end{landscape}
+% \restoregeometry
+% \clearpage
+
+\subsubsection{Weightings}
+
+Table \ref{tab:objective-attributes-weightings} also shows the relative weightings applied to each objective when considering their respective performance criteria. Note that Objective 2 and 7 are not included in the weighting because they are considered independent of the airframe design.
+
+\begin{table}[H]
+\caption{Objective Attributes and Weightings}
+\label{tab:objective-attributes-weightings}
+\centering
+\begin{tabular}{|c|p{10cm}|r|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Obj. \#}}     & \textbf{Sample Attributes}           & \multicolumn{1}{c|}{\textbf{Weighting}} \\\hline
+1 & Manufacturing simplicity, durability, reliability, weight, cost                                     & 0.14                                   \\\hline
+2 &  Weight category, autonomy requirement, certified pilot availability & -                                      \\\hline
+3 &  Forward aerodynamic efficiency, propulsive efficiency, endurance, controllability & 0.24                                   \\\hline
+4 &  Vertical aerodynamic efficiency, propulsive efficiency, endurance, controllability                                      & 0.24                                   \\\hline
+5 &  Size and weight range accepted, ease of insertion, impact on flight                                  & 0.16                                   \\\hline
+6 &  Transition time and efficiency, transition requirements, robustness,                               & 0.22                                   \\\hline
+7 &  Reliability, degree of automation, conditions required                         & -                                      \\\hline
+ \multicolumn{1}{|c}{}   &        \multicolumn{1}{r|}{Total}                       & 1.00                                     \\\hline
+\end{tabular}
+\end{table}
+
+Objectives 3 and 4 have the highest weighting as they pertain to the efficiency of the airframe and are therefore crucial to the overarching aim of pushing the range capabilities of the system. Objective 6 refers to the VTOL transition efficiency and is therefore considered of similar importance for the same reasons. Objectives 5 is weighted less as the payload requirements for the CFS are fairly limited. Objective 1 is weighted the least as most concepts will be able to be manufactured by either the Mechanical Engineering Workshop or by external manufacturers.\\
+
+Within each objective, the various criteria are weighted to allow for consideration for the differing level of importance. These criteria and their respective weights can be seen in the tables within Appendix \ref{app_performance_criteria}.
+
+
+
+\clearpage
+\include{Concepts/Concepts}
+
+% \subsection{Concept Generation Approach Performance}
+
+% \begin{figure}[H]
+%     \centering
+%     \fbox{\includegraphics[width = 0.8\textwidth]{Concepts/Improvement.pdf}}
+%     \caption{Improvement achieved during concept generation rounds}
+%     \label{fig:statbatt}
+% \end{figure}
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{PrelimSizing/prelimsizing}
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{Tilt Wing}
+\include{Tiltwing/Tiltwing}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Payload}
+\label{payload}
+\subsubsection{Theory} 
+%SAM: It would be valuable to include a figure here to depict how these values are calculated
+For a payload to fulfill its required functions there are several parameters that must be considered in its selection. For aircraft imaging payloads these are the camera pixel dimensions, field of view and aircraft altitude. To determine the spatial resolution, which is the area corresponding to one pixel, Equation \ref{eqn:Spactial} is used.\\
+\begin{equation}
+    \text{Spatial Resolution} = \frac{\text{Ground Area Visible}}{\text{Total Pixel Count}} \label{eqn:Spactial}
+\end{equation}
+
+\subsubsection{Method}
+While the development of a payload for use by the CFS is outside the scope of this project, it is crucial that potential payloads are explored to ensure the developed system is able to incorporate the required payloads. The determining factors of payload selection are spatial resolution, weight, size and cost. 
+
+\subsubsection{Analysis}
+An analysis of 4 potential imaging systems for the payload was conducted based on the aforementioned performance criteria which is displayed in Table \ref{tab:Payloads}. 
+
+\begin{table}[H]
+\caption{Potential Payload Specification Comparisons}
+\label{tab:Payloads}
+\begin{tabular}{|p{3.5cm}|r|p{2.0cm}|r|r|} \hline
+Imaging System  & Weight (g) & Size (mm)  & Resolution (MP) & Cost (AUD)  \\ \hline
+FireFlight  & 500  & $98 \times 76 \times 68 $ & 0.3      & Unavaliable \\ \hline
+GoPro (Hero 7)     & 116  & $62.3 \times 44.9 \times 33$    & 12       & 530         \\ \hline
+Raspberry Pi NoIR Camera  v2 & 3.4  & \cellcolor[HTML]{FFFFFF}25 x 23 x 9   & 8     & 35   \\ \hline
+Gimbal Mounted, 4k Camera    & 1000 & \cellcolor[HTML]{FFFFFF}128 x 82 x 70 & 14   & 600  \\  \hline    
+\end{tabular}
+\end{table}
+
+It should be noted that the FireFlight system is a 3 camera system with two IR cameras and a single RBG camera. In addition to this, the system has integrated in flight image processing, 
+Flight Path Planning and a mounting plate. Evaluating the end users needs, it was concluded that Emergency Fire Services would likely look to incorporate all 'all in one' system such as the fireflight system which has proven effectiveness on conventional fixed wing aircraft at high altitudes. Following the selection of the Fireflight system for payload integration design, the performance of the system at the maximum operating height under CASA regulations of 400ft was Investigated. Through communications with Dr Paul Dare, CEO - Fire flight, technical data for the swath width and resolution at various altitudes was acquired. The Fireflight 3000 system encompasses 3 cameras with varying focal lengths of 9mm, 13mm and 19mm. Resolutions are only provided for altitudes of 5000 ft and above and consequently the data must be extrapolated to approximate the spatial resolution at the operational altitude of 400ft\\
+
+This was done through the determination of the Field of View (FOV) of the camera system through basic trigonometry which will allow for the calculation of the spatial resolution. The 9mm focal length case was selected as this will result in the poorest spatial resolution which if acceptable will ensure the other two camera systems are also suitable for the desired purposes.
+%SAM: - An image here will be valuable in the final.
+For an altitude of 5000ft, the 9mm camera system has a swath width of 1.8km. Determining the FOV angle: 
+\begin{gather}
+    \label{eq: FOV calculation}
+    FOV = 2\times \arctan (\frac{swath\: width/2}{altitude} )\\
+    FOV = 2\times \arctan ({\frac{900m}{1524m}}) = 61^o
+\end{gather}
+This was validated by performing the same calculations for other altitudes with a maximum calculated error of 3.5 \%. \\
+Applying this FOV for an altitude of 400ft, allows the calculation of the minimum spatial resolution for the 0.3MP fireflight camera assuming a FOV of $60.0^o$.\\
+
+\begin{gather}
+    \label{eq: Swath calculation}
+    Swath\: Width = altitude\times \tan(60^o)\\
+    Swath\; Width = 122\times \tan(60^o) = 211m^2 \\
+    Ground\: Area\: Visible = (Swath\: Width)^2 = 44521m^2 \\
+    Spatial Resolution = \frac{44521m^2}{0.3\times10^6 MP} = 0.148m^2/pixel 
+\end{gather}
+
+\subsubsection{Results}
+%Sam- would be good to repeat this analyse with the other 2 camera systems to determine the observable areas and resolutions for those systems
+From this analysis it was observed that using the wide angle camera system a swath Width of 211m is possible, producing imagery with a spatial resolution of 0.148. This resolution should satisfy the requirements of the CFS to be able to provide valuable regarding the bushfire such as hot spots or down trees. 
+\subsubsection{Discussion}
+The Fireflight system was selected owing to the built in bushfire monitoring systems and proven effectiveness in this field. The system has the required resolution at the maximum operating condition. The effectiveness of the fixed wing drone due to a maximum flight altitude of 400ft may be reduced as the swath distance is insufficient to be able to accurately map vast bushfire areas. Consequently, the system may need to be paired with high altitude aircraft to further investigate identified locations of interest. Alternatively,there is the potential that drone flight restrictions may be eased as CASA continue to modify their regulations to reflect the desired uses of the aircraft which would make the aircraft far more feasible. As the Fire Flight system incorporates features which are not crucial to the drone development it will be used as a basis for the payload housing system but not practically implemented. The cost effective Pi Video camera will be used for image collection purposes.
+
+%-What camera systems are to be Incorporated into the aircraft, Fireflight system + gopro for video recording or will this be predominantly done by the raspberry Pi cameras
+\subsubsection{Conclusions}
+The Fireflight Bushfire Monitoring System is a proven device that could potentially be Incorporated into the drone to achieve the needs of Emergency Fire Services. The camera achieves the required resolutions and has an acceptable size and weight. A raspberry pi camera will be integrated to the drone physically to capture appropriate video.  
+-Proceeding with Fireflight camera system,
+For testing purposes will use a gopro?
+\subsubsection{Future Work}
+Communications will continue with Fireflight to further assess the applicability of this technology to the drone. Furthermore, the payload weight will be Incorporated into the preliminary sizing calculations. The payload size specifications will be used in the development of an appropriate payload mounting system to ensure the system is able to capture the required data. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+
+\include{ControlSystem/control}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{powerElectronics/Electronics}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{AutonomousSystems/Autonomous}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% \section{Future Work}
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Summary}
+This report presents the preliminary research and analysis performed on the Long Range VTOL UAV project. Motivated by the desire to develop a system capable of assisting emergency fire service endeavors, the aims and scope of the project were established. Principally the system aims to innovate in the design of a VTOL air frame and corresponding VTOL transition sequence. A minimal Viable product shall be manufactured for testing and validation purposes while further theoretical analysis will progress in parallel to allow the group to fulfill both academic and industry requirements from relevant stakeholder groups. Primary and objectives were also detailed including designing an air frame capable of operating in forward flight and hover configurations in addition to the VTOL transition and capability to perform autonomous operations.An extensive literature review provided the basis for identification of opportunities for improvements within the VTOL sector. Additionally, current marketplace solutions were assessed for each subsystem to determine the degree of integration with existing COTS systems possible.  \\
+
+Three stages of conceptual designs were undertaken with rankings based upon qualitative analysis. Analysis the average scores of each round, improvements in meeting the specified system objectives were clearly made. Of key distinction was the propulsion system to be incorporated. Theoretical analysis was performed which displayed that the two propulsion systems were both presenting similar results meant that to distinguish between the two systems, an experimental evaluation method was desirable. Consequently, the tilt-wing mechanism was designed to be modular in the sets of wings may be attached to assess the benefits from the two proposed propulsion systems. This approach was approved by relevant stakeholders and the project scope adjusted accordingly. 
+%need to speak more on prelim sizing, and individual sub system analysis, also perhaps on project managerment, safety and risk. 
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addcontentsline{toc}{section}{\protect\hphantom{\numberline{\thesection}}References}
+\begin{flushleft}
+\bibliographystyle{agsm}
+\setcitestyle{notesep={; },round,aysep={},yysep={;}}
+\bibliography{refs} % Entries are in the "refs.bib" file
+\end{flushleft}
+
+\newpage
+
+\begin{appendices}
+
+\section{Objective Based Performance Criteria}
+\label{app_performance_criteria}
+
+Tables \ref{tab:obj_1_criteria} to \ref{tab:obj_6_criteria} detail the performance criteria used to compare the airframe concepts generated during the ideation stage of the project. These criteria were developed using the Specific, Relevant, Measurable and Scalable framework.
+
+\input{Criteria}
+
+
+
+\section{Project management (incl. stakeholders, status update)}
+\subsection{Stakeholders}
+
+\section{Budget}
+\input{Appendix/BudgetTable}
+\clearpage
+
+\section{WBS and Gantt Chart}
+
+\section{Risk Assessment}
+
+\section{CAD Drawings}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = \textwidth]{Tiltwing/Tilt Assembly Exploded View.pdf}
+    \caption{Exploded assembly of Prototype Tilt Wing Mechanism}
+    \label{fig:explode}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = \textwidth]{Tiltwing/Tilt Assembly.pdf}
+    \caption{Assembly of Prototype Tilt Wing Mechanism}
+    \label{fig:assembly}
+\end{figure}
+
+\clearpage
+\newpage
+
+
+
+\section{Statistical Analysis Data}
+
+\label{StatDATA}
+
+% Table generated by Excel2LaTeX from sheet 'Sheet1'
+
+\begin{table}[H]
+\centering
+\caption{}
+\label{tab:my-table}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+\hline
+Battery & type & discharge rate C & Cells in series & Voltage V & mAh & Weight grams & Weight kg & Nominal Cell Voltage \\ \hline
+Tattu & Lipo & 20 & 6 & 22.2 & 10000 & 1319 & 1.319 & 3.7 \\ \hline
+Tattu & Lipo & 25 & 6 & 22.2 & 10000 & 1400 & 1.4 & 3.7 \\ \hline
+Tattu & Lipo & 25 & 6 & 22.2 & 10000 & 1517 & 1.517 & 3.7 \\ \hline
+Tattu & Lipo & 25 & 6 & 22.2 & 10000 & 1517 & 1.517 & 3.7 \\ \hline
+Tattu & Lipo & 15 & 6 & 22.2 & 12000 & 1620 & 1.62 & 3.7 \\ \hline
+Tattu & Lipo & 15 & 6 & 22.2 & 12000 & 1620 & 1.62 & 3.7 \\ \hline
+Tattu & Lipo & 15 & 6 & 22.2 & 12000 & 1620 & 1.62 & 3.7 \\ \hline
+Tattu & Lipo & 15 & 6 & 22.2 & 12000 & 1670 & 1.67 & 3.7 \\ \hline
+Tattu & Lipo & 15 & 6 & 22.2 & 12000 & 1670 & 1.67 & 3.7 \\ \hline
+Tattu & Lipo & 15 & 6 & 22.2 & 16000 & 1932 & 1.932 & 3.7 \\ \hline
+Tattu & Lipo & 15 & 6 & 22.2 & 16000 & 1932 & 1.932 & 3.7 \\ \hline
+Tattu & Lipo & 15 & 6 & 22.2 & 16000 & 2063 & 2.063 & 3.7 \\ \hline
+Tattu & Lipo & 25 & 6 & 22.2 & 22000 & 2490 & 2.49 & 3.7 \\ \hline
+Tattu & Lipo & 25 & 6 & 22.2 & 22000 & 2650 & 2.65 & 3.7 \\ \hline
+Turnigy & Lipo & 25 & 3 & 11.1 & 2200 & 188 & 0.188 & 3.7 \\ \hline
+Turnigy & Lipo & 20 & 3 & 11.1 & 5000 & 360 & 0.36 & 3.7 \\ \hline
+Turnigy & Lipo & 35 & 2 & 7.4 & 300 & 17 & 0.017 & 3.7 \\ \hline
+Turnigy & Lipo & 40 & 3 & 11.1 & 2200 & 204 & 0.204 & 3.7 \\ \hline
+ZIPPY & Lipo & 25 & 3 & 11.1 & 2200 & 163 & 0.163 & 3.7 \\ \hline
+Turnigy & Lipo & 25 & 3 & 11.1 & 1200 & 80 & 0.08 & 3.7 \\ \hline
+Turnigy & Lipo & 25 & 2 & 7.4 & 4200 & 222 & 0.222 & 3.7 \\ \hline
+Turnigy & Lipo & 25 & 2 & 7.4 & 6000 & 333 & 0.333 & 3.7 \\ \hline
+Zippy & Lipo & 30 & 2 & 7.4 & 8000 & 390 & 0.39 & 3.7 \\ \hline
+Turnigy & Lipo & 12 & 4 & 14.8 & 6600 & 598 & 0.598 & 3.7 \\ \hline
+Zippy & Lipo & 25 & 3 & 11.1 & 5800 & 411 & 0.411 & 3.7 \\ \hline
+Turnigy & Lipo & 12 & 4 & 14.8 & 8000 & 752 & 0.752 & 3.7 \\ \hline
+Turnigy & Lipo & 12 & 4 & 14.8 & 10000 & 902 & 0.902 & 3.7 \\ \hline
+Turnigy & Lipo & 12 & 6 & 22.2 & 8000 & 1110 & 1.11 & 3.7 \\ \hline
+Turnigy & Lipo & 12 & 4 & 14.8 & 12000 & 1080 & 1.08 & 3.7 \\ \hline
+Turnigy & Lipo & 12 & 6 & 22.2 & 12000 & 1650 & 1.65 & 3.7 \\ \hline
+Turnigy & Lipo & 12 & 4 & 14.8 & 20000 & 1775 & 1.775 & 3.7 \\ \hline
+Turnigy & Lipo & 12 & 4 & 14.8 & 16000 & 1366 & 1.366 & 3.7 \\ \hline
+Turnigy & Lipo & 12 & 6 & 22.2 & 14000 & 1820 & 1.82 & 3.7 \\ \hline
+Turnigy & Lipo & 12 & 6 & 22.2 & 16000 & 2015 & 2.015 & 3.7 \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{}
+\label{tab:my-table}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|c|c|}
+\hline
+\multicolumn{1}{|c|}{Name} & Max Power W & Weight g \\ \hline
+Hobbywing XRotor Race Pro 2207-2650KV Brushless Motor & 822.4 & 31.79 \\ \hline
+Turnigy Aerodrive SK3 - 5055-380KV Brushless Outrunner Motor & 1600 & 422 \\ \hline
+ACK-5310CP-350KV Brushless Outrunner Motor 6$\sim$8S (CW) & 910 & 216 \\ \hline
+PROPDRIVE v2 3536 1800KV Brushless Outrunner Motor & 875 & 126 \\ \hline
+PROPDRIVE v2 2826 1350KV Brushless Outrunner Motor & 302 & 58 \\ \hline
+PROPDRIVE v2 5060 380KV Brushless Outrunner Motor & 2665 & 438 \\ \hline
+PROPDRIVE v2 3548 900KV Brushless Outrunner Motor & 815 & 178 \\ \hline
+PROPDRIVE v2 4258 500KV Brushless Outrunner Motor & 1300 & 300 \\ \hline
+Turnigy Aerodrive SK3 - 6374-192KV Brushless Outrunner Motor & 2750 & 858 \\ \hline
+Turnigy Aerodrive SK3 - 5055-430KV Brushless Outrunner Motor & 1750 & 378 \\ \hline
+Turnigy Aerodrive SK3 - 4240-740KV Brushless Outrunner Motor & 870 & 195 \\ \hline
+Turnigy TrackStar 13.5T Sensored Brushless Motor 3040KV (ROAR approved) & 255 & 178 \\ \hline
+Turnigy Aerodrive SK3 - 6354-260KV Brushless Outrunner Motor & 2360 & 489 \\ \hline
+Turnigy RotoMax 50cc Size Brushless Outrunner Motor & 5300 & 1080 \\ \hline
+9235-100KV Turnigy Multistar Brushless Multi-Rotor Motor & 2800 & 674 \\ \hline
+Turnigy RotoMax 1.60 Brushless Outrunner Motor & 2960 & 849 \\ \hline
+Turnigy RotoMax 150cc Size Brushless Outrunner Motor & 9800 & 2530 \\ \hline
+Turnigy RotoMax 100cc Size Brushless Outrunner Motor 167kv & 7992 & 2074 \\ \hline
+Turnigy D2006-2400KV Brushless Motor (CW) & 240 & 25 \\ \hline
+TrackStar 380 Sensorless Brushless Motor 4400KV & 216 & 86 \\ \hline
+PROPDRIVE v2 2830 1000KV Brushless Outrunner Motor & 370 & 69 \\ \hline
+Black Widow 2204 2300KV With Built-In ESC CCW & 140 & 33.5 \\ \hline
+Durafly™ Excalibur - Aerostar 3542-800KV Brushless Outrunner Motor & 830 & 174 \\ \hline
+Hobbywing XRotor Race Pro 2306-2700KV Brushless Motor & 651.7 & 27.5 \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+
+
+
+\newpage
+
+
+\section{Preliminary Sizing Code}
+\label{appendixcalcs}
+\lstinputlisting[language=Matlab,
+caption=Preliminary Sizing Code for variable estimation,
+label=code
+]{prelim_iteration.m}
+
+\newpage
+
+\section{Code for Landing Pad Detection}
+
+The following listing shows the Python code written to detect the landing pad as described in Section \ref{sec:autonomous}.
+
+\lstinputlisting[language=Python,
+caption=Python OpenCV code for landing pad detection,
+label=code
+]{AutonomousSystems/detect_colour.py}
+
+\section{(Safety) risk assessments and SOPs}
+
+\end{appendices}
+
+\end{document}

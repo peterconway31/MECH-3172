@@ -1,0 +1,140 @@
+%----------------------------------------------------------------------------------------
+%	PREAMBLE
+%----------------------------------------------------------------------------------------
+\documentclass[12pt]{article} % Default font size is 12pt, it can be changed here
+
+\usepackage{geometry} % Required to change the page size to A4
+\geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
+% \geometry{top=8em}
+\geometry{top=8em,bottom=8em}
+
+\usepackage{verbatim}
+
+
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+
+\usepackage[table]{xcolor}% http://ctan.org/pkg/xcolor
+\definecolor{cadmiumgreen}{rgb}{0.0, 0.42, 0.24}
+
+\usepackage{commath}
+
+\usepackage{etoolbox}
+\usepackage{ifthen}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={ESDPP Prelim}
+} % Hyperlinks
+\urlstyle{same}
+
+\usepackage{sidecap}
+
+\usepackage{fancyhdr}
+
+\usepackage{gensymb}
+
+\usepackage{graphicx} % Required for including pictures
+
+\usepackage{array}
+
+\usepackage{caption}
+
+\usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
+\usepackage{wrapfig} % Allows in-line images such as the example fish picture
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template - \lipsum[#]
+
+\usepackage{amsmath,amssymb,latexsym} % Maths and maths symbols.
+
+\usepackage{xparse}
+
+%peter added these %%
+
+%%
+
+\linespread{1.2} % Line spacing
+
+\setlength{\parindent}{0pt}
+
+\usepackage{setspace}
+\usepackage{pgfplots}
+\pgfplotsset{every axis/.append style={
+    font=\footnotesize,
+    thin,
+    tick style={thin}}}
+\usetikzlibrary{patterns}
+\usepgflibrary{patterns}
+\pgfplotsset{compat=1.5.1}
+% \usepackage{circuitikz}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{calc,intersections}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows, arrows.meta, decorations.pathmorphing, decorations, shapes}
+\usepackage{cancel}
+
+\tikzset{
+    position label/.style={
+       below = 3pt,
+       text height = 1.5ex,
+       text depth = 1ex
+    },
+   brace/.style={
+     decoration={brace, mirror},
+     decorate
+   }
+}
+
+
+
+%\setlength\parindent{0pt} % Uncomment to remove all indentation from paragraphs
+
+\graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
+
+%Table%
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\newcommand{\note}[2]{{\color{red}{[#1] #2}}}
+
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+%New colors defined below
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+%Code listing style named "mystyle"
+\lstdefinestyle{mystyle}{
+%   backgroundcolor=\color{backcolour},
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2,
+  frame=tblr,
+}
+
+%"mystyle" code listing set
+\lstset{style=mystyle}
+
+
+\renewcommand{\lstlistlistingname}{List of Listings}

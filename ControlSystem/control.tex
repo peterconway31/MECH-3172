@@ -1,0 +1,55 @@
+\subsection{Control - Programmable Flight Controller}
+
+\subsubsection{Theory}
+Across all prototypes, a programmable flight controller is necessary to achieve controlled VTOL and horizontal flight regimes. As supported in literature, flight controllers with PID control algorithms will be most applicable to this project. While this narrows the scope of flight controller selection, their exists numerous models which have particular advantages. Such advantages must be considered with their relevance to our performance criteria analysed.\\
+\\
+Among commercially available controllers, the model of processor varies depending on requirements. These models are variants of the STM32 MCU ranging from the F1 to the most recent F7 MCU which vary in processing speed and capability (REF HERE). The processor is similar to a computers CPU which evaluates computational logic and communicates with other components of the flight controller to keep the aerial system stable (REF HERE). Processing power among these different models is an imperative aspects to consider, governing the control agility and data processing capabilities of the aerial system (REF HERE).  
+
+Through signals sent from the ground control station and those generated through the PID feedback loop on-board the flight controller, motor speed is manipulated to achieve required roll, pitch and yaw\cite{vervoorst2016modular}. Depending on the BLDC motor layout of the VTOL system, the manner in which motor speed is controlled to achieve desired motion varies \cite{vervoorst2016modular}.\\
+
+\subsubsection{Method}
+
+To select an optimal flight controller for this project, key aspects of programmable flight controllers will be analysed. Considerations will include price, firmware compatibility, processing power, number of UART ports and number of PWM/D-Shot input/output ports.\\
+\\
+A selection of popular commercially available flight controllers will be introduced and analysed against these key attributes allowing a results matrix to be formed. From this matrix, an optimal flight controller will be selected. 
+\subsubsection{Analysis}
+\textbf{Popular COTS Flight Controllers}\\
+
+\textbf{Naze 32:}\\
+The Naze 32 is smaller flight controller which is highly popular in the FPV multi-rotor racing society given its memory and CPU power. While this flight controller offers fast processing, support for external modules such as data collection systems and GPS modules in minimal.\\
+\\
+\textbf{Matek Systems F405-STD:}\\
+The Matek Systems F405-STD is a highly commended flight controller given its abilities to support five UART ports and up to six PWM/Dshot outputs (REF HERE). This support makes this board ideal for GPS assisted position control while still having capabilities to support other external devices. \\
+\\
+\textbf{Pixhawk Cube:}\\
+The Pixhawk Cube is aimed at commercial systems where autopilot is a key requirement. This flight controller features three sets of IMU for triple redundancy, fourteen PWM outputs and five UART ports (REF HERE).\\
+\\
+\textbf{Navio2:}\\
+The Navio2 is vastly different from the common flight controller given its is paired with a Raspberry Pi 3 to function yielding the benefit of advanced computing power using 4 CPU cores. Furthermore, this controller promotes high end innovation such as computer vision based flight since the system is Linux based (REF HERE).\\
+\clearpage
+\subsubsection{Results}
+\begin{table}[H]
+\caption{Flight Controller Selection Matrix}
+\label{controller}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|r|r|r|r|}
+\hline
+     & \textbf{Naze 32}    & \textbf{Matek F405-STD}          & \textbf{Pixhawk Cube}            & \textbf{NAVIO2}                  \\ \hline
+\textbf{Price {[}AUD{]}}        & 20.12      & 47.68                   & 364.14                  & 349                     \\ \hline
+\textbf{Firmware Compatability} & BaseFlight & BetaFlightArdupilotiNAV & Ardupilot               & Linux                   \\ \hline
+\textbf{Processor/Clock Speed}  & F3/72MHz   & F4/168MHz               & F4/168MHz               & ARM Cortex A-53/ 1.4GHz \\ \hline
+\textbf{No. UART Ports}         & 2          & 5                       & 5                       & 40                      \\ \hline
+\textbf{No. PWM/Dshot Ports}    & 6 PWM      & 6 PWM/Dshot             & 14 PWM                  & 13 PWM                  \\ \hline
+\textbf{Link to Objective}      & O3, O4     & O3, O4, O6, O7, O10     & O3, O4, O6, O7, O9, O10 & O3, O4, O6, O7, O9, O10 \\ \hline
+\textbf{Score /10}              & 4          & 7                       & 8                       & 9                       \\ \hline
+\textbf{Rank}                   & 4          & 3                       & 2                       & 1                       \\ \hline
+\end{tabular}}
+\end{table}
+\subsubsection{Discussion}
+\subsubsection{Conclusions}
+As displayed in Table \ref{tab:controller}, the optimal controller for the intended prototype is the Navio2. When considering the attributes listed in Table \ref{tab:controller}, this controller is dominant and is highly applicable to this project given that the Linux environment allows for a high level of innovation in control system design and data analyses.\\
+\\
+While this board is optimal, initial control system testing will use the Matek System F405-STD. This is a low-cost and effective flight control system which will allow for system integration testing of the proposed concepts before purchasing the intended flight controller. This action intends to eliminate the possibility that any control system complexities are overseen which may affect the validity of the flight controller analysis conducted above. 
+
+\subsubsection{Future Work}
+Implementation of the Matek Systems F405-STD flight controller in a simplified VTOL system will be conducted to examine whether the level of control required from the performance criteria is achievable. Any unforeseen complexities in flight control and system integration will be analysed to optimise the process of integrating the final control system into the selected prototype. 

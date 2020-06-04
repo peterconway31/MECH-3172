@@ -1,0 +1,32 @@
+\subsection{Power Electronics}
+
+\subsubsection{Theory}
+%Introduce the required theory that underlines the analysis for selection of each component.
+For successful flight of the proposed prototype, power electronics are required to integrate control and provide propulsion. As discussed in literature, key components include a flight controller, BLDC motors, ESCs, servo motors, a Lipo battery, data telemetry, control links and camera sensors (REF HERE). Furthermore, depending on the complexity of the mission profile, an auxiliary companion computer is required to support high level autonomy and control \cite{deci1995human}.\\
+\\
+Due to CASA regulations, a drone piloted under no certification can not exceed two kilograms in total flight weight \cite{CASA}. As a result, power electronics for propulsion and mechanical control will be sized to meet this regulation. Although the final manufactured prototype will exceed this weight category, a preliminary minimum complexity VTOL system will be sized and constructed allowing power electronics integration techniques to be verified.\\
+\\
+Of all power electronics discussed, those imperative for a minimum complexity controlled VTOL system include BLDC motors and corresponding propellers, ESCs, servo motors, a Lipo battery, control link and flight controller \cite{vervoorst2016modular}.\\
+\\
+When considering BLDC motor sizing, the KV rating is imperative to consider. The KV rating of a motor describes the increase in RPM per one volt increase in the supplied voltage with no load on the motor \cite{shaikh2017design}. KV rating and torque produced by the motor are inversely proportional, hence a lower KV rated motor coupled with a larger propeller will produce higher torque \cite{shaikh2017design}.\\
+\\
+For effective BLDC motor control, ESC selection is of high importance. The ESC module governs the voltage sent to the BLDC motor \cite{green2015modeling}. Through a PWM control signal sent from the flight controller, the ESC manipulates the duty cycle and frequency of the three phase voltage waveform, adjusting the motors speed and torque as required \cite{green2015modeling}. Commercially available ESCs come in a variety of maximum amperage sizes and corresponding switching frequencies and internal resistance \cite{green2015modeling}. Sizing of this module is performed once a BLDC motor is selected which governs the voltage required, hence maximum amperage requirement for the ESC module.\\
+\\
+For precise control of mechanical systems such as the tilt wing mechanism, voltage feedback servo motors provide sufficient capabilities. Through PWM signals generated from the flight controller, servo position can be precisely adjusted with a PID feedback loops. \cite{van1981motor}. When selecting servo motors for a specific application, variables such as torque to inertia ratio, speed range and peak torque are imperative to consider \cite{krishnan1987selection}. In this section, an arbitrary servo motor will be selected given the minimum complexity controlled VTOL system will not represent the forces experienced by mechanism in the final prototype.\\
+\\
+As discussed in previous literature, Lipo batteries provide the highest energy density, thus are most suitable for electric VTOL systems (REF HERE). After a BLDC motor is selected, with corresponding voltage requirements, a Lipo battery will be chosen. Beyond voltage requirements, Lipo batteries consist of a capacity rating and discharge rating which must be considered when sizing the power system \cite{chang2016lipo}. Battery capacity is the amount of power a battery can consistently supply given in units of Ah or mAh \cite{chuangfeng2011measurement}. Discharge rating is a relationship between battery capacity and discharge capacity denoted by C which explains the batteries maximum output current \cite{chuangfeng2011measurement}. \\
+\\
+The link between the operator and the VTOL system is the ground control station which is typically a combination of software and hardware to produce telemetry data \cite{haque2017drone}. Such data includes GPS location, altitude, heading, IMU data and more depending on control requirements \cite{haque2017drone}. Radio frequencies used to connect the ground control transmitter and UAV system are typically 2.4 GHZ and 5.8GHZ \cite{Radio}. These transmission frequencies are considered line-of-sight frequencies given they are not intended for long range \cite{Radio}. CASA regulations do not permit control of UAV systems beyond line of sight without certification, thus telemetry systems with higher range capability will not be considered \cite{CASALaw}. 
+\subsubsection{Method}
+%Follow same approach as done in the flight controller selection process: analyse COTS components against desired parameters introduced in theory.\\
+In order to size an appropriate power electronics system, minimum thrust requirements will be calculated to size appropriate BLDC motors. Based on results from this analysis, corresponding components will be selected. An electrical diagram will be constructed to show the overall configuration of the power electronic components.\\
+\subsubsection{Analysis}
+Include calculations regarding required thrust from motors to lift a sub-2kg VTOL UAV for testing.\\
+\\
+Give overview of components to be considered.
+\subsubsection{Results}
+Provide a selection matrix for each component which reveals optimal components.
+\subsubsection{Conclusions}
+List the final configuration of electrical components to be further considered for testing.
+\subsubsection{Future Work}
+Describe methodology for testing a simplified VTOL system for analysis of component integration and theoretical analysis verification.(i.e. Is the system producing the thrust expected? Is the system actually controllable with the components selected?). 

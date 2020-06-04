@@ -1,0 +1,263 @@
+% \begin{table}[ht]
+% \vspace{-1.25cm}
+% \caption{Performance Criteria for Objectives}
+% \vspace{-0.25cm}
+% \label{performance-criteria}
+% \centering
+% \resizebox{1.4\textwidth}{!}{
+% \begin{tabular}{|p{3cm}|p{8cm}|p{10cm}|p{10cm}|p{10cm}|p{12cm}|p{2cm}|}
+% \hline
+%     \textbf{Objectives} & \textbf{Criteria} & \textbf{Description} & \textbf{Measurable} & \textbf{Bad = 1} & \textbf{Good = 10} & \textbf{Weighting} \\ \hline \hline
+%     \#1 & Ease of manufacturing & How difficult it is to manufacturer the design. & Predicted manufacturing time, requires external sourcing, tool types required & unable to be manufactured by group/external manufacturer & Easily manufactured without external sourcing and within time frame & 0.25 \\ \hline
+% 	 & Durability & The ability of the airframe to withstand a failure and crash. Level of maintenance. & Delicate parts, external components, materials, & Delicate external parts & Exterior offers crash protection to important subsystems & 0.1 \\ \hline
+% 	 & Reliability & How reliable the airframe design in regards to comparing to standard airframe design. & Basis of design, No. of actuators, No. of Control Surfaces, Effectiveness of Control Surfaces  & no past designs to base off & Minimal complex parts, with large control surfaces & 0.2 \\ \hline
+% 	 & Availability of materials & How accessible the airframe's designed materials are. & Delivery time/access time & Materials/parts are readily available in workshops & Materials/parts are sourced from overseas with delivery times exceeding a month & 0.1 \\ \hline
+% 	 & Ease of assembly / design complexity & The difficulty of manufacturing and assembling the airframe's design. & number of parts, Modularity, Fastener Type & Excessive number of parts with complicated connections & Mimimal number of parts with simple connection interfaces & 0.05 \\ \hline
+% 	 & Ease of transport & The difficulty assoicated with transporting the airframe's design once manfactured. & Modulal design & Requires & Simply Transportable in Common Car & 0.05 \\ \hline
+% 	 & Weight & The airframe design's expected weight. & assembled weight (including batteries without payload) & Heavy Airframe, outside of allocated weight allowance & Falls within Allocated Weight Range, Reasonably Light & 0.15 \\ \hline
+% 	 & Cost & The total cost to manufacture the airframe's design. & Procurement cost, manufacturing cost & Exceeds Allocated Budget & New Project Costs under budget & 0.1 \\ \hline
+% 	\#3 & Forward Aerodynmaic efficiency (forward flight L/D) & How amount of lift versus drag produced during forward flight. & The total lift of the aircraft compaired to the total drag & Low lift to drag ratio & High lift to drag ratio & 0.22 \\ \hline
+% 	 & Propulsive Efficency (Eta\_p\_f) & Propulsive efficiency achieved during level flight. & The efficency of thrust power out compaired to power input &  &  & 0.16 \\ \hline
+% 	 & Max Forward Flight Endurance & The maximum endurance range the aicraft can achieve purely in forward flight. & Distance acheiveable by the device & Can't operate & Can operate indefinetly in a forward flight confiuration & 0.15 \\ \hline
+% 	 & Operational altitude & The altitude range which the aircraft can operate when in forward flight. & Per Description & Requires Operational Flight at an altitude above CASA regulations & Can operate at all altitudes up to 400ft AGL & 0.05 \\ \hline
+% 	 & Controlability & The amount of control the pilot has over the aircraft's yaw, pitch and roll when in forward flight. & Number of control surfaces required, effectiveness of control surfaces & The pilot has zero control & device was low response time to pilot commands, low overshoot, high precision & 0.05 \\ \hline
+% 	 & power usage & Required power consumption for forward flight. & Power to weight ratio & Low power to weight ratio (1:1) & High power to weight power (4:1) & 0.12 \\ \hline
+% 	 & Speed controlability/range & The operational speed range and ability to control speed output. & Forward flight operational range & Zero speed controlability. & Low speed range during horizontal flight without stall. Large speed range for both vertical and horizontal flight. & 0.1 \\ \hline
+% 	 & Stability (abilty to handle gusts ect) & The aircraft's stability when in forward flight, and how easy it is to maintain and return to. & Is the aircraft statically stable, stability in other directional planes, ability to handle gusts. & Device can only operate in still wind conditions & Device can operate during wind conditions typical for a catastropic fire danger day & 0.1 \\ \hline
+% 	 & Redundancy & The aircrafts failsafe ability & Devices ability to sustain flight during/after a failure. Number of backup or fail-safe systems. & Zero redundancy. Small failures cause a critical device failure & Multiple reduncancy with back-up components and fail-safe measures for both horizonatal and verical flight & 0.05 \\ \hline
+% 	\#4 & Vertical Aerodynmaic efficiency ((T+L)/W) & The aerodynamic efficiency of the aircraft in the vertical configuration & The total lift + thurst of the aircraft compaired to the total drag in vertical configuration & low ratio & high ratio & 0.1 \\ \hline
+% 	 & Propulsive Efficency (Eta\_p\_v) & The propulsive efficiency achieved during vertical flight. & The efficency of thrust power out compaired to power input & Low efficency (<40\%) & High effciency (>80\%) & 0.2 \\ \hline
+% 	 & Max Hover Endurance & The maximum time that a device can operate in the hovor configuration & The time the in minuites that the device can hovor for & Hovor endurance not sufficient to reach operational height & Hovor efficiency can completely satisfy mission profile & 0.09 \\ \hline
+% 	 & Operational altitude & The altitude range which the aircraft can operate at when in hover. & The altitude range in meters where the device can operate at & Requires Operational Flight at an altitude above CASA regulations & Can operate at all altitudes up to 400ft AGL & 0.02 \\ \hline
+% 	 & Controlability & The amount of control the aircraft has in yaw, pitch and roll when in vertical flight. & Number of control surfaces required, effectiveness of control surfaces & Device cannot be controlled in hovor configuration & The device can remain stationary in all axis, and ascend and descend in 1 axis & 0.16 \\ \hline
+% 	 & Power useage & The power required to operate in a hovour configuration & The battery capacity dissipated in hover 
+% configuration for expected time in loitering
+% phase of mission profile & >20\% & Capable of sustainig 10 hovor configurations as per mission profile & 0.05 \\ \hline
+% 	 & Speed controlability/range & Range of speed that the drone can be controlled at & How slow / fast can the system move vertically. Control at low and high speed is important. & Controlable only for one speed & Controlable for +/- 50\% of average speed & 0.1 \\ \hline
+% 	 & Hover stability (abilty to handle gusts ect) & The aircraft's stability when in hover or vertical flight, and how easy it is to maintain and return to. & Is the aircraft statically stable, stability in other planes. & Device can only operate in still wind conditions & Device can operate during wind conditions typical for a catastropic fire danger day & 0.18 \\ \hline
+% 	 & Landing gear & A component which protects the airframe in takeoff and landing & The force the landing gear can support before fail & Landing gear cannot sustain forces in standard takeoff and landing & Landing gear that can handle variable landing conditions and ground terrain. Is multipurpose and does not increase drag & 0.05 \\ \hline
+% 	 & Redundancy & The aircrafts failsafe ability & Devices ability to sustain flight during/after a failure. Number of backup or fail-safe systems. & Zero redundancy. Small failures cause a critical device failure & Multiple reduncancy with back-up components and fail-safe measures for both horizonatal and verical flight & 0.05 \\ \hline
+% 	\#5 & Ease of payload insertion, & The simplicity and ease to insert payload into the system & Does it require tools, tool complexity, time required to insert the payload, how obvious is it that its inserted & Requires complicated tools, and has a loose fit & Requires no tools and clicks in obviously & 0.15 \\ \hline
+% 	 & size and size range of potential payload, & The volume of the payload, as well as how that volume is distributed & Cubic centemetres & It doesnt accept a payload & Payload can by up to 50\% of weight & 0.1 \\ \hline
+% 	 & weight and weight range of payload, & The mass in Kg of the paylaod that the vehicle can safely carry, This shouldnt effect the stability or controllibility of the aircraft in any meaningful way & Kilograms & Too heavy for 
+% airframe to support & Little infrastructure 
+% required to support
+% payload & 0.18 \\ \hline
+% 	 & Payload impact on flight & The impacts created by the payload when installed, such as increased drag or is the payload integrated to minimise flight impacts. & Flight time. Drag Force [N] & Payload greatly influences size of frontal area & Payload has minimal effect on frontal area of aiframe adding little drag & 0.3 \\ \hline
+% 	 & damage mitigration (vuntrability), & The payloads resistance to damage if failure of the system occurs & How far does payload protrude from body & Payload is external to airframe & Payload is within the main profile & 0.04 \\ \hline
+% 	 & payload orientation (operation affected by hover/horizontal flight) & The effect different orientations has on the payload to complete objectives & How many different types of data can be collected from each orientation - how many orietations are their? & The payload is unable to collect meaningfull data & The payload is able to collect all nessesary data, regardless of orientation & 0.23 \\ \hline
+% 	\#6 & Transition time & The time it takes to transition to other flight mode & Seconds & Takes longer than 10 seconds & Takes no time to transition & 0.08 \\ \hline
+% 	 & Transition Efficiency & The ammount of battery capacity dissipated 
+% in transition phase & Battery Capacity Dissipated \% & >10\% & <5\% & 0.16 \\ \hline
+% 	 & Transition Complexity & The complexity of control systems required to transitions & Requirement for custom flight control dynamics & Requires custom flight control dynamics & Standard in cheap COTS systems & 0.13 \\ \hline
+% 	 & Transition Unique Components & Components that are only used in one configuration, and therefore are deadweight in the auxilery configuration & Weight spent on transition unique components, number of actuators required & 10\% of aircraft weight is on transition unique components & No specific systems for transition & 0.12 \\ \hline
+% 	 & Spatial requirments for tranisiton (altitude, area etc) & The altitude, airspace, and other limiations that effect when trasition can occur & Altitude required [m] & System requires =>30 metres for transition & System looses zero altitude during transistion & 0.11 \\ \hline
+% 	 & Reliability of Transition & The ability for the aircraft to have a high success of transition. & Percentage of successful transitions based on physical testing & <90 & >95 & 0.15 \\ \hline
+% 	 & Trasition Robustness & The ability for the aircarft to transition in various weather conditions including but not limited to, gusts, crosswinds, density, etc & Maximum cross-wind speed that system can performVTOL transition [kts] & The system can only transition with cross-winds less then 10 kts & The system can transistion with 40 kts cross-winds & 0.15 \\ \hline
+% 	 & Redundancy (what if something goes wrong during transition) & If there is a motor of actuator failure, can the system land or continue flying & Number of actuators or motors that can fail before the system is uncontrollerable & No redundancy systems & Can land in a controlled manner or continue in former flight mode in the event of motor or actuator failure & 0.1 \\ \hline
+% \end{tabular}}
+% \end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Objective 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{table}[h]
+\centering
+\caption{Performance Criteria for Objective 1: Design and Manufacture an Airframe}
+\label{tab:obj_1_criteria}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{2cm}|p{4cm}|p{4cm}|p{4cm}|p{4cm}|r|}
+\hline
+\textbf{Criteria}                             & \textbf{Description}                                                                           & \textbf{Measurable}                                                                                            & \textbf{Bad = 1}                                                  & \textbf{Good = 10  }                                                                     & \textbf{Weighting} \\ \hline
+Ease of manufacturing                & How difficult it is to manufacturer the design.                                       & Predicted manufacturing time, requires external sourcing, tool types required                         & Unable to be manufactured by group/external manufacturer & Easily manufactured without external sourcing and within time frame             & 0.25      \\ \hline
+Durability                           & The ability of the airframe to withstand a failure and crash. Level of maintenance.   & Delicate parts, external components, materials,                                                       & Delicate external parts                                  & Exterior offers crash protection to important subsystems                        & 0.1       \\ \hline
+Reliability                          & How reliable the airframe design in regards to comparing to standard airframe design. & Basis of design, number. of actuators, number. of Control Surfaces, Effectiveness of Control Surfaces & Number past designs to base off                          & Minimal complex parts, with large control surfaces                              & 0.2       \\ \hline
+Availability of materials            & How accessible the airframe's designed materials are.                                 & Delivery time/access time                                                                             & Materials/parts are readily available in workshops       & Materials/parts are sourced from overseas with delivery times exceeding a month & 0.1       \\ \hline
+Ease of assembly / design complexity & The difficulty of manufacturing and assembling the airframe's design.                 & number of parts, Modularity, Fastener Type                                                            & Excessive number of parts with complicated connections   & Minimal number of parts with simple connection interfaces                       & 0.05      \\ \hline
+Ease of transport                    & The difficulty associated with transporting the airframe's design once manufactured.  & Assembled weight (including batteries without payload)                                                & Cannot be transported                                                 & Simply Transportable in Common Car                                              & 0.05      \\ \hline
+Weight                               & The airframe design's expected weight.                                                & Assembled weight (including batteries without payload)                                                & Heavy Airframe, outside of allocated weight allowance    & Falls within Allocated Weight Range, Reasonably Light                           & 0.15      \\ \hline
+Cost                                 & The total cost to manufacture the airframe's design.                                  & Procurement cost, manufacturing cost                                                                  & Exceeds Allocated Budget                                 & New Project Costs under budget                                                  & 0.1       \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Objective 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[]
+\centering
+\caption{Performance Criteria for Objective 2: Design Complies with Standards and Regulations}
+\label{tab:obj_2_criteria}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{2cm}|p{4cm}|p{4cm}|p{4cm}|p{4cm}|r|}
+\hline
+\textbf{Criteria}      & \textbf{Description}                                                                                         & \textbf{Measurable}                                                 & \textbf{Bad = 1}                                                                  & \textbf{Good = 10}                                                       & \textbf{Weighting} \\ \hline
+Flight zone            & CASA approved flight grounds                                                                                 & Seeking approval to test on flight grounds                          & Cannot meet approval requirements                                                 & Design meets required criteria                                           & -                  \\ \hline
+Weight category        & CASA regulated weight category                                                                               & 2- 25kg (to checked)                                                & Device exceeds 25kg, not adhering to regulation and cannot be flown               & Design meets required criteria                                           & -                  \\ \hline
+Autonomy requirement   & Does it require autonomy to fly. dependence on autonomy is a bad thing in terms of getting permission to fly & Number of autonomous systems, dependence on these systems           & Is completely autonomous with no human fail-safe                                  & Design does not impose additional requirements due to autonomous feature & -                  \\ \hline
+Altitude requirement   & The maximum operational altitude of the aircraft to comply with CASA.                                        & 400 ft altitude limit (to be confirmed)                             & Device cannot operate under 400ft, not adhering to regulation and cannot be flown & Can operate at all altitudes below 400ft                                 & -                  \\ \hline
+Flight Pilot Available & How difficult it is to locate a pilot with the required approval to fly the UAV.                             & Ease of finding Individual with appropriate operational certificate & Device cannot be flown by any accredited UAV pilots                               & Persons with no qualifications can fly the UAV                           & -                  \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Objective 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[]
+\centering
+\caption{Performance Criteria for Objective 3: Design System Capable of Forward Flight}
+\label{tab:obj_3_criteria}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{2cm}|p{4cm}|p{4cm}|p{4cm}|p{4cm}|r|}
+\hline
+\textbf{Criteria}                                            & \textbf{Description}                                                                                         & \textbf{Measurable}                                                                                         & \textbf{Bad = 1}                                                           & \textbf{Good = 10}                                                                                                        & \textbf{Weighting} \\ \hline
+Forward Aerodynamic efficiency (forward flight L/D) & How amount of lift versus drag produced during forward flight.                                      & The total lift of the aircraft compared to the total drag                                          & Low lift to drag ratio                                            & High lift to drag ratio                                                                                            & 0.22      \\ \hline
+Propulsive Efficiency (Eta\_p\_f)                   & Propulsive efficiency achieved during level flight.                                                 & The efficiency of thrust power out compared to power input                                         &                                                                   &                                                                                                                    & 0.16      \\ \hline
+Max Forward Flight Endurance                        & The maximum endurance range the aircraft can achieve purely in forward flight.                      & Distance achievable by the device                                                                  & Can't operate                                                     & Can operate indefinitely in a forward flight configuration                                                         & 0.15      \\ \hline
+Operational altitude                                & The altitude range which the aircraft can operate when in forward flight.                           & Per Description                                                                                    & Requires Operational Flight at an altitude above CASA regulations & Can operate at all altitudes up to 400ft AGL                                                                       & 0.05      \\ \hline
+Flight Controllability                                     & The amount of control the pilot has over the aircraft's yaw, pitch and roll when in forward flight. & Number of control surfaces required, effectiveness of control surfaces                             & The pilot has zero control                                        & device was low response time to pilot commands, low overshoot, high precision                                      & 0.05      \\ \hline
+Power usage                                         & Required power consumption for forward flight.                                                      & Power to weight ratio                                                                              & Low power to weight ratio (1:1)                                   & High power to weight power (4:1)                                                                                   & 0.1       \\ \hline
+Speed controllability/range                         & The operational speed range and ability to control speed output.                                    & Forward flight operational range                                                                   & Zero speed controllability.                                       & Low speed range during horizontal flight without stall. Large speed range for both vertical and horizontal flight. & 0.1       \\ \hline
+Stability (ability to handle gusts etc)             & The aircraft's stability when in forward flight, and how easy it is to maintain and return to.      & Is the aircraft statically stable, stability in other directional planes, ability to handle gusts. & Device can only operate in still wind conditions                  & Device can operate during wind conditions typical for a catastrophic fire danger day                               & 0.1       \\ \hline
+Redundancy                                          & The aircraft's fail-safe ability                                                                      & Devices ability to sustain flight during/after a failure. Number of backup or fail-safe systems.   & Zero redundancy. Small failures cause a critical device failure   & Multiple redundancy with back-up components and fail-safe measures for both horizontal and vertical flight         & 0.05      \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Objective 4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[]
+\centering
+\caption{Performance Criteria for Objective 4: Design System Capable of Hovering}
+\label{tab:obj_4_criteria}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{2cm}|p{4cm}|p{4cm}|p{4cm}|p{4cm}|r|}
+\hline
+\textbf{Criteria}                                      & \textbf{Description}                                                                                              & \textbf{Measurable}                                                                                                                                                  & \textbf{Bad = 1}                                                             & \textbf{Good = 10}                                                                                                               & \textbf{Weighting} \\ \hline
+Vertical Aerodynamic efficiency ((T+L)/W)     & The aerodynamic efficiency of the aircraft in the vertical configuration                                 & The total lift and thrust of the aircraft compared to the total drag in vertical configuration                                                                & low ratio                                                           & high ratio                                                                                                              & 0.1       \\ \hline
+Propulsive Efficiency (Eta\_p\_v)             & The propulsive efficiency achieved during vertical flight.                                               & The efficiency of thrust power out compared to power input                                                                                                  & Low efficiency (\textless{}40\%)                                    & High efficiency (\textgreater{}80\%)                                                                                    & 0.2       \\ \hline
+Max Hover Endurance                           & The maximum time that a device can operate in the hover configuration                                    & The time the in minutes that the device can hover for                                                                                                       & Hover endurance not sufficient to reach operational height          & Hover efficiency can completely satisfy mission profile                                                                 & 0.09      \\ \hline
+Operational altitude                          & The altitude range which the aircraft can operate at when in hover.                                      & The altitude range in meters where the device can operate at                                                                                                & Requires Operational Flight at an altitude above CASA regulations   & Can operate at all altitudes up to 400ft AGL                                                                            & 0.02      \\ \hline
+Hover controllability                         & The amount of control the aircraft has in yaw, pitch and roll when in vertical flight.                   & Number of control surfaces required, effectiveness of control surfaces                                                                                      & Device cannot be controlled in hover configuration                  & The device can remain stationary in all axis, and ascend and descend in 1 axis                                          & 0.16      \\ \hline
+Power usage                                   & The power required to operate in a hover configuration                                                   & The battery capacity dissipated in hover configuration for expected time in loitering phase of mission profile & \textgreater{}20\%                                                  & Capable of sustaining 10 hover configurations as per mission profile                                                    & 0.05      \\ \hline
+Speed controllability/range                   & Range of speed that the drone can be controlled at                                                       & How slow / fast can the system move vertically. Control at low and high speed is important.                                                                 & Controllable only for one speed                                     & Controllable for +/- 50\% of average speed                                                                              & 0.1       \\ \hline
+Hover stability (ability to handle gusts etc) & The aircraft's stability when in hover or vertical flight, and how easy it is to maintain and return to. & Is the aircraft statically stable, stability in other planes.                                                                                               & Device can only operate in still wind conditions                    & Device can operate during wind conditions typical for a catastrophic fire danger day                                    & 0.18      \\ \hline
+Landing gear                                  & A component which protects the airframe in take-off and landing                                          & The force the landing gear can support before fail                                                                                                          & Landing gear cannot sustain forces in standard take-off and landing & Landing gear that can handle variable landing conditions and ground terrain. Is multipurpose and does not increase drag & 0.05      \\ \hline
+Redundancy                                    & The aircraft's fail-safe ability                                                                           & Devices ability to sustain flight during/after a failure. Number of backup or fail-safe systems.                                                            & Zero redundancy. Small failures cause a critical device failure     & Multiple redundancy with back-up components and fail-safe measures for both horizontal and vertical flight              & 0.05      \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Objective 5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+% \usepackage[normalem]{ulem}
+% \useunder{\uline}{\ul}{}
+\begin{table}[]
+\centering
+\caption{Performance Criteria for Objective 5: Design a System with Payload Capacity}
+\label{tab:obj_5_criteria}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{2cm}|p{4cm}|p{4cm}|p{4cm}|p{4cm}|r|}
+\hline
+\textbf{Criteria}                                                            & \textbf{Description}                                                                                                                                                   & \textbf{Measurable}                                                                                                       & \textbf{Bad = 1}                                                                      & \textbf{Good = 10}                                                                                      & \textbf{Weighting} \\ \hline
+Ease of payload insertion,                                          & The simplicity and ease to insert payload into the system                                                                                                     & Does it require tools, tool complexity, time required to insert the payload, how obvious is it that its inserted & Requires complicated tools, and has a loose fit                              & Requires no tools and clicks in obviously                                                      & 0.15      \\ \hline
+size and size range of potential payload,                           & The volume of the payload, as well as how that volume is distributed                                                                                          & Cubic centimetres                                                                                                & It doesn't accept a payload                                                  & Payload can by up to 50\% of weight                                                            & 0.1       \\ \hline
+weight and weight range of payload,                                 & The mass in Kg of the payload that the vehicle can safely carry, This shouldn't effect the stability or controllability of the aircraft in any meaningful way & Kilograms                                                                                                        & Too heavy for airframe to support & Little infrastructure required to support payload & 0.18      \\ \hline
+Payload impact on flight                                            & The impacts created by the payload when installed, such as increased drag or is the payload integrated to minimise flight impacts.                            & Flight time. Drag Force {[}N{]}                                                                                  & Payload greatly influences size of frontal area                              & Payload has minimal effect on frontal area of airframe adding little drag                      & 0.3       \\ \hline
+damage mitigation (vulnerability),                                  & The payloads resistance to damage if failure of the system occurs                                                                                             & How far does payload protrude from body                                                                          & Payload is external to airframe                                              & Payload is within the main profile                                                             & 0.04      \\ \hline
+payload orientation (operation affected by hover/horizontal flight) & The effect different orientations has on the payload to complete objectives                                                                                   & How many different types of data can be collected from each orientation - how many orientations are their?       & The payload is unable to collect meaningful data                             & The payload is able to collect all necessary data, regardless of orientation                   & 0.23      \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Objective 6
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+% \usepackage[normalem]{ulem}
+% \useunder{\uline}{\ul}{}
+\begin{table}[]
+\centering
+\caption{Performance Criteria for Objective 6: Design System to Perform VTOL Transitions}
+\label{tab:obj_6_criteria}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{2cm}|p{4cm}|p{4cm}|p{4cm}|p{4cm}|r|}
+\hline
+\textbf{Criteria}                                                    & \textbf{Description}                                                                                                                            & \textbf{Measurable}                                                                      & \textbf{Bad = 1   }                                                       &\textbf{ Good = 10 }                                                                                                  & \textbf{Weighting} \\ \hline
+Transition time                                             & The time it takes to transition to other flight mode                                                                                   & Seconds                                                                         & Takes longer than 10 seconds                                     & Takes no time to transition                                                                                 & 0.08      \\ \hline
+Transition Efficiency                                       & The amount of battery capacity dissipated in transition phase                           & Battery Capacity Dissipated \%                                                  & \textgreater{}10\%                                               & \textless{}5\%                                                                                              & 0.16      \\ \hline
+Transition Complexity                                       & The complexity of control systems required to transitions                                                                              & Requirement for custom flight control dynamics                                  & Requires custom flight control dynamics                          & Standard in cheap COTS systems                                                                              & 0.13      \\ \hline
+Transition Unique Components                                & Components that are only used in one configuration, and therefore are deadweight in the auxiliary configuration                        & Weight spent on transition unique components, number of actuators required      & 10\% of aircraft weight is on transition unique components       & No specific systems for transition                                                                          & 0.12      \\ \hline
+Spatial requirements for transition (altitude, area etc)    & The altitude, airspace, and other limitations that effect when transition can occur                                                    & Altitude required {[}m{]}                                                       & System requires =\textgreater{}30 metres for transition          & System looses zero altitude during transition                                                               & 0.11      \\ \hline
+Reliability of Transition                                   & The ability for the aircraft to have a high success of transition.                                                                     & Percentage of successful transitions based on physical testing                  & \textless{}90                                                    & \textgreater{}95                                                                                            & 0.15      \\ \hline
+Transition Robustness                                       & The ability for the aircraft to transition in various weather conditions including but not limited to, gusts, crosswinds, density, etc & Maximum cross-wind speed that system can perform VTOL transition {[}kts{]}      & The system can only transition with cross-winds less then 10 kts & The system can transition with 40 kts cross-winds                                                           & 0.15      \\ \hline
+Redundancy (what if something goes wrong during transition) & If there is a motor of actuator failure, can the system land or continue flying                                                        & Number of actuators or motors that can fail before the system is uncontrollable & No redundancy systems                                            & Can land in a controlled manner or continue in former flight mode in the event of motor or actuator failure & 0.1       \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Objective 7
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+% \usepackage[normalem]{ulem}
+% \useunder{\uline}{\ul}{}
+\begin{table}[]
+\centering
+\caption{Performance Criteria for Objective 7: Design System to Perform Autonomous Operations}
+\label{tab:obj_7_criteria}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{2cm}|p{4cm}|p{4cm}|p{4cm}|p{4cm}|r|}
+\hline
+\textbf{Criteria}     & \textbf{Description}                                                                                                                                   & \textbf{Measurable}                                                              & \textbf{Bad = 1}                                               & \textbf{Good = 10}                                                                   & \textbf{Weighting} \\ \hline
+Reliability           & The reliability in which the system can execute autonomous missions                                                                                    & Percentage - based on number of successfully executed test mission profiles      & \textless{}90                                                  & \textgreater{}95                                                                     & -                  \\ \hline
+Degree of automation  & The number of control inputs required by operator                                                                                                      & Number of inputs - Throttle input, pitch input, yaw input etc.                   & No automation                                                  & VTOL and transition is automated and requires only one input to initiate the process & -                  \\ \hline
+Scope of scenarios    & The scope determines the number of useful applications the autonomous system could be operated in                                                      & Number of mission profiles system can execute                                    & System is highly limited in when autonomous flight can be used & The system is autonomous in most applications                                        & -                  \\ \hline
+Conditions required   & Conditions such as atmospheric and bush-fire, that determine when and if the drone can be operated autonomously, what wind conditions etc are required & Range of condition variables that system can operate in autonomously             & System can only operate in conditions of a standard day        & System is only impacted by physical capability of components                         & -                  \\ \hline
+Operational advantage & The complexity of the system that is automated                                                                                                         & Does the autonomous system improve any of the previous criteria (objectives 1-6) & No advantage when automating system                            & Greatly reduces complexity to initiate system                                        & -                  \\ \hline
+\end{tabular}%
+}
+\end{table}
