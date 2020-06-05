@@ -74,10 +74,9 @@
 \rule{\textwidth}{1.2pt}\vspace*{-\baselineskip}\vspace*{2pt} % Thick horizontal line
 \rule{\textwidth}{0.4pt}\\[\baselineskip] % Thin horizontal line
 
-{\LARGE \textsc{ASRA}\\[0.3\baselineskip]
+{\LARGE \textsc{\textbf{3172 - ASRA}}\\[0.3\baselineskip]
 \Large \textsc{Aerial Surveillance Response Aircraft}\\[0.3\baselineskip]
 \textsc{Preliminatry Report}}\\[0.2\baselineskip] % Title
-\note{Rhys}{Include Honours number}
 
 \rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} % Thin horizontal line
 \rule{\textwidth}{1.2pt}\\[\baselineskip] % Thick horizontal line
@@ -168,6 +167,8 @@ We would like to thank the following organisations and individuals for their con
 
 Table \ref{tab:definitions} defines acronyms and technical jargon used throughout the following document. 
 
+%\note{Tom}{Keep this alphabetical!!}
+
 \begin{table}[h!]
     \centering
     \caption{Glossary of Terms}
@@ -175,23 +176,28 @@ Table \ref{tab:definitions} defines acronyms and technical jargon used throughou
     \begin{tabular}{l|l}
         Concept & Definition\\\hline
         Airframe & The body of an aircraft as distinct from its engine\\
+        BLDC & Brushless Direct Current\\
         CAD & Computer Aided Design\\
         CASA & Civil Aviation Safety Authority\\
         CFD & Computational Fluid Dynamics\\
         CFS & Country Fire Service\\
-        COTS & Component of the Shelf\\
+        COTS & Component off the Shelf\\
+        ESC & Electric Speed Controller\\
+        eVTOL & electric Vertical Take Off and Landing\\
+        FC & Flight Controller\\
+        FOV & Field of View
         FPV & First Person View\\
+        ICE & Internal Composition Engine\\
+        IR & Infrared \\
+        LIDAR & Light Detection and Ranging \\
+        Li-po & Lithium Polymer\\
+        PPE & Personal Protective Equipment \\
+        RGB & Red Green Blue \\
         RPA & Remotely Piloted Aircraft\\
         UAV & Unmanned Aerial Vehicle \\
         URAF & Unmanned Research Aircraft Facility\\
         UART & Universal Asynchronous Receiver Transmitter\\
         VTOL & Vertical Take Off and Landing\\
-        eVTOL & electric Vertical Take Off and Landing\\
-        ICE & Internal Composition Engine\\
-        BLDC & Brushless Direct Current\\
-        Li-po & Lithium Polymer\\
-        ESC & Electric Speed Controller\\
-        FC & Flight Controller\\
     \end{tabular}
 \end{table}
 
@@ -309,42 +315,54 @@ The increasing occurrence and intensity of bushfires increases the required resp
 UAV technology has seen extensive use in surveillance-based applications, with successful implementation and promising development for bushfire monitoring and management \citep{RN16}, \citep{RN21}. As outlined by \citeauthor{royo2011uas} (\citeyear{royo2011uas}), the flexibility, precision and low-cost of UAVs provide significant advantages in comparison to current manned aerial systems when integrated with remote sensing capabilities to detect bushfires. \citeauthor{RN17} (\citeyear{RN17}) describes how these systems approve upon existing bushfire management by eliminating manned exposure and increasing response time, serving as a powerful alternative when integrated with spatial, spectral and temporal resolution remote sensing systems.
 
 \subsection{Aims \& Scope}
-The aim of this project is to design and build a high efficiency, long range VTOL UAV intended to be utilised by emergency fire services, including the CFS, to assist in bushfire monitoring and alleviation. The system should predominantly innovate in the integration of existing airframe concepts and designs, as well as the VTOL transition, to improve in efficiencies in flight configurations and thus mission specific capabilities.\\ \note{Rhys}{improve}
+The aim of this project is to design and build a high efficiency, long range VTOL UAV intended to be utilised by emergency fire services, including the CFS, to assist in bushfire monitoring and alleviation. The system should predominantly innovate in the integration of existing air-frame concepts and designs, as well as the VTOL transition, to improve in efficiencies in flight configurations and thus mission specific capabilities.\\ 
+%\note{ANYONE}{improve if nessisary}\\
 \\
-To demonstrate the value a VTOL UAV may provide emergency fire services and to broaden the device’s usability, the system will be designed to have the capability to perform multiple bushfire applications. The complete list of these applications is detailed in Appendix ???. The overarching application of conducting scans of bushfire burn scars for general impact and damage data collection was chosen due to it's demanding mission profile and dependence on VTOL. \\
+To demonstrate the value a VTOL UAV may provide emergency fire services and to broaden the device’s usability, the system will be designed to have the capability to perform multiple bushfire applications. The complete list of these applications is detailed in Appendix \ref{app_technical}. The overarching application of conducting scans of bushfire burn scars for general impact and damage data collection was chosen due to it's demanding mission profile and dependence on VTOL. \\
 \\
-More on Scope
-\note{Rhys}{Touch on LM and groups scope}
-\note{Rhys}{* Build Minimal Viable Product (MVP) (snapshot in time) with a modular design that will allow additional innovation as we progress}
-\note{Rhys}{*Analysis will continue through project to result in a theoretical optimal design at the end}
-%\note{Sam}{Comparison to current market place design to quantify device capability against commercial devices to comment on the commercial feasibility of system}
+The overall scope of this project is defined by the 'Design and Build' nature of the project as well as the expectations and ambitions defined by the team and sponsor; Lockheed Martin. To meet such expectations and the Project Aims defined by the SMART Objectives, a continuous analytical approach is undertaken to design a theoretically optimised VTOL UAV for the specified application. Through detailed preliminary analysis, quantitative analysis and testing, the team aims to push innovation through the integration of novel design as well as ensuring the final VTOL UAV design expands current VTOL capabilities through improved performance efficiencies. To meet academic requirements and adhere to workshop deadlines, the 'Design and Build' element of the project will begin before the optimal final design is reached. The design and manufacturing of this system will continue alongside the ongoing analysis to produce a Minimal Viable Product (MVP) VTOL UAV. This system will demonstrate the viability of the pursued concept, whilst allowing valuable testing to validate and verify the analysis. The preliminary concept/design of the MVP represents a snapshot in the current analysis but will incorporate a modular design to allow ongoing modifications supported by the evolving analysis. This approach ensures the MVP can continually demonstrate the analysis and ongoing innovation. The outcome of this scope will result in an optimal theoretical VTOL UAV based on analysis supported by an operational MVP demonstrating key VTOL design aspects. 
+
+%The scope of UAV its self is ...
 
 \subsection{Objectives}
-\note{Sam}{Rhys to add some text around summarising the objectives}
-
 The following objectives must be achieved to meet the overarching project aims:\\
 \\
 \textbf{Primary Objectives}
-\begin{enumerate}
-    \item Design and Manufacture an Airframe\\
-    *Might need to Summarise each objective
-    \item Formulate Design that Complies with Relevant Standards and Regulations
-    \item Design System Capable of Forward Flight
-    \item Design System Capable of Hovering
-    \item Design a System with Payload Capacity
-    \item Design System to Perform VTOL Transitions
-    \item Design System to Perform Autonomous Operations
-    \end{enumerate}
-\textbf{Secondary Objectives}
-\begin{enumerate}
-    \setcounter{enumi}{7}
-        \item Design System to Meet all Required Mission Pro-files
-        \item Design System to Execute Autonomous Waypoint Following
-        \item Design System to Support First Person View
-    \end{enumerate}
+\begin{description}
+    \item[1. Design and Manufacture an Airframe]
+     Generate a comprehensive CAD model, fully described by drawings with appropriate tolerances and a bill of materials that will be delivered to the workshop by the 21st August. %\note{Rhys}{is this still the date?}
+    \item[2. Formulate Design that Complies with Relevant Standards and Regulations]\\
+    Ensure designs are compliant with specific regulations during the design phase of the project;
+    \begin{itemize}
+        \item CASA: ADVISORY CIRCULAR AC 101-01 v3.0
+        \item CASA: Visual Flight Rules
+        \item UofA: Unmanned Research Aircraft Facility (URAF)
+    \end{itemize}
+    Adhere to all operational regulations for entirety of the project.
+    \item[3. Design System Capable of Forward Flight]
+    System will have the ability to fly in a forward flight configuration in expected operating conditions using lift aerofoils upon completion of flight testing. This is to be done by the 9th of October.
+    \item[4. Design System Capable of Hovering]
+    System will have the ability to fly in a hovering configuration in a controlled, indoor environment upon completion of flight testing. This is to be done by the 9th of October. 
+    \item[5. Design a System with Payload Capacity]
+    System will have the capacity to accept a payload containing a monitoring unit and associated controllers. Subject to flight testing, the system must then be able to achieve flight requirements as intended. This is to be done by the 9th of October. 
+    \item[6. Design System to Perform VTOL Transitions]
+    The system will successfully transition from vertical hover to controller horizontal forward flight, through a single controlled input. The transition from horizontal to vertical flight should reflect the same control. This will be achieved upon the completion of flight testing and by the 9th of October. 
+    \item[7. Design System to Perform Autonomous Operations]
+    The system will be capable of performing autonomous take-off, landing and VTOL/horizontal transition. The system will also have on-board objective awareness and avoidance mechanisms that are activated during landing stages. This will be achieved upon the completion of flight testing and by the 9th of October.
+    \end{description}
+\textbf{Secondary Objectives}\\
+Upon the completion of the primary objectives, any remaining time will be spent working on the following objectives. 
+\begin{description}
+    % \setcounter{enumi}{7}
+        \item[8. Design System to Meet all Required Mission Pro-files]\\
+        This objective will be achieved when the system can perform the flight plan set out by the worst case mission profile. 
+        \item[9. Design System to Execute Autonomous Waypoint Following]\\
+        Using software on a ground computer, the user will be able to input GPS coordinates allowing the system to autonomously fulfil mission profiles using appropriate flight modes. 
+        \item[10. Design System to Support First Person View]\\
+        The system should connect to a First Person View (FPV) headset and be able to remotely send live video feed from forward facing cameras to allow a pilot to guide the system with a high level of spacial awareness of the system and surroundings. 
+    \end{description}
 
-\note{harry}{Don't refer to SMART method, summarise each objective in a sentence or two}
-For further detail of each objective using the SMART (Specific, Measurable, Attainable, Relevance and Time based) structure, refer to Appendix ???. 
+For further detail of each objective using the SMART (Specific, Measurable, Attainable, Relevance and Time based) structure, refer to Appendix \ref{app_smart}. 
 
 %\subsection{Hypothesis}
 
@@ -352,32 +370,27 @@ For further detail of each objective using the SMART (Specific, Measurable, Atta
 A variety of project management protocols were implemented throughout this project to achieve the specified aims, objectives and ensure quality. These protocols have been presented/documented in the Charter and further elaborated on in this document. \\
 \\
 %this paragraph might be too long given word limit
-A work breakdown structure (WBS), detailed in Appendix ???, was developed to list and detail objectives, tasks and milestones. From the WBS, a Gantt chart (Appendix ???), generated using Team Gantt, was utilised to plan and control the collaborative work of the team to meet the key dates and deliverables. A quality assurance review approach (Appendix ???) allowed effective resource allocation,and monitoring to ensure the objectives were met to a high standard. The adaptable nature of the Gantt chart also allowed constant modifications and review to ensure increased accuracy and task allocation where needed. Additionally, a project risk assessment was completed using a risk categorisation matrix (Appendix ???), which outlined potential risks with mitigation management plans. A project budget consisting of a Primary Project Budget and a Detailed Budget Estimations was also generated to project likely expenditure and inform stake-holders. 
+A work breakdown structure (WBS), detailed in Appendix \ref{app_WBS&gantt}, was developed to list and detail objectives, tasks and milestones. From the WBS, a Gantt chart (Appendix \ref{app_WBS&gantt}), generated using Team Gantt, was utilised to plan and control the collaborative work of the team to meet the key dates and deliverables. A quality assurance review approach (Appendix \ref{app_quality}) allowed effective resource allocation,and monitoring to ensure the objectives were met to a high standard. The adaptable nature of the Gantt chart also allowed constant modifications and review to ensure increased accuracy and task allocation where needed. Additionally, a project risk assessment was completed using a risk categorisation matrix (Appendix \ref{app_riskassessment}), which outlined potential risks with mitigation management plans. A project budget consisting of a Primary Project Budget and a Detailed Budget Estimations was also generated to project likely expenditure and inform stake-holders (Appendix \ref{}). 
 
 \subsection{Report Overview}
-\note{Rhys}{Complete}
+To ensure a successful VTOL UAV design this preliminary report includes a literature review to demonstrate the academic landscape regarding existing VTOL designs and to collate theory relevant to the projects technical aspects. The report also includes mission specific technical requirements to define the performance parameters necessary to complete the mission profiles defined by the application. A conceptual design section details the concept generation approach, displays various rounds of designs and assesses each against performance criteria. Lastly a detailed subsystem design section explains the theory, methodology, analysis and results of each subsystem. This section also features discussions where necessary and scopes potential future work. Supporting Appendices are also included at the end of this report.
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Literature Review}
-\note{Jake}{Finish propulsion systems, include a Materials section, write conclusion}
 %Rubric: 
 %Literature review and/or Methodology and/or Theory to demonstrate how work fits into the academic or industrial landscape, and how the design goals and research outcomes will be achieved. Literature review is how others have solved your problem; Methodology is how you are solving yours. Theory provides technical background. 
 
 To understand how to effectively design a VTOL aircraft that achieves the project’s aims, existing VTOL aircraft have been investigated. This was further expanded upon through investigating core subsystems required to achieve the project’s aims. This formed the basis of knowledge to begin development of project ASRA.
 
 \subsection{VTOL Technology}
-%Comparative study of existing vtol technology and systems. -Sam's Industry Study
-%Inherent benefits/negatives of each, with a focus on endurance and efficiency (link back to achieving project aims). 
-%Compound aircraft vs tilt-rotor vs tilt-wing vs tail-sitter vs lift/ducted fans vs vectored thrust etc 
-%Key findings, relate back to suitability and best configuration for achieving aims (compare which vtol technology provide best results for endurance, etc)  
 
 VTOL technology is a highly developed field of aviation due to its unique advantages, resulting in various standardised VTOL configurations and categories (\citeauthor{RN15}, \citeyear{RN15}). Each VTOL configuration provides benefits and negatives inherent in their design, with selection dependent mission requirements (\citeauthor{hirschberg2006overview}, \citeyear{hirschberg2006overview}) (\citeauthor{RN15}, \citeyear{RN15}). Therefore, each VTOL configuration must be investigated to effectively select the most appropriate design to achieve the project’s aims for a high endurance, long range aircraft with efficiency hover capability. As described by \citeauthor{hirschberg2006overview} (\citeyear{hirschberg2006overview}), these configurations are frequently defined by their propulsion systems used to achieve hover and forward flight, divided into five primary categories; compound aircraft, tilt-thrust producer, tilt-wing, tail-sitter, and vectored thrust. \\
 
 Compound aircraft utilise separate propulsion systems to achieve forward and hover flight, encompassing combined helicopter and fixed-wing aircraft such as the Eurocoptor X3, and basic fixed-wing multirotor UAVs such as Mugin EV350 (\citeauthor{RN15}, \citeyear{RN15}) (\citeauthor{Mugin}, \citeyear{Mugin}). As described by \citeauthor{dundar2020design} (\citeyear{dundar2020design}), this configuration does not require complex mechanisms providing design simplicity, reducing potential cost and risk. These designs however will often display reduced performance in one flight mode to improve the other, as illustrated by the Sikorsky S-97 which provides great hover efficiency, but poor cruise efficiency (\citeauthor{RN15}, \citeyear{RN15}). \\
 
-Tilt-thrust producer, tilt-wing and tail-sitter aircraft use a single propulsion system for both modes of flight, encompassing tilt-rotor aircraft such as the V-22 Osprey, NASA’s GL-10 tilt-wing and Lockheed’s XFV-1 tail-sitter (\citeauthor{hirschberg2006overview}, \citeyear{hirschberg2006overview}) (\citeauthor{rothhaar2014nasa}, \citeyear{rothhaar2014nasa}). Tilt-thrust producer and tilt-wing configurations are often desired for the aircraft requiring balanced performance between forward and hover flight \citeauthor{RN15} (\citeyear{RN15}) . These configurations have been proven to be capable of performing long range operations as demonstrated by \citeauthor{rothhaar2014nasa} (\citeyear{rothhaar2014nasa}) and \citeauthor{Bellv280} (\citeyear{Bellv280}). While the principle of flight is identical for both configurations, tilt-wing aircraft are more difficult to control in hover flight as a result of cross-winds and the increased surface area from the vertical wing (\citeauthor{hirschberg2006overview}, \citeyear{hirschberg2006overview}). However, the tilt-wing aircraft are more efficient in VTOL due to less interference between the rotor and the wing as opposed to tilt-rotor aircraft (\citeauthor{paduano2017system}, \citeyear{paduano2017system}). Furthermore, dead weight can be detrimental to these configurations if tilt-mechanisms are not operational in all flight modes (\citeauthor{RN15}, \citeyear{RN15}). Despite these limitations, tilt-thrust producer and tilt-wing configurations provide benefits in propulsive efficiency which align with the project’s aims. \\
+Tilt-thrust producer, tilt-wing and tail-sitter aircraft use a single propulsion system for both modes of flight, encompassing tilt-rotor aircraft such as the V-22 Osprey, NASA’s GL-10 tilt-wing and Lockheed’s XFV-1 tail-sitter (\citeauthor{hirschberg2006overview}, \citeyear{hirschberg2006overview}) (\citeauthor{rothhaar2014nasa}, \citeyear{rothhaar2014nasa}). Tilt-thrust producer and tilt-wing configurations are often desired for the aircraft requiring balanced performance between forward and hover flight \citeauthor{RN15} (\citeyear{RN15}). These configurations have been proven to be capable of performing long range operations as demonstrated by \citeauthor{rothhaar2014nasa} (\citeyear{rothhaar2014nasa}) and \citeauthor{Bellv280} (\citeyear{Bellv280}). While the principle of flight is identical for both configurations, tilt-wing aircraft are more difficult to control in hover flight as a result of cross-winds and the increased surface area from the vertical wing (\citeauthor{hirschberg2006overview}, \citeyear{hirschberg2006overview}). However, the tilt-wing aircraft are more efficient in VTOL due to less interference between the rotor and the wing as opposed to tilt-rotor aircraft (\citeauthor{paduano2017system}, \citeyear{paduano2017system}). Furthermore, dead weight can be detrimental to these configurations if tilt-mechanisms are not operational in all flight modes (\citeauthor{RN15}, \citeyear{RN15}). Despite these limitations, tilt-thrust producer and tilt-wing configurations provide benefits in propulsive efficiency which align with the project’s aims. \\
 
 Tail-sitter aircraft solve the dead weight problem by tilting the entire airframe to achieve forward and hover flight, performing VTOL upright and forward flight horizontally (\citeauthor{hirschberg2006overview}, \citeyear{hirschberg2006overview}). This configuration provides the inherent benefit of improved cruise speed and efficiency compared to other tilting systems due to decreased drag, as well as being capable of performing fast take-off and landing (\citeauthor{hirschberg2006overview}, \citeyear{hirschberg2006overview}) (\citeauthor{RN15}, \citeyear{RN15}). However, tilting the airframe introduces complexity for various subsystem abilities, such as the payload, often resulting in redundancy in one flight mode. Challenges are also faced with the controller design due to complexities associated with the rotating body (\citeauthor{hochstenbach2015design}, \citeyear{hochstenbach2015design}). These negatives are the primary causes for the tail-sitter configuration being disregard for more practical VTOL configurations (\citeauthor{RN15}, \citeyear{RN15}). \\
 
@@ -385,38 +398,29 @@ Vectored thrust aircraft commonly operate using nozzles or vanes to deflect the 
 
 
 \subsection{Propulsion Systems} 
-%Investigating propulsion systems used for existing vtol aircraft 
-%Which provides best performance in what flight modes (forward flight vs hover/vtol climb) 
-%How other systems/designs altered their systems/designs to improve efficiency for each flight mode (Distributed propulsion, ducted fans, etc) 
-%Aerodynamics coupling (peter)
 
 The propulsion system is a key subsystem to consider throughout the design process for VTOL aircraft, with the propulsion design defining the VTOL configuration and performance for both modes of flight (\citeauthor{RN15}, \citeyear{RN15}). Conventional propulsion systems such as turbojets and piston engines are often considered unsuitable for use in small VTOL UAVs, primarily due to poor scaling of performance factors when decreasing size (\citeauthor{moore2014misconceptions}, \citeyear{moore2014misconceptions}). Whereas, electric propulsion systems see greater use in the small UAV weight category (\citeauthor{rothhaar2014nasa}, \citeyear{rothhaar2014nasa})( \citeauthor{Mugin} \citeyear{Mugin})(\citeauthor{RN8} \citeyear{RN8}). Electric propulsion provides various inherent benefits such as high efficiency over large ranges of motor speeds and six times the power to weight ratio of conventional propulsion systems, (\citeauthor{moore2014misconceptions}, \citeyear{moore2014misconceptions}). However, electric propulsion systems often suffer from reduced endurance due to the low energy density of current battery technology.  As described by \citeauthor{dundar2020design} (\citeyear{dundar2020design}), an electric propulsion system for a conventional VTOL UAV consists of the thrust producer, typically propeller driven for forward flight and rotor for vertical flight, with supporting electronics. The propulsion system’s performance in forward and vertical flight can be influenced by various design considerations, including the number of thrust points, location and size of propellers used. This will dictate the design complexity for the propulsion system and supporting subsystems (\citeauthor{cetinsoy2012design}, \citeyear{cetinsoy2012design}). Therefore, electrical propulsion design considerations must be understood to effectively select and design a propulsion system most suitable to achieve the project objectives for efficient forward and vertical flight. \\
 
-For a propulsion system that is used for both modes of flight, there are key control and design aspects that must be understood prior to design. \citeauthor{cetinsoy2012design} (\citeyear{cetinsoy2012design}) illustrates that propulsion designs using two separate thrust points will require propellers to have cyclic control when used in vertical flight. This introduces design and control complexity, as the propellers will require variable pitch control. While designs with three thrust points will not require variable pitch propellers, additional longitudinal control is required typically achieved by designing one thrust point to rotate (\citeauthor{monterroso2018preliminary}, \citeyear{monterroso2018preliminary}). Further increasing the number of thrust points to four or more greatly simplifies control for vertical flight, requiring only differential speed control of each propeller and is easily achieved using typical multi-rotor control (\citeauthor{cetinsoy2012design}, \citeyear{cetinsoy2012design}). Furthermore, increasing the number and/or size of propellers used in vertical flight will lead to an increase in disk area, and as described by \citeauthor{maisel2000history} (\citeyear{maisel2000history}) this will increase hover efficiency. However, incorporating the increased number of propellers effectively into the propulsion system for forward flight is difficult, often leading to reduced performance (\citeauthor{maisel2000history}, \citeyear{maisel2000history}). To overcome these limitations and maximise the advantages of electric propulsion, \citeauthor{rothhaar2014nasa} (\citeyear{rothhaar2014nasa}) developed an experimental VTOL tilt-wing aircraft utilising a distributed propulsion system. Distributed propulsion draws upon the scalability of electric motors, distributing the propulsion system across the airframe resulting in reduced drag losses while simultaneously improving system redundancy (\citeauthor{rothhaar2014nasa}, \citeyear{rothhaar2014nasa}). Supported by \citeauthor{ma2020sizing} (\citeyear{ma2020sizing}) and \citeauthor{matrone2019performance} (\citeyear{matrone2019performance}), distributed propulsion enables aircraft to benefit from coupling the aerodynamic and propulsive subsystems, their associated efficiency. Alternatively, \citeauthor{RN8} (\citeyear{RN8}) utilised a ducted propeller as the primary lift producer for VTOL to improve vertical flight performance over conventional rotor propulsion systems. This design does however sacrifice forward flight performance due to the becoming dead weight. \\
-\note{Sam}{Jake this sounds great but finish your sentance please : P }
-
-Further described by \citeauthor{yilmaz2015performance} (\citeyear{yilmaz2015performance}), ducted propellers                      
-%Ducted fan: preferred in low speed applications such as VTOL, hovercraft, helicopter tail-rotors
-%Positives: increased thrust, reduced noise (good for uber operation), increased propeller efficiency but removing propeller tip vortices
-%Negatives: increased design complexity, improper design can negatively affect performance, increased weight due to duct, increased induced drag due to duct
+For a propulsion system that is used for both modes of flight, there are key control and design aspects that must be understood prior to design. \citeauthor{cetinsoy2012design} (\citeyear{cetinsoy2012design}) illustrates that propulsion designs using two separate thrust points will require propellers to have cyclic control when used in vertical flight. This introduces design and control complexity, as the propellers will require variable pitch control. While designs with three thrust points will not require variable pitch propellers, additional longitudinal control is required typically achieved by designing one thrust point to rotate (\citeauthor{monterroso2018preliminary}, \citeyear{monterroso2018preliminary}). Further increasing the number of thrust points to four or more greatly simplifies control for vertical flight, requiring only differential speed control of each propeller and is easily achieved using typical multi-rotor control (\citeauthor{cetinsoy2012design}, \citeyear{cetinsoy2012design}). Furthermore, increasing the number and/or size of propellers used in vertical flight will lead to an increase in disk area, and as described by \citeauthor{maisel2000history} (\citeyear{maisel2000history}) this will increase hover efficiency. However, incorporating the increased number of propellers effectively into the propulsion system for forward flight is difficult, often leading to reduced performance (\citeauthor{maisel2000history}, \citeyear{maisel2000history}). To overcome these limitations and maximise the advantages of electric propulsion, \citeauthor{rothhaar2014nasa} (\citeyear{rothhaar2014nasa}) developed an experimental VTOL tilt-wing aircraft utilising a distributed propulsion system. Distributed propulsion draws upon the scalability of electric motors, distributing the propulsion system across the airframe resulting in reduced drag losses while simultaneously improving system redundancy (\citeauthor{rothhaar2014nasa}, \citeyear{rothhaar2014nasa}). Supported by \citeauthor{ma2020sizing} (\citeyear{ma2020sizing}) and \citeauthor{matrone2019performance} (\citeyear{matrone2019performance}), distributed propulsion enables aircraft to benefit from coupling the aerodynamic and propulsive subsystems, their associated efficiency. Alternatively, \citeauthor{RN8} (\citeyear{RN8}) utilised a ducted propeller as the primary lift producer for VTOL to improve vertical flight performance over conventional rotor propulsion systems. This design does however sacrifice forward flight performance due to the becoming dead weight. Ducted propellers can display significant advantages to conventional propellers, specifically at low speeds, through the removal of propeller tip vortices. This results in increased thrust and propeller efficiency when compared to same size propellers in a conventional system (\citeauthor{RyuMinhyoung2016AAot}, \citeyear{RyuMinhyoung2016AAot}). \citeauthor{yilmaz2015performance}, (\citeyear{yilmaz2015performance}) further supports ducted propeller use in small UAV applications requiring low speed and VTOL, however, describes how ducts will disadvantage and negatively impact the propulsive system in forward flight conditions. Furthermore, ducted propellers introduce increased design complexity to the propulsion system, along with increased weight and drag (\citeauthor{RyuMinhyoung2016AAot}, \citeyear{RyuMinhyoung2016AAot}). Despite this, the benefits provided by ducted propellers has prompted its development and implementation under the condition they are deemed more energy efficient for a given mission profile when compared to conventional propellers.
  
 %\subsection{Material Selection}
-
-\subsection{Control Systems}
-The application of VTOL technology requires accurate control to achieve stable flight often in the  presence of many disturbances including wind gusts, mechanical failures and changes in system dynamics throughout operation. VTOL configurations are fundamentally dynamically unstable, rendering full manual control from a pilot impossible (REF HERE (Vervoost)). While difficult to develop and manufacture, effective control systems are commercially available. Such systems include a GPS module for position control and a digital flight controller (REF HERE (Vervoost)). The digital flight controller has the capability to process control inputs and reject external disturbances. This is achieved via an inertial measurement unit (IMU) to compute the VTOL systems attitude and position in space which is then paired with a closed-loop controller (REF HERE (Vervoost)). The IMU consists of angular rate sensors and acceleration sensors in all three axes (REF HERE (Vervoost)). The level of input required from the ground control station (GCS) is dependent on the control algorithm used. The IMU is commonly paired with a proportional integral derivative (PID) control loop for VTOL aircraft given its applicability to practical scenarios(REF HERE (Kermal)). Inherent with this control algorithm is the ability to intricately tune the control gains such that stability of the UAV can be optimised in various flight scenarios (REF HERE (Kermal)). Other applicable control algorithms exist including linear quadratic regulator (LQR) control and artificial neural networks. While evidence shows these control algorithms can achieve better control, the complexity of their implementation is not feasible for this project (REF HERE (Control Algorithms)). 
-\note{Harry}{commercial flight controllers are available for a broad range of vtol configurations such as the ... which has been used on a ....}
-
 \subsection{Power Electronics}
 
-VTOL systems have a variety of power electronics relative to specific mission objectives. Across typical commercially available VTOL systems, electrical components can be segregated into propulsion and control systems. Propulsion systems include brushless direct current (BLDC) motors, electronic speed controllers (ESCs) and lithium polymer (Lipo) batteries. Control electronics include the data telemetry and control links and cameras. BLDC motors are most applicable to VTOL systems given that their speed and torque can be precisely controlled (DC Motors-REF). This control is possible through ESCs which use two control loops to vary the motors torque and speed output. These outputs are governed by control signals from the digital flight controller(ESC-REF). Servomotors are commonly applied to control surfaces and mechanical systems where a high level of controllability is required. Controllability is achieved through PID control loops which govern the servmotor's velocity and position(servomotors-REF). Many power supplies are available for mobile electric systems; however Lipo batteries provide the highest energy density and are therefore most appropriate for aerial systems (epectec-REF). An example of a commercially available system that integrates these components is the ALTI Transition. This VTOL fixed wing aircraft incorporates a hybrid propulsion system consisting of four BLDC ESC motors for VTOL and an internal combustion engine (ICE) for endurance horizontal flight. The aircraft's control surfaces are actuated via servomotors with the entire electrical component of the hybrid system powered by a Lipo battery (Vitech-REF). The system is controlled using an autopilot flight controller with communication to the ground station through a data telemetry and control link. The system implements multiple sensors depending on the mission profile including multi-spectral systems, dual sensor surveillance cameras, high resolution mapping and photogrammetry (ALTI). 
+VTOL systems have a variety of power electronics relative to specific mission objectives. Across typical commercially available VTOL systems, electrical components can be segregated into propulsion and control systems. Propulsion systems include brushless direct current (BLDC) motors, electronic speed controllers (ESCs) and lithium polymer (Lipo) batteries. Control electronics include the data telemetry and control links and cameras. BLDC motors are most applicable to VTOL systems given that their speed and torque can be precisely controlled (\citeauthor{singh1997recent}, \citeyear{singh1997recent}). This control is possible through ESCs which use two control loops to vary the motors torque and speed output. These outputs are governed by control signals from the digital flight controller (\citeauthor{kandiban2012design}, \citeyear{kandiban2012design}). Servomotors are commonly applied to control surfaces and mechanical systems where a high level of controllability is required. Controllability is achieved through PID control loops which govern the servomotor's velocity and position(\citeauthor{huang2009precision}, \citeyear{huang2009precision}). Many power supplies are available for mobile electric systems; however Lipo batteries provide the highest energy density and are therefore most appropriate for aerial systems (\citeauthor{epectec}, \citeyear{epectec}). An example of a commercially available system that integrates these components is the ALTI Transition. This VTOL fixed wing aircraft incorporates a hybrid propulsion system consisting of four BLDC ESC motors for VTOL and an internal combustion engine (ICE) for endurance horizontal flight. The aircraft's control surfaces are actuated via servomotors with the entire electrical component of the hybrid system powered by a Lipo battery (\citeauthor{vitech}, \citeyear{vitech}). The system is controlled using an autopilot flight controller with communication to the ground station through a data telemetry and control link. The system implements multiple sensors depending on the mission profile including multi-spectral systems, dual sensor surveillance cameras, high resolution mapping and photogrammetry (ALTI). 
+
+\subsection{Control Systems}
+
+The application of VTOL technology requires accurate control to achieve stable flight often in the  presence of many disturbances including wind gusts, mechanical failures and changes in system dynamics throughout operation. VTOL configurations are fundamentally dynamically unstable, rendering full manual control from a pilot impossible (\citeauthor{vervoorst2016modular}, \citeyear{vervoorst2016modular}). While difficult to develop and manufacture, effective control systems are commercially available. Such systems include a GPS module for position control and a digital flight controller (\citeauthor{vervoorst2016modular}, \citeyear{vervoorst2016modular}). The digital flight controller has the capability to process control inputs and reject external disturbances. This is achieved via an inertial measurement unit (IMU) to compute the VTOL systems attitude and position in space which is then paired with a closed-loop controller (\citeauthor{vervoorst2016modular}, \citeyear{vervoorst2016modular}). The IMU consists of angular rate sensors and acceleration sensors in all three axes (\citeauthor{vervoorst2016modular}, \citeyear{vervoorst2016modular}). The level of input required from the ground control station (GCS) is dependent on the control algorithm used. The IMU is commonly paired with a proportional integral derivative (PID) control loop for VTOL aircraft given its applicability to practical scenarios (\citeauthor{ccakici2016control}, \citeyear{ccakici2016control}). Inherent with this control algorithm is the ability to intricately tune the control gains such that stability of the UAV can be optimised in various flight scenarios (\citeauthor{ccakici2016control}, \citeyear{ccakici2016control})). Other applicable control algorithms exist including linear quadratic regulator (LQR) control and artificial neural networks. While evidence shows these control algorithms can achieve better control, the complexity of their implementation is not feasible for this project (\citeauthor{zulu2016review}, \citeyear{zulu2016review}). A commercially available system which employs a standard closed-loop PID controller is the DJI Phantom using a DJI N3 flight controller which consists of dual IMU redundancy, GPS capabilities and intelligent flight modes  (\citeauthor{djin3}, \citeyear{djin3}).
+
+
+
 %All electrical systems required to design and build an aircraft to satisfy aims 
 %Motors, batteries, ESCs, flight controllers, navigation (GPS, etc), servos, etc  
 %Passive and active control of aircraft airframes (this will need clarification, unsure if needed or could be combined with aerodynamics subsection) 
 
 \subsection{Imaging Systems}
-%Combined sensing and payload sections into one -Sam/Rhys
 
-The progression of imaging system capabilities in recent years has resulted in a diverse and extensive marketplace of cameras, which may be tailored to individual system requirements. Traditional colour camera systems collate an image through the use of red green and blue (RGB) sensors which are able to develop an image as seen by the human eye (\citeauthor{Sam1}, \citeyear{Sam1}). Utilising a Infra-Red (IR) camera which may take the form of a multi spectral camera or modified RGB system, provides increasingly useful data for purposes such as accurately monitoring crop health on farms (\citeauthor{Sam1}, \citeyear{Sam1}). The incorporation of sophisticated multi-spectral and where financial resources permit, hyper-spectral imaging systems, into satellites and aircraft has seen  increased access to valuable data for analysis (\citeauthor{Sam2}, \citeyear{Sam2}). However for the purposes of bushfire monitoring, extensive data collection beyond the visible and near infrared range's is unnecessary. Bushfire monitoring camera systems are readily available through companies such as Fire Flight and currently employed on conventional fixed wing aircraft (\citeauthor{Sam6}, \citeyear{Sam6}). \\
+The progression of imaging system capabilities in recent years has resulted in a diverse and extensive marketplace of cameras, which may be tailored to individual system requirements. Therefore, to ensure that an appropriate primary imaging system is selected to meet the payload requirements to fulfil mission requirements, investigation into existing system is required. Traditional colour camera systems collate an image through the use of red green and blue (RGB) sensors which are able to develop an image as seen by the human eye (\citeauthor{Sam1}, \citeyear{Sam1}). Utilising a Infra-Red (IR) camera which may take the form of a multi spectral camera or modified RGB system, provides increasingly useful data for purposes such as accurately monitoring crop health on farms (\citeauthor{Sam1}, \citeyear{Sam1}). The incorporation of sophisticated multi-spectral and where financial resources permit, hyper-spectral imaging systems, into satellites and aircraft has seen  increased access to valuable data for analysis (\citeauthor{Sam2}, \citeyear{Sam2}). However for the purposes of bushfire monitoring, extensive data collection beyond the visible and near infrared range's is unnecessary. Bushfire monitoring camera systems are readily available through companies such as Fire Flight and currently employed on conventional fixed wing aircraft (\citeauthor{Sam6}, \citeyear{Sam6}). \\
 \\
 Other imaging systems may also be implemented on a drone for uses such as general video recording or sensing. The most common practice in commercial drone flight is to incorporate an OTS camera system, such as a Gorpo which provides high quality video (\citeauthor{Sam3}, \citeyear{Sam3}). Recording flight video has the potential to accelerate pilot competency through analysing their performance and the ability to playback particular events. Imaging systems may also be utilised for sensing and incorporated into autonomous landing procedures; most commonly a LIDAR (Light and Radar) system (\citeauthor{Sam4}, \citeyear{Sam4}). LIDAR systems scan an environment with lasers and through analysis of the time for the light to return to the sensor are able to accumulate data to develop a 3D depiction of the surrounding landscape.\\ %which may be utilised for several tasks such as autonomous operations. \\ 
 
@@ -444,16 +448,14 @@ One major consideration for imaging systems when integrated into drones is how t
 
 % 3 https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7502574&casa_token=yGa_806mezoAAAAA:YYkvHy7ZON-5GMycoIfekWaYL_sxuG-G0CFUsgfjYKX9y1unT3spDpK1YVeGzyH52-I0GojLiz8
 
-\note{Tom}{Reference formatting needs work}
 
-To minimise the operational oversight required by end users, many UAVs have autonomous capabilities. Systems which can fly autonomously using GPS waypoint following such as that developed by \citeauthor{Tom1} (\citeyear{Tom1}) are becoming increasingly common due to the desire for drone based delivery systems. This system uses Mission Planner, an open source software package by ArduPilot, as an interface to monitor and send route information to the system. Another aspect of automation embedded in UAVs is the ability to autonomously detect suitable landing sites and safely descend and land. \citeauthor{Tom2} (\citeyear{Tom2}) use C++ and OpenCV to develop a system that can autonomously detect and land on a predefined target shape using a greyscale image feed from an onboard camera. They identified that the target shape must be designed such that the drone can orient itself even if the target is only partially visible. This is achieved by designing a target comprising of a set of concentric circles each with inner and outer diameters of a unique ratio. \citeauthor{Tom3} (\citeyear{Tom3}) demonstrate that with onboard image processing, a similar approach can be used to detect and land on moving targets. They successfully landed their UAV on a moving vehicle, suggesting potential applications for quick system recovery with emergency services. Research by \citeauthor{Tom4} (\citeyear{Tom4}) shows that by using machine learning methods such as support vector machines, suitable landing sites in regional and suburban areas can be detected from aerial imagery with an accuracy of up to 88\%. 300 satellite images from Google Earth were used as the data, with two thirds used for training and the remainder for testing. To minimise the computing power required to perform the autonomous landing procedures, \citeauthor{Tom5} (\citeyear{Tom5}) suggest using an object tracking algorithm such as Camshift to avoid the need to constantly run more costly detection algorithms. This therefore defines the three processes required to detect and land on a target; detect the target, track the target and calculate displacement vectors. 
-
-
-
-
+To minimise the operational oversight required by end users, many UAVs have autonomous capabilities. Systems which can fly autonomously using GPS waypoint following such as that developed by \citeauthor{Tom1} (\citeyear{Tom1}) are becoming increasingly common due to the desire for drone based delivery systems. This system uses Mission Planner, an open source software package by ArduPilot, as an interface to monitor and send route information to the system. Another aspect of automation embedded in UAVs is the ability to autonomously detect suitable landing sites and safely descend and land. \citeauthor{Tom2} (\citeyear{Tom2}) use C++ and OpenCV to develop a system that can autonomously detect and land on a predefined target shape using a greyscale image feed from an onboard camera. They identified that the target shape must be designed such that the drone can orient itself even if the target is only partially visible. This is achieved by designing a target comprising of a set of concentric circles each with inner and outer diameters of a unique ratio. \citeauthor{Tom3} (\citeyear{Tom3}) demonstrate that with onboard image processing, a similar approach can be used to detect and land on moving targets. They successfully landed their UAV on a moving vehicle, suggesting potential applications for quick system recovery with emergency services. Research by \citeauthor{Tom4} (\citeyear{Tom4}) shows that by using machine learning methods such as support vector machines, suitable landing sites in regional and suburban areas can be detected from aerial imagery with an accuracy of up to 88\%. 300 satellite images from Google Earth were used as the data, with two thirds used for training and the remainder for testing. To minimise the computing power required to perform the autonomous landing procedures, \citeauthor{Tom5} (\citeyear{Tom5}) suggest using an object tracking algorithm such as Camshift to avoid the need to constantly run more costly detection algorithms. This therefore defines the three processes required to detect and land on a target; detect the target, track the target and calculate displacement vectors. With the high level project aim being to develop a functional system for the CFS, having autonomous capabilities such as landing site detection and descent provides meaningful value to the operators. Literature suggests that using onboard camera systems with OpenCV an Python will be the most appropriate method for delivering this functionality. 
 
 
 \subsection{Summary}
+%Relate back to project aims/objectives, what provides the best/most suitable benefits/features to best achieve the aims/objectives (long range, endurance, etc)  
+To ensure that the aircraft is designed effectively to achieve the project's aims, the literature identified tilt-thrust producer and tilt-wing designs to be the most suitable VTOL configuration. As this configuration provides an inherent balanced performance between forward and vertical flight, providing the design features necessary to optimise and improve both modes of flight simultaneously. To ensure that the aircraft is within the objectified weight range for a small UAV, an electric propulsion system will be required. Furthermore, it was identified that four or more conventional propellers used for hover flight would greatly reduce design complexity and potential innovation to improve flight performances to be explored with distributed propulsion. However, ducted propellers offer desirable advantages pertaining to hover flight, but due to in overall decreased forward flight performance this will require further quantitative analysis to determine its energy cost benefit. Investigating the current industry standards for VTOL UAVs indicated that the use of BLDC motors and ESCs will be suitable to meeting the propulsion system's electronic requirements. Furthermore, to develop a complete system, onboard controllers and navigation systems will be required, with LiPo batteries being the most appropriate for maximising fight times using electronic power. Commercially available PID flight controllers were identified as capable of providing the level of control necessary to maintain a stable aircraft for the two different flight modes, as well as the potential to optimise control gains to improve the transition between modes of flight. Commercially available imaging systems such as Fire Flight were identified as suitable for fulfilling payload requirements, along with payload placement on the UAV being highly airframe and payload dependent. Further imaging systems may be implemented with sensing systems and integrated with autonomous system. Finally, to minimise potential operation oversight by end users and add further value to the system, autonomous capabilities such as landing site detection were identified. This desired functionality is achievable through the use of addition imaging systems in conjunction with developing software using OpenCV and Python. 
+
 
 
 \clearpage
@@ -461,8 +463,8 @@ To minimise the operational oversight required by end users, many UAVs have auto
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\subsection{Technical Task}
 
-\section{Technical Requirements}
-intro 
+\section{Mission Specific Technical Requirements}
+The technical requirements of the system form the foundation for all design considerations. These requirements link the user requirements and objectives and convert them into values which can be used in the design and selection of components. It is essential that the system meets these requirements as they determine whether the design will be successful. 
 
 % \subsection{Performance Criteria - Tom}
 % 
@@ -484,9 +486,9 @@ intro
 
 % Put a table in showing weightings for both objectives and sub criteria
 
-\subsection{Mission Specification}
+\subsection{Performance Parameters}
 
-To do: add in details about mission profiles and how they were derived.
+For mission related values to be selected for the aircraft, it is important to consider the application and role of the aircraft and its corresponding systems. CASA regulates the size of remotely piloted aircraft and such mass of the system will determine the restrictions imposed upon it. For the system to articulately carry out its user needs it was decided that the weight range of 2.01 to 25 kg would be most suitable for the design. The system also needs to be able to the bushfire scar location from a safe distance and loiter with enough endurance to collect meaningful data. These requirements are shown in Table \ref{fig:MPP}.
 
 \begin{table}[H]
 \begin{center}
@@ -510,52 +512,70 @@ Additional Payload                       & 3 kg              & 6.6 lbs          
 \end{center}
 \end{table}
 
-\subsubsection{Missions}
-\note{Rhys}{Peter to do aprox 5 mission profiles}
+\newpage
 
+\subsection{Mission Profiles}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{PrelimSizing/mission2.png}
-    \caption{Basic Mission}
-    \label{fig:my_label}
-\end{figure}
+The following mission profiles outline the possible missions and operations that aircraft will be expected to complete. The aircraft should be able to meet all potential mission profiles with adequate reserve to ensure safety and reliability. Each mission has different operational requirements and as such, will have differing energy budgets.\\
+
+\subsubsection{Mission 1}
+A basic mission shown in Figure \ref{fig:miss1} utilises vertical take-off and land stages with conventional climb and cruise segments. This mission would be typical of a transport mission moving the aircraft to different operational locations. This mission profile could also be seen as the maximum range case for the aircraft as the majority of this mission would be spent in the relatively efficient cruise segment. It is also of note that this mission includes a loiter segment 5-6 for the system to detect an adequate landing site.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{misison5.png}
-    \caption{Pure Hover Mission}
-    \label{fig:my_label}
+    \includegraphics[width=1\textwidth]{PrelimSizing/mission2.png}
+    \caption{Profile 1 - Basic mission}
+    \label{fig:miss1}
 \end{figure}
+
+\subsubsection{Mission 2}
+The second profile, shown in Figure \ref{fig:miss2} details mission comprised entirely of vertical take-off, climb, hover, decent and vertical landing. This mission would demonstrate the systems maximum hover endurance and would likely be used as a mission to test on board systems and payloads. 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{PrelimSizing/mission1.png}
-    \caption{Mission with Extended Loiter}
-    \label{fig:my_label}
+    \includegraphics[width=1\textwidth]{misison5.png}
+    \caption{Profile 2 - Pure hover mission}
+    \label{fig:miss2}
 \end{figure}
 
+\subsubsection{Mission 3}
+Figure \ref{fig:miss3} outlines the third potential profile. This profile is similar to mission 1 with the exception of a large loiter segment, 4-5, this mission would be a typical high altitude scan of a large area for the system. This data could then be used for inform locations of interest for more detailed data collection in a future mission. It is likely that in this mission, the system would take-off and land from the same location.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{PrelimSizing/mission1.png}
+    \caption{Profile 3 - Mission with extended loiter}
+    \label{fig:miss3}
+\end{figure}
+
+\subsubsection{Mission 4}
+Profile 4 shown in Figure \ref{fig:miss4} is based off Profile 3 with the addition of a decent, transition to hover, and hover loiter before transitioning and climbing back to the cruise altitude. This additional segment allows for more detailed data acquisition after a point of interest has been identified.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{mission4.png}
-    \caption{Mission with Extended Loiter and Decent to Hover Loiter}
-    \label{fig:my_label}
+    \caption{Profile 4 - Mission with extended loiter and decent to hover loiter}
+    \label{fig:miss4}
 \end{figure}
+
+\subsubsection{Mission 5}
+The profile shown below in Figure \ref{fig:miss5} extends Profile 4 to include a divert to alternate landing zone. This mission would be needed if circumstances were such that the original landing zone was unavailable, which could be likely in the event of a bushfire. For this reason all missions in these conditions should include reserves such that a divert to alternate can be achieved.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{PrelimSizing/mission3.png}
-    \caption{Caption}
-    \label{fig:my_label}
+    %\resizebox{width = 0.8\textwidth}{!}{\include{profiles/profile5}}
+    \caption{Profile 5 - Mission with extended loiter, decent to hover Loiter, and diversion to alternate landing zone}
+    \label{fig:miss5}
 \end{figure}
 
-\note{Peter}{Add table for WCMP Also talk about assume decent has no power requirements future work for regenerative charging}
+\subsection{Summary}
+By analysing the missions 1 - 5 it is found that profile 5 requires the greatest energy budget, and therefore is denoted as the worst case mission profile. As this mission consumes the most energy, its stands to reason that designing to complete this mission will ensure that the system can also complete all other potential missions. The mission requirements derived from profile 5 is shown in Table \ref{tab:PP} will be used to inform the design of the final aircraft. 
 
 \begin{table}[H]
 \begin{center}
     \caption{Mission Profile Parameters}
-    \label{fig:PP}
+    \label{tab:PP}
 \begin{tabular}{|c|l|c|c|c|}
 \hline
 \textbf{Stage} & \multicolumn{1}{c|}{\textbf{Description}} & \textbf{Speed} & \textbf{Altitude} & \textbf{Range / Time} \\ \hline \hline
@@ -583,142 +603,138 @@ Additional Payload                       & 3 kg              & 6.6 lbs          
 \end{table}
 
 
-\subsubsection{Mission Requirements}
-\note{Rhys}{Video/Camera resolutions}
-
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conceptual Designs}
+% \section{Conceptual Designs}
 
-As many design decisions depend on the airframe of the system, a process of ideation and concept generation was identified as a priority for the project. The following section outlines the approach taken to ensure innovation was facilitated while adhearing to the timeline.
+% As many design decisions depend on the airframe of the system, a process of ideation and concept generation was identified as a priority for the project. The following section outlines the approach taken to ensure innovation was facilitated while adhearing to the timeline.
 
-\subsection{Concept Generation Approach}
-\label{sec:Concept_Generation_Approach}
+% \subsection{Concept Generation Approach}
+% \label{sec:Concept_Generation_Approach}
 
-% What are we doing
-% Approach to what
-% How does this impact the project
-% Why is it important
-% What order were things conducted
-% what were the outcomes
+% % What are we doing
+% % Approach to what
+% % How does this impact the project
+% % Why is it important
+% % What order were things conducted
+% % what were the outcomes
 
-To effectively develop concepts that would have potential to push the flight efficiency technology curve, existing literature and aircraft designs were studied. Based on this research, design gaps pertaining to efficient VTOL aircraft design were identified and explored. With the existing technology in mind, a first principles approach to airframe design was conducted. This method allowed the team to eliminate any assumptions and propositions that had the potential to constrain the creativity of the concept generation.
+% To effectively develop concepts that would have potential to push the flight efficiency technology curve, existing literature and aircraft designs were studied. Based on this research, design gaps pertaining to efficient VTOL aircraft design were identified and explored. With the existing technology in mind, a first principles approach to airframe design was conducted. This method allowed the team to eliminate any assumptions and propositions that had the potential to constrain the creativity of the concept generation.
 
-\subsubsection{Methodology}
+% \subsubsection{Methodology}
 
-A set of specific, relevant, measurable and scalable performance criteria were derived from the primary objectives to ensure the concepts aligned with the project requirements. These criteria are detailed in Section \ref{perfcrit}.\\
+% A set of specific, relevant, measurable and scalable performance criteria were derived from the primary objectives to ensure the concepts aligned with the project requirements. These criteria are detailed in Section \ref{perfcrit}.\\
 
-The first round of concepts were assessed against the performance criteria, using theoretical analysis based on literature and qualitative reasoning. The concepts were then ranked based on their score for each objective, and the top scoring concepts were analysed. This process allowed the team to rapidly identify the most relevant and successful technologies when considering the specific domains defined by the project objectives. This information allowed the team to focus the concept generation ideation for the second iteration embed synergies within the design.\\
+% The first round of concepts were assessed against the performance criteria, using theoretical analysis based on literature and qualitative reasoning. The concepts were then ranked based on their score for each objective, and the top scoring concepts were analysed. This process allowed the team to rapidly identify the most relevant and successful technologies when considering the specific domains defined by the project objectives. This information allowed the team to focus the concept generation ideation for the second iteration embed synergies within the design.\\
 
-This approach is summarised below.
-\begin{enumerate}
-    \item Review the existing literature and designs in the aircraft design field.
-    \item Identify the main characteristics of existing designs.
-    \item Generate performance criteria from project objectives.
-    \item Creatively theorise potential concepts using first principles.
-    \item Rank concepts based on performance criteria.
-    \item Further iterate top ranked concepts and generate additional concepts by designing for objectives.
-    \item Assess modified/new concepts against the performance criteria and further develop the top ranked concepts.
-\end{enumerate}
+% This approach is summarised below.
+% \begin{enumerate}
+%     \item Review the existing literature and designs in the aircraft design field.
+%     \item Identify the main characteristics of existing designs.
+%     \item Generate performance criteria from project objectives.
+%     \item Creatively theorise potential concepts using first principles.
+%     \item Rank concepts based on performance criteria.
+%     \item Further iterate top ranked concepts and generate additional concepts by designing for objectives.
+%     \item Assess modified/new concepts against the performance criteria and further develop the top ranked concepts.
+% \end{enumerate}
 
-\subsubsection{Desired Outcomes}
+% \subsubsection{Desired Outcomes}
 
-This approach is designed to eliminate concepts that do not align with the project aim and converge on a concept that broadly does. To ensure scope for innovation was maintained, a wide variety of concepts were developed. To desired outcome of this process was to give the team a broad understanding of the advantages and disadvantages associated with particular designs and decide on an airframe concept that could then be further developed and refined. The decided concept would then be used as base design upon which tests could be conducted and improvements could be made. As the concept was not intended to be the final product, the process was not designed find the optimal system, but instead act as a method to decide on a system worthy of further investigation.
-
-
-% \begin{itemize}
-%     \item Find a design that's suitable
-%     \item Not necessarily finding an optimal design
-%     \item Not a critical evaluation of concepts
-%     \item Only aimed at deciding on a design for further analysis
-% \end{itemize}
-
-\subsubsection{Limitations}
-
-Given the number of concepts developed and the constrained timeframe, it was deemed appropriate to take a somewhat qualitative approach to scoring the concepts against some of the performance criteria. With more time and resources, prototyping could be conducted to achieve definitive results upon which to base the concept assessments.
-
-\subsection{Performance Criteria}\label{perfcrit}
+% This approach is designed to eliminate concepts that do not align with the project aim and converge on a concept that broadly does. To ensure scope for innovation was maintained, a wide variety of concepts were developed. The desired outcome of this process was to give the team a broad understanding of the advantages and disadvantages associated with particular designs and to decide on an airframe concept that could then be further developed and refined. The decided concept would then be used as base design upon which tests could be conducted and improvements could be made. As the concept was not intended to be the final product, the process was not designed find the optimal system, but instead act as a method to decide on a system worthy of further investigation.
 
 
-Table \ref{tab:objectives} attributes each objective with its respective numerical identifier used throughout this section.
+% % \begin{itemize}
+% %     \item Find a design that's suitable
+% %     \item Not necessarily finding an optimal design
+% %     \item Not a critical evaluation of concepts
+% %     \item Only aimed at deciding on a design for further analysis
+% % \end{itemize}
 
-\begin{table}[H]
-\caption{Project Objectives}
-\label{tab:objectives}
-\centering
-\begin{tabular}{|c|p{10cm}|}
-\hline
-             \#                       & \multicolumn{1}{c|}{\textbf{Description}} \\\hline
-1 & Design and Manufacture an Airframe                                    \\
-2 & Design Complies with Standards and Regulations                                     \\
-3 & Design System Capable of Forward Flight                                                \\
-4 & Design System Capable of Hovering                                                \\
-5 & Design System with Payload Capacity                                                                   \\
-6 & Design System to Perform VTOL Transitions                                                               \\
-7 & Design System to Perform Autonomous Operations                                                              \\\hline
-\end{tabular}
-\end{table}
+% \subsubsection{Limitations}
+
+% Given the number of concepts developed and the constrained timeframe, it was deemed appropriate to take a somewhat qualitative approach to scoring the concepts against some of the performance criteria. With more time and resources, prototyping could be conducted to achieve definitive results upon which to base the concept assessments.
+
+% \subsection{Performance Criteria}\label{perfcrit}
 
 
+% Table \ref{tab:objectives} attributes each objective with its respective numerical identifier used throughout this section.
 
-\subsubsection{Assessed Attributes for Objectives}
-%explain selection criteria
-%include large selection criteria table
-
-% Tod do: discuss and justify criteria within each objective.\\
-In order to achieve the project aims, each objective was broken down into its key capabilities and characteristics that would be required to achieve it. These are summarised in Table \ref{tab:objective-attributes-weightings} and further detailed in Appendix \ref{app_performance_criteria}.
-
-% Tables \ref{tab:obj_1_criteria} to \ref{tab:obj_6_criteria} in Appendix  show the performance criteria that were developed to compare airframe designs. 
+% \begin{table}[H]
+% \caption{Project Objectives}
+% \label{tab:objectives}
+% \centering
+% \begin{tabular}{|c|p{10cm}|}
+% \hline
+%              \#                       & \multicolumn{1}{c|}{\textbf{Description}} \\\hline
+% 1 & Design and Manufacture an Airframe                                    \\
+% 2 & Design Complies with Standards and Regulations                                     \\
+% 3 & Design System Capable of Forward Flight                                                \\
+% 4 & Design System Capable of Hovering                                                \\
+% 5 & Design System with Payload Capacity                                                                   \\
+% 6 & Design System to Perform VTOL Transitions                                                               \\
+% 7 & Design System to Perform Autonomous Operations                                                              \\\hline
+% \end{tabular}
+% \end{table}
 
 
 
-\note{}{Rey - how much detail do you think is required here?}
+% \subsubsection{Assessed Attributes for Objectives}
+% %explain selection criteria
+% %include large selection criteria table
+
+% % Tod do: discuss and justify criteria within each objective.\\
+% In order to achieve the project aims, each objective was broken down into its key capabilities and characteristics that would be required to achieve it. These are summarised in Table \ref{tab:objective-attributes-weightings} and further detailed in Appendix \ref{app_performance_criteria}.
+
+% % Tables \ref{tab:obj_1_criteria} to \ref{tab:obj_6_criteria} in Appendix  show the performance criteria that were developed to compare airframe designs. 
 
 
 
 
 
-% \newgeometry{left=1.5cm, right=0.5cm, bottom=0.5cm, top=0.5cm}
-% % \begin{landscape}
-% \pagestyle{empty}
-
-
-\note{Harry}{Does this need to go in the Appendix or here??}
-\note{Rhys}{Split up for each objective}
-
-% \end{landscape}
-% \restoregeometry
-% \clearpage
-
-\subsubsection{Weightings}
-
-Table \ref{tab:objective-attributes-weightings} also shows the relative weightings applied to each objective when considering their respective performance criteria. Note that Objective 2 and 7 are not included in the weighting because they are considered independent of the airframe design.
-
-\begin{table}[H]
-\caption{Objective Attributes and Weightings}
-\label{tab:objective-attributes-weightings}
-\centering
-\begin{tabular}{|c|p{10cm}|r|}
-\hline
-\multicolumn{1}{|c|}{\textbf{Obj. \#}}     & \textbf{Sample Attributes}           & \multicolumn{1}{c|}{\textbf{Weighting}} \\\hline
-1 & Manufacturing simplicity, durability, reliability, weight, cost                                     & 0.14                                   \\\hline
-2 &  Weight category, autonomy requirement, certified pilot availability & -                                      \\\hline
-3 &  Forward aerodynamic efficiency, propulsive efficiency, endurance, controllability & 0.24                                   \\\hline
-4 &  Vertical aerodynamic efficiency, propulsive efficiency, endurance, controllability                                      & 0.24                                   \\\hline
-5 &  Size and weight range accepted, ease of insertion, impact on flight                                  & 0.16                                   \\\hline
-6 &  Transition time and efficiency, transition requirements, robustness,                               & 0.22                                   \\\hline
-7 &  Reliability, degree of automation, conditions required                         & -                                      \\\hline
- \multicolumn{1}{|c}{}   &        \multicolumn{1}{r|}{Total}                       & 1.00                                     \\\hline
-\end{tabular}
-\end{table}
-
-Objectives 3 and 4 have the highest weighting as they pertain to the efficiency of the airframe and are therefore crucial to the overarching aim of pushing the range capabilities of the system. Objective 6 refers to the VTOL transition efficiency and is therefore considered of similar importance for the same reasons. Objectives 5 is weighted less as the payload requirements for the CFS are fairly limited. Objective 1 is weighted the least as most concepts will be able to be manufactured by either the Mechanical Engineering Workshop or by external manufacturers.\\
-
-Within each objective, the various criteria are weighted to allow for consideration for the differing level of importance. These criteria and their respective weights can be seen in the tables within Appendix \ref{app_performance_criteria}.
 
 
 
-\clearpage
+
+% % \newgeometry{left=1.5cm, right=0.5cm, bottom=0.5cm, top=0.5cm}
+% % % \begin{landscape}
+% % \pagestyle{empty}
+
+
+
+
+% % \end{landscape}
+% % \restoregeometry
+% % \clearpage
+
+% \subsubsection{Weightings}
+
+% Table \ref{tab:objective-attributes-weightings} also shows the relative weightings applied to each objective when considering their respective performance criteria. Note that Objective 2 and 7 are not included in the weighting because they are considered independent of the airframe design.
+
+% \begin{table}[H]
+% \caption{Objective Attributes and Weightings}
+% \label{tab:objective-attributes-weightings}
+% \centering
+% \begin{tabular}{|c|p{10cm}|r|}
+% \hline
+% \multicolumn{1}{|c|}{\textbf{Obj. \#}}     & \textbf{Sample Attributes}           & \multicolumn{1}{c|}{\textbf{Weighting}} \\\hline
+% 1 & Manufacturing simplicity, durability, reliability, weight, cost                                     & 0.14                                   \\\hline
+% 2 &  Weight category, autonomy requirement, certified pilot availability & -                                      \\\hline
+% 3 &  Forward aerodynamic efficiency, propulsive efficiency, endurance, controllability & 0.24                                   \\\hline
+% 4 &  Vertical aerodynamic efficiency, propulsive efficiency, endurance, controllability                                      & 0.24                                   \\\hline
+% 5 &  Size and weight range accepted, ease of insertion, impact on flight                                  & 0.16                                   \\\hline
+% 6 &  Transition time and efficiency, transition requirements, robustness,                               & 0.22                                   \\\hline
+% 7 &  Reliability, degree of automation, conditions required                         & -                                      \\\hline
+%  \multicolumn{1}{|c}{}   &        \multicolumn{1}{r|}{Total}                       & 1.00                                     \\\hline
+% \end{tabular}
+% \end{table}
+
+% Objectives 3 and 4 have the highest weighting as they pertain to the efficiency of the airframe and are therefore crucial to the overarching aim of pushing the range capabilities of the system. Objective 6 refers to the VTOL transition efficiency and is therefore considered of similar importance for the same reasons. Objectives 5 is weighted less as the payload requirements for the CFS are fairly limited. Objective 1 is weighted the least as most concepts will be able to be manufactured by either the Mechanical Engineering Workshop or by external manufacturers.\\
+
+% Within each objective, the various criteria are weighted to allow for consideration for the differing level of importance. These criteria and their respective weights can be seen in the tables within Appendix \ref{app_performance_criteria}.
+
+
+
+
 \include{Concepts/Concepts}
 
 % \subsection{Concept Generation Approach Performance}
@@ -759,50 +775,72 @@ An analysis of 4 potential imaging systems for the payload was conducted based o
 \begin{table}[H]
 \caption{Potential Payload Specification Comparisons}
 \label{tab:Payloads}
-\begin{tabular}{|p{3.5cm}|r|p{2.0cm}|r|r|} \hline
-Imaging System  & Weight (g) & Size (mm)  & Resolution (MP) & Cost (AUD)  \\ \hline
-FireFlight  & 500  & $98 \times 76 \times 68 $ & 0.3      & Unavaliable \\ \hline
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|p{3.5cm}|r|p{3.0cm}|r|r|} \hline
+\textbf{Imaging System}  & \textbf{Weight (g)} & \textbf{Size (mm)} & \textbf{Resolution (MP)} & \textbf{Cost (AUD)}  \\ \hline
+FireFlight 3000  & 500  & $98 \times 76 \times 68 $ & 0.3      & Unavailable \\ \hline
 GoPro (Hero 7)     & 116  & $62.3 \times 44.9 \times 33$    & 12       & 530         \\ \hline
-Raspberry Pi NoIR Camera  v2 & 3.4  & \cellcolor[HTML]{FFFFFF}25 x 23 x 9   & 8     & 35   \\ \hline
-Gimbal Mounted, 4k Camera    & 1000 & \cellcolor[HTML]{FFFFFF}128 x 82 x 70 & 14   & 600  \\  \hline    
+Raspberry Pi NoIR Camera  v2 & 3.4  & $25 \times 23 \times 9$   & 8     & 35   \\ \hline
+Gimbal Mounted, 4k Camera    & 1000 & $128 \times 82 \times 70$ & 14   & 600  \\  \hline    
 \end{tabular}
+}
 \end{table}
 
-It should be noted that the FireFlight system is a 3 camera system with two IR cameras and a single RBG camera. In addition to this, the system has integrated in flight image processing, 
-Flight Path Planning and a mounting plate. Evaluating the end users needs, it was concluded that Emergency Fire Services would likely look to incorporate all 'all in one' system such as the fireflight system which has proven effectiveness on conventional fixed wing aircraft at high altitudes. Following the selection of the Fireflight system for payload integration design, the performance of the system at the maximum operating height under CASA regulations of 400ft was Investigated. Through communications with Dr Paul Dare, CEO - Fire flight, technical data for the swath width and resolution at various altitudes was acquired. The Fireflight 3000 system encompasses 3 cameras with varying focal lengths of 9mm, 13mm and 19mm. Resolutions are only provided for altitudes of 5000 ft and above and consequently the data must be extrapolated to approximate the spatial resolution at the operational altitude of 400ft\\
+It should be noted that the FireFlight system is a three camera system with two IR cameras and a single RBG camera. In addition to this, the system has integrated in-flight image processing, flight path planning and a mounting plate. Ideally a payload with minimal weight would be selected to allow for maximum battery weight, consequently increasing the total endurance time. Comparing the 4 systems, the raspberry Pi camera would be preferable for optimising system endurance, however a housing mechanism would need to be developed and the weight added to this system for consistent analysis. All payload sizes presented are considered appropriate for the scale of the manufactured air frame. A greater camera resolution correlates to improved image quality, and consequently more precise data collection. On the scale of bushfire area's however, all of the above resolutions are expected to provide adequate picture clarity. Finally, the cost of the respective payloads was taken into consideration.  \\  
 
-This was done through the determination of the Field of View (FOV) of the camera system through basic trigonometry which will allow for the calculation of the spatial resolution. The 9mm focal length case was selected as this will result in the poorest spatial resolution which if acceptable will ensure the other two camera systems are also suitable for the desired purposes.
+Evaluating the end users needs, it was concluded that Emergency Fire Services would likely look to incorporate an `all in one' system such as the FireFlight system which has proven effectiveness on conventional fixed wing aircraft at high altitudes. This would minimise the technical experience required to perform the data analysis. Consequently, the FireFlight 3000 system was identified as the preferred payload system to integrate into the design.
+
+
+\\
+Following the selection of the FireFlight system, the performance of the system at the maximum operating height under CASA regulations of 400ft was investigated. Through communications with Dr Paul Dare, CEO of FireFlight, technical data for the swath width and resolution at various altitudes was acquired. The FireFlight 3000 system encompasses three cameras with varying focal lengths of 9 mm, 13 mm and 19 mm. Resolutions are only provided for altitudes of 5000 ft and above and consequently the data must be extrapolated to approximate the spatial resolution at the operational altitude of 400ft.\\
+
+This was done through the determination of the field of view (FOV) of the camera system through basic trigonometry which will allow for the calculation of the spatial resolution. The 9 mm focal length case was selected as this will result in the poorest spatial resolution which if acceptable will ensure the other two camera systems are also suitable for the desired purposes.
 %SAM: - An image here will be valuable in the final.
-For an altitude of 5000ft, the 9mm camera system has a swath width of 1.8km. Determining the FOV angle: 
-\begin{gather}
-    \label{eq: FOV calculation}
-    FOV = 2\times \arctan (\frac{swath\: width/2}{altitude} )\\
-    FOV = 2\times \arctan ({\frac{900m}{1524m}}) = 61^o
-\end{gather}
-This was validated by performing the same calculations for other altitudes with a maximum calculated error of 3.5 \%. \\
-Applying this FOV for an altitude of 400ft, allows the calculation of the minimum spatial resolution for the 0.3MP fireflight camera assuming a FOV of $60.0^o$.\\
+For an altitude of 5000 ft, the 9 mm camera system has a swath width of 1.8 km. Determining the FOV angle: 
+\begin{align*}
+    % \label{eq: FOV calculation}
+    \text{FOV} &= 2\times \arctan \left(\frac{(\text{swath width})/2}{\text{altitude}}\right)\\
+    \text{FOV} &= 2\times \arctan \left({\frac{900\text{ m}}{1524\text{ m}}}\right)\\
+    \therefore\quad \text{FOV} &= 61^\circ
+\end{align*}
+This was validated by performing the same calculations for the swath width data provided at other altitudes of 7500ft and 15000ft with a maximum calculated FOV error of 3.5\%. \\
 
-\begin{gather}
-    \label{eq: Swath calculation}
-    Swath\: Width = altitude\times \tan(60^o)\\
-    Swath\; Width = 122\times \tan(60^o) = 211m^2 \\
-    Ground\: Area\: Visible = (Swath\: Width)^2 = 44521m^2 \\
-    Spatial Resolution = \frac{44521m^2}{0.3\times10^6 MP} = 0.148m^2/pixel 
-\end{gather}
+Applying this FOV for an altitude of 400 ft (112 m), allows the calculation of the minimum spatial resolution for the 0.3 MP FireFlight camera with a FOV of $60.0^\circ$.
+\begin{align*}
+    % \label{eq: Swath calculation}
+    \text{Swath Width} &= \text{altitude}\times \tan(\text{FOV})\\
+    &= 122\text{ m}\times \tan(60^\circ)\\
+    \therefore\quad \text{Swath Width} &= 211\text{ m}^2 \\
+    \text{Ground Area Visible} &= (\text{Swath Width})^2\\
+    \therefore\quad\text{Ground Area Visible} &= 44521\text{ m}^2 \\
+    \text{Spatial Resolution} &= \frac{44521\text{ m}^2}{0.3\times10^6\text{ MP}}\\
+    \therefore\quad\text{Spatial Resolution} &= 0.148\text{ m$^2/$pixel} 
+\end{align*}
+
+To determine the scannable area the swath width was multiplied by the cruise fight velocity and allowable scan time for the worst case mission profile.   
+
+\begin{align*}
+    % \label{eq: Scannable Area calculation}
+    \text{Scanned Area} &= \text{Swath Width}\times \text{Loiter Speed}\times \text{Scan time}\\
+    \text{Scanned Area} &= 211\text{m}\times 22 \text{m}/\text{s}\times30\text{s} \\
+    \text{Scanned Area} &= 835 \text{ha}
+  \end{align*}
 
 \subsubsection{Results}
 %Sam- would be good to repeat this analyse with the other 2 camera systems to determine the observable areas and resolutions for those systems
-From this analysis it was observed that using the wide angle camera system a swath Width of 211m is possible, producing imagery with a spatial resolution of 0.148. This resolution should satisfy the requirements of the CFS to be able to provide valuable regarding the bushfire such as hot spots or down trees. 
+From this analysis it was observed that using the wide angle camera system with a swath width of 211 m at 400 ft a resultant spatial resolution of $0.148\text{m}^2$ is achieved. This resolution should satisfy the requirements of the CFS and provide valuable data regarding the bushfire such as hot spots or down trees. Furthermore, with a scanning loiter speed of 22m/s, for the worst case mission profile the scanned area is 835 hectares which is sufficient to justify the feasibility of this payload. 
+
+
 \subsubsection{Discussion}
-The Fireflight system was selected owing to the built in bushfire monitoring systems and proven effectiveness in this field. The system has the required resolution at the maximum operating condition. The effectiveness of the fixed wing drone due to a maximum flight altitude of 400ft may be reduced as the swath distance is insufficient to be able to accurately map vast bushfire areas. Consequently, the system may need to be paired with high altitude aircraft to further investigate identified locations of interest. Alternatively,there is the potential that drone flight restrictions may be eased as CASA continue to modify their regulations to reflect the desired uses of the aircraft which would make the aircraft far more feasible. As the Fire Flight system incorporates features which are not crucial to the drone development it will be used as a basis for the payload housing system but not practically implemented. The cost effective Pi Video camera will be used for image collection purposes.
+The FireFlight system was selected owing to the built in bushfire monitoring systems and proven effectiveness in this field. The system has the required resolution at the maximum operating altitude. The effectiveness of the fixed wing drone at a maximum flight altitude of 400 ft may be limited as the swath distance is relatively low reducing the practically of large bushfire mapping in a single flight. Consequently, the system may need to be paired with high altitude aircraft to further investigate identified locations of interest. Alternatively,there is the potential that drone flight restrictions may be eased as CASA continue to modify their regulations to reflect the desired uses of the aircraft which would make the aircraft far more feasible. The CFS could also pursue providing drone licences to members or seeking external remote pilots with outside line of sight clearances.
+As the Fire Flight system incorporates features which are not necessary to demonstrate the drones capabilities the system shall be used as a basis for the payload housing system but not practically implemented. Consequently the cost effective Pi video camera will be used for basic image collection purposes. Where greater video quality is desired a go pro system may be integrated as the size and weight of this system were less than that of the Fireflight system.
 
 %-What camera systems are to be Incorporated into the aircraft, Fireflight system + gopro for video recording or will this be predominantly done by the raspberry Pi cameras
-\subsubsection{Conclusions}
-The Fireflight Bushfire Monitoring System is a proven device that could potentially be Incorporated into the drone to achieve the needs of Emergency Fire Services. The camera achieves the required resolutions and has an acceptable size and weight. A raspberry pi camera will be integrated to the drone physically to capture appropriate video.  
--Proceeding with Fireflight camera system,
-For testing purposes will use a gopro?
+\subsubsection{Summary}
+The FireFlight Bushfire Monitoring System is a proven device that would fulfill the needs of emergency fire service organisations. Physical integration of the system will not take place but the dimensions and power requirements will be considered in the analysis and design of the overall system. The cameras in this system achieve the required resolutions with an acceptable size and weight. A raspberry pi camera will be integrated to the drone physically to capture  appropriate flight video. To capture flight video of the final design a gopro system may be integrated.
+
 \subsubsection{Future Work}
-Communications will continue with Fireflight to further assess the applicability of this technology to the drone. Furthermore, the payload weight will be Incorporated into the preliminary sizing calculations. The payload size specifications will be used in the development of an appropriate payload mounting system to ensure the system is able to capture the required data. 
+Communications will continue with FireFlight to further assess the applicability of this technology to the drone. The payload size specifications will be used in the development of an appropriate payload mounting system to ensure the system is able to capture the required data using comerrically avalaible monitoring technologies. Power requirements of the payloads both Fireflight and Raspberry Pi systems will be considered in the energy budget. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
@@ -824,10 +862,11 @@ Communications will continue with Fireflight to further assess the applicability
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Summary}
-This report presents the preliminary research and analysis performed on the Long Range VTOL UAV project. Motivated by the desire to develop a system capable of assisting emergency fire service endeavors, the aims and scope of the project were established. Principally the system aims to innovate in the design of a VTOL air frame and corresponding VTOL transition sequence. A minimal Viable product shall be manufactured for testing and validation purposes while further theoretical analysis will progress in parallel to allow the group to fulfill both academic and industry requirements from relevant stakeholder groups. Primary and objectives were also detailed including designing an air frame capable of operating in forward flight and hover configurations in addition to the VTOL transition and capability to perform autonomous operations.An extensive literature review provided the basis for identification of opportunities for improvements within the VTOL sector. Additionally, current marketplace solutions were assessed for each subsystem to determine the degree of integration with existing COTS systems possible.  \\
+This report presents the preliminary research and analysis performed on the Long Range VTOL UAV project. Motivated by the desire to develop a system capable of assisting emergency fire service endeavors, the aims and scope of the project were established. Principally the system aims to innovate in the integration of existing air-frame concepts and designs along with the VTOL transition to improve upon efficiencies and specific capabilities. A minimal viable product shall be manufactured for testing and validation purposes while further theoretical analysis will progress in parallel to allow the group to fulfill both academic and industry requirements from relevant stakeholder groups. 
 
-Three stages of conceptual designs were undertaken with rankings based upon qualitative analysis. Analysis the average scores of each round, improvements in meeting the specified system objectives were clearly made. Of key distinction was the propulsion system to be incorporated. Theoretical analysis was performed which displayed that the two propulsion systems were both presenting similar results meant that to distinguish between the two systems, an experimental evaluation method was desirable. Consequently, the tilt-wing mechanism was designed to be modular in the sets of wings may be attached to assess the benefits from the two proposed propulsion systems. This approach was approved by relevant stakeholders and the project scope adjusted accordingly. 
-%need to speak more on prelim sizing, and individual sub system analysis, also perhaps on project managerment, safety and risk. 
+Primary and secondary objectives were also detailed including designing an air frame capable of performing VTOL transitions with the capability to perform autonomous operations.An extensive literature review provided the basis for identification of opportunities for improvements within the VTOL sector. Additionally, current marketplace solutions were assessed for each subsystem to determine the degree of integration with existing COTS systems possible.  \\
+
+Three stages of conceptual designs were undertaken with initial rankings based upon literature and qualitative analysis. Observing the average scores of each round, improvements in meeting the specified system objectives were clearly made. Preliminary sizing was undertaken to determine key design parameters such as the battery weight determined to be 3.185kg. As the propulsion system is still to be confirmed, the tilt-wing mechanism was designed to allow different sets of wings to be attached to the aircraft, enabling the propulsion systems to be assessed experimentally. The tilt wing mechanism is capable of performing 140 degrees of rotation and withstanding 2.51 Nm of torque. Future work will include further design of individual subsystems as mentioned in their respective sections along with the manufacture of the MVP. Current projections from project management tools demonstrate that the project is currently on track to be complied by the required deadlines and within the project budget. 
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -841,6 +880,349 @@ Three stages of conceptual designs were undertaken with rankings based upon qual
 \newpage
 
 \begin{appendices}
+\section{Technical Aims}
+\label{app_technical}
+%\note{Rhys}{Is this entire section required? - its stright from the charter}\\
+The aim of this project is to design and build a high efficiency, long range VTOL UAV intended to be utilised by emergency fire services, including the CFS, to assist in bushfire monitoring and alleviation. The system should predominantly innovate in the concept and design of the airframe as well as the VTOL transition.\\
+
+To demonstrate the value a VTOL UAV may provide emergency fire services and to broaden the device's usability, the system will be designed to have the capability to achieve multiple real-world applications. The scope of these applications is constrained by the current restrictions of shared air-space during bushfires. Hence, for the system to be implemented into a currently feasible use, the group of potential applications are either for pre or post-bushfire scenarios. Post-bushfire applications utilise the strengths of a VTOL UAV device well; as indicated by the literature review. Consequently, the post-bushfire time frame was chosen as the focus for the project.  \\
+
+A list of potential post-bushfire applications are listed below:
+    \begin{enumerate}
+       \item Conduct scans of bushfire burn scars for general  impact and damage data assessments
+        \item Identify, locate and categorise thermal hot spots during a post fire cleanup
+        \item Identify, locate and assess the damage of downed trees on roads
+        \item Identify, locate and assess the damage causing down power-lines
+        \item Identify and locate dwellings and buildings (both recognised and unknown) to determine if/how they burned
+    \end{enumerate}
+
+These applications were chosen due to their significance to emergency fire services (as indicated by the CFS) but also because of their similar system requirements. Hence, the design/configuration of the UAV will not need to alter between applications. The mission profiles of each application will vary but still rely on the same fundamental VTOL capabilities. Different payloads may also be required and hence the VTOL must be designed to accommodate an array of commercially available payloads, with the potential to accommodate new payload technology. \\
+
+From the list, application one of scanning bushfire burn scars will have the broadest mission profiles and particularly require vertical take-off and is therefore chosen as the overarching application of the VTOL. A system that is capable of achieving this application will easily be able to transition to the other applications listed, with little to no design alterations. \\
+
+With advancements in shared airspace, the list of potential applications of this VTOL will increase. This may eventuate to applications in time periods just before and during a bushfire. To ensure this system can accommodate these additional applications, the system must be engineered to operate during more challenging weather conditions that are often present during bushfires. 
+
+\clearpage
+\newpage
+
+\section{SMART Objectives}
+\label{app_smart}
+The below objectives must be achieved to meet the overarching project aims. They have been detailed in accordance with the SMART (Specific, Measurable, Attainable, Relevance and Time based) structure, so that they provide clear guidance and are obvious when they are achieved. Both primary and secondary objectives have been detailed, with the primary objectives being the first priority for time allocation. 
+
+\subsection{Primary Objectives}
+
+The following objectives are considered necessary for the successful completion of this project.
+
+\subsubsection{Objective 1: Design and Manufacture an Airframe}
+
+\begin{description}
+    \item[Specific] \hfill \\
+    Upon completion of a comprehensive CAD, model fully described by drawings with appropriate tolerances and a bill of materials, the system can be manufactured.
+    \item[Measurable] \hfill  \\
+    The final design is approved by the Mechanical Engineering Workshop staff and subsequently manufactured to the designed tolerances. For the objective to be considered achieved, the system must be ready to test.
+    \item[Attainable] \hfill \\
+    Previous honours projects have successfully designed and manufactured a system of similar complexity with comparable resources, as evidenced by 2019 Short Take Off and Landing Air Taxi. The design, materials and components are limited to what the budget, time restrictions, workshop facilities and capabilities allows.
+    \item[Relevance] \hfill  \\
+    Design and manufacture of an airframe is essential to successfully demonstrate the performance of our design to the stakeholders and ultimately add value to the emergency fire services.
+    \item[Time Based] \hfill \\
+    Manufactured design to be completed and ready for testing by the 18th of September.
+\end{description}
+
+To make this objective more manageable, the following tasks have identified.
+\begin{itemize}
+    \item Design a prototype able to functionally demonstrate key design features. The design must be fully described by CAD drawings. This is to be completed by the 2nd of July.
+    \item Manufacture the prototype in accordance to the specified tolerances in drawings. This is to be completed by the 21st of August.
+\end{itemize}
+
+%\note{Rey}{this says there's only 7 days to build!?}
+
+\subsubsection{Objective 2: Formulate Design that Complies with Relevant Standards and Regulations}
+
+\begin{description}
+    \item[Specific] \hfill \\
+    The design must be compliant with the following regulations.
+    \begin{itemize}
+        \item CASA: ADVISORY CIRCULAR AC 101-01 v3.0
+        \item CASA: Visual Flight Rules
+        \item UofA: Unmanned Research Aircraft Facility (URAF)
+    \end{itemize}
+    If this is not the case, the system has limited usefulness for the stakeholders.
+    \item[Measurable] \hfill
+    If the following requirements are met, the objective will have been achieved.
+    \begin{itemize}
+        \item Have a take-off weight between 2.01 - 25 kg, categorising the UAV as a `Small' RPA.
+        \item Will operate under the supervision of the URAF.
+        \item Will operate in accordance with CASA airspace regulation.
+    \end{itemize}
+    \item[Attainable] \hfill \\
+    % Regulation specifications are attainable through literature and communication with relevant associations. Additional correspondence with stakeholders throughout the project's duration will ensure the design adheres to regulations continually.
+    CASA documents are accessible and outline the specific standards and regulations that our project will require. There are current commercial systems that can adhere to these regulations indicating attainability. 
+    
+    \item[Relevance]\hfill \\
+    Design must adhere to appropriate standards to be testable and useable by the emergency fire services.
+    \item[Time Based] \hfill \\
+    Design specific regulations must be researched and implemented during the design phase of the project. All operational regulations must be met throughout the entirety of the project, thus the timeframe for this objective is continuous. 
+\end{description}
+
+\textbf{Tasks:}
+\begin{itemize}
+    \item Relevant regulation texts must be examined. This was achieved by the 6th of February.
+    \item Regular communication with URAF and supervisors to ensure the team complies with the relevant regulations.
+    \item Approval must be received from CASA before any flight testing can take place.
+\end{itemize}
+
+\subsubsection{Objective 3: Design System Capable of Forward Flight}
+
+\begin{description}
+    \item[Specific] \hfill \\
+    This system will have the ability to fly in a forward flight configuration in expected operating conditions using lift aerofoils.
+    \item[Measurable] \hfill \\
+    Forward flight will be tested in an environment in accordance to the aforementioned regulations. This objective is achieved when the system successfully flies at least 500 metres. Achieving this objective indicates that it is likely that the system has the capability to fly until the battery is depleted.
+    \item[Attainable] \hfill \\
+    Previous honours projects have achieved this with comparable constraints. Existing literature is readily available which will provide guidance as to how to achieve this objective.
+    \item[Relevance] \hfill \\
+    To conduct scans of bushfire burn scars, long range forward flight capabilities are required as the impacted area can be extensive and remote.
+    \item[Time Based] \hfill \\
+    This will be achieved upon the completion of the flight testing. This is to be done by the 9th of October.
+\end{description}
+
+\textbf{Tasks:}
+\begin{itemize}
+    \item Conduct sensitivity analysis of conceptual forward flight configurations to produce a set of designs appropriate for further investigation. This is to be completed by the 14th of May.
+    \item CFD simulations will be developed to optimise horizontal flight characteristics yielding the required endurance. This is to be completed by the 23rd of June.
+\end{itemize}
+
+
+\subsubsection{Objective 4: Design System Capable of Hovering}
+
+\begin{description}
+    \item[Specific] \hfill \\
+    This system will have the ability to fly in a hovering configuration in a controlled, indoor environment.
+    \item[Measurable] \hfill \\
+    Hovering will be tested in an environment in accordance to the aforementioned regulations. This objective is achieved when the system successfully hovers at least 2 metres above the ground for at least 2 minutes with a total displacement of less than 1 metre from the initial hover position. Achieving this objective signifies that the system may to have the capability to perform more in the expected conditions.
+    \item[Attainable] \hfill \\
+    Previous honours projects have achieved this with comparable constraints and existing literature is readily available which will provide guidance as to how to achieve this objective. This objective can be achieved in an indoor environment, thus has fewer CASA restrictions to adhere to and is therefore more attainable.
+    \item[Relevance] \hfill \\
+    Hovering is required for achieving the VTOL capability as detailed in the aims, and provides added functionality for the emergency services by facilitating a loitering capability.
+    \item[Time Based] \hfill \\
+    This will be achieved upon the completion of the flight testing. This is to be done by the 9th of October.
+\end{description}
+
+\textbf{Tasks:}
+\begin{itemize}
+    \item Conduct sensitivity analysis of conceptual hover flight configurations to produce a set of designs appropriate for further investigation. This is to be completed by the 14th of May.
+    \item CFD simulations will be developed to optimise hover flight mode characteristics yielding required endurance. This is to be completed by the 23rd of June.
+    \item Initial testing will be conducted with a tether attaching the drone to an anchor point. This will mitigate the risk of unexpected behaviour. This will be completed by the 21st of August.
+\end{itemize}
+
+\subsubsection{Objective 5: Design a System with Payload Capacity}
+
+\begin{description}
+    \item[Specific] \hfill \\
+    The design will have the ability to accept a payload containing a monitoring unit and associated controllers. The system must then be able to achieve flight requirements as intended.
+    \item[Measurable] \hfill \\
+    The capability of the system to support a payload will be assessed during testing in expected conditions. The system must be able to achieve similar flight requirements with or without a payload.
+    \item[Attainable] \hfill \\
+    Drones categorised as `Small' RPAs by CASA are commonly utilised to carry large payloads. These large payloads often consist of surveillance technologies similar to the proposed system. Based on this, it is deemed that this objective is attainable.
+    \item[Relevance] \hfill \\
+    An onboard monitoring system has been deemed necessary to provide value to the emergency fire service as intended as it is key to collecting the desired data.
+    \item[Time Based] \hfill \\
+    This will be achieved upon the completion of flight testing. This is to be done by the 9th of October.
+\end{description}
+
+\textbf{Tasks:}
+\begin{itemize}
+    \item The physical payload architecture is to be designed and fully described by engineering drawings by the 19th of July.
+    \item Payload housing implementation should be completed by the 18th of September.
+    \item Payload preliminary testing is to be complete by the 25th of September.
+\end{itemize}
+
+\subsubsection{Objective 6: Design System to Perform VTOL Transitions}
+
+\begin{description}
+    \item[Specific] \hfill \\
+    Through a single controlled input, the system will transition from vertical hover to controlled horizontal forward flight. The transition from horizontal to vertical flight should reflect the same control. 
+    \item[Measurable] \hfill \\ 
+    The system will successfully perform transitions from vertical to horizontal flight and back with one control input. This will be analysed by ensuring the system does not deviate from its point of transition by more than 5 metres.
+    \item[Attainable] \hfill \\
+    Flight control tuning methods will be researched to ensure movement throughout the transition flight regime is within 5 metres. Existing literature suggests that this is within the capability of the project group.
+    \item[Relevance] \hfill \\
+    To achieve long range flight with the capability to capture detailed and accurate sensory data, it is imperative that the system is capable of performing the mentioned transitions accurately. 
+    \item[Time Based] \hfill \\
+    This will be achieved upon the completion of flight testing. This is to be done by the 9th of October.
+\end{description}
+
+\textbf{Tasks:}
+\begin{itemize}
+    \item Research flight controllers and select one with the capabilities required. This is to be done by the 3rd of July.
+    \item The prototype should demonstrate these capabilities to a similar extent of the final system. Prototype testing is to be completed by the 21st of August.
+\end{itemize}
+
+\subsubsection{Objective 7: Design System to Perform Autonomous Operations}
+
+\begin{description}
+    \item[Specific] \hfill \\
+    The system will be capable of performing autonomous take-off, landing and VTOL/horizontal transition. The system will also have on board object awareness and avoidance mechanisms that are activated during landing stages.
+    \item[Measurable] \hfill \\
+    The device can successfully take-off utilising its vertical hovering capability and transition into horizontal flight without human interference. Additionally, the device can successfully transition from horizontal flight to vertical hovering to land without human interference. The system will be capable of the mentioned transitions throughout mission profile for loitering purposes. When landing, the system will be able to detect and avoid obstacles to mitigate risk of damage.
+    \item[Attainable] \hfill \\
+    Existing literature suggests this is attainable within the specified design constraints and there exists commercial products that deliver similar functionality. This is an area of specialisation for the project's mentors and therefore provides an advantage for the team.
+    \item[Relevance] \hfill \\
+    Autonomous transition operations are critical for optimising flight efficiency and safety by ensuring consistency by removing human error. Given the final users of this system are emergency fire service personnel in potentially fast paced environments, simplifying the user control inputs through automation is important to achieve the overarching aim of providing assistance.
+    \item[Time Based] \hfill \\
+    This will be achieved upon the completion of the flight testing. This is to be done by the 9th of October.
+\end{description}
+
+\textbf{Tasks:}
+\begin{itemize}
+    \item Develop an object detection system and implement functionality required to influence the system positioning based on the environment. This should be achieved by the 3rd of July.
+    \item Optimise autonomous take-off/landing controller tuning. This is to be achieved by the 21st of August.
+    \item Optimise autonomous transition controller tuning. This is to be achieved by the 21st of August.
+\end{itemize}
+\newpage
+\subsection{Secondary Objectives}
+
+Upon the completion of the primary objectives, any remaining time will be spent working on the following objectives.
+
+\subsubsection{Objective 8: Design System to Meet all Required Mission Profiles}
+
+\begin{description}
+    \item[Specific] \hfill \\
+    After designing multiple mission profiles for the application, this objective will be achieved when the system can perform the flight plan set out by the worst case mission profile.
+    \item[Measurable] \hfill \\
+    The mission profile will be tested at a remote location in accordance to the regulations defined in Objective 2. Success will be indicated when the mission is completed without any issues.
+    \item[Attainable] \hfill \\
+    Mission profiles can be formulated by communicating with stakeholders. Existing literature will also be consulted to further ensure mission profiles accurately represent expected applications.
+    \item[Relevance] \hfill \\
+    To make the system useful and reliable for the application, it is important that it can complete the worst case mission profile without issues. Without this certainty, the system cannot be used reliably.
+    \item[Time Based] \hfill \\
+     This is a secondary, `stretch', objective, and would be achieved following the achievement of the primary objectives if time permits.
+\end{description}
+
+\subsubsection{Objective 9: Design System to Execute Autonomous Waypoint Following}
+\begin{description}
+    \item[Specific] \hfill \\
+    Using software on a ground computer, the user will be able to input GPS coordinates allowing the system to autonomously fulfil mission profile using appropriate flight modes.
+    \item[Measurable] \hfill \\ 
+    The objective will be considered achieved once the drone successfully completes a mission profile with a flight path predefined by input GPS waypoints.
+    \item[Attainable] \hfill \\
+    There is existing computer software that can communicate with a variety of flight controllers to provide this functionality. Throughout the autonomous flight, a ground based operator will have override capabilities and an appropriately programmed `kill' switch.
+    \item[Relevance] \hfill \\
+    To achieve the long term aim of assisting the emergency fire services, waypoint driven autonomous flight is key to reducing the operator's cognitive load.
+    \item[Time Based] \hfill \\
+    As this is a secondary, `stretch', objective, this would be achieved after the primary objectives are achieved if time permits. Based on existing literature, this is suspected to take two weeks.
+\end{description}
+
+% \note{Tom}{Fill out the below sections!!!}
+\subsubsection{Objective 10: Design System to Support First Person View}
+\begin{description}
+    \item[Specific] \hfill \\
+    The system should connect to an First Person View (FPV) headset and be able to remotely send a live video feed from forward facing cameras. The frame rate and resolution of the streamed video will be of a standard such that a pilot can guide the system with a high level of spacial awareness of the system and surroundings.
+    \item[Measurable] \hfill \\ 
+    This objective is considered achieved once the system is successfully piloted via an FPV enabled system. The pilot should not need to see the system directly, but instead rely on the live video feed from on-board cameras.
+    \item[Attainable] \hfill \\
+    FPV technology is currently used to provide drone pilots with the required level of spacial awareness required to avoid obstacles at high speed in drone racing settings. A similar system could be used to implement the required functionality to achieve this objective.
+    \item[Relevance] \hfill \\
+    Using an FPV headset to control the system yields capabilities of more advanced mission profiles. If the emergency fire service needs to closely examine a particular point of interest, an FPV system allows this to happen without requiring a direct line of sight from the operator.
+    \item[Time Based] \hfill \\
+    As this is a secondary, `stretch', objective, this would be achieved after the primary objectives are achieved if time permits. This objective would require additional cameras and communication systems, and therefore would take a considerable amount of time to implement.
+\end{description}
+
+\clearpage
+\newpage
+
+\section{WBS and Gantt Chart}
+\label{app_WBS&gantt}
+In order to achieve the aims and objectives outlined within this document, a project management strategy is required. A work breakdown structure (WBS), detailed in Table \ref{tab:WBS}, was developed to list and detail objectives, tasks and milestones. This WBS will develop and expand as the work is performed such that it fully details the project. From the WBS, a Gantt chart, detailed in Figure \ref{fig:Gantt}, was created. This Gantt chart visually demonstrates the tasks and their time frames throughout the lifetime of the project. For the success of the project, it is essential that these management tools are constantly reviewed and revised. This allows team members to reflect on the project's progress and be aware of all upcoming deadlines. The critical path for the project has been impacted through the unforeseen circumstances of COVID-19, however contingency has been incorporated in the time allocated to deliverables within the Gantt chart. Consequently the critical path for the project is indicated by the major deliverable end dates on the Gantt  chart.  \\
+
+\newpage 
+
+\newgeometry{left=1.5cm, right=0.5cm, bottom=0.5cm, top=0.5cm}
+\begin{landscape}
+\pagestyle{empty}
+
+\scriptsize
+\input{multiplepageWBS}
+
+
+%note{Tom}{Make sure the objective numbers match!! order has changed very slightly!}
+
+
+% \restoregeometry
+\end{landscape}
+\restoregeometry
+\clearpage
+
+\normalsize
+
+
+
+
+\newgeometry{left=0.5cm, right=0.5cm, bottom=0.5cm, top=0.5cm}
+\begin{landscape}
+
+\begin{figure}[!b]
+    \centering
+    \begin{subfigure}{1.4\textwidth}
+        \includegraphics[page = 1, width=1\textwidth]{3172_Ultra_long_range_UAV-4.pdf}
+        %\subcaption{$Q^{*}$ values for arm 2}
+        \label{fig:gantt1}
+    \end{subfigure}
+    \vspace{-1cm}
+    \caption[Gantt Chart]{Gantt Chart depicting timeline, key deliverables and milestones}
+    \label{fig:Gantt}
+\end{figure}%
+\begin{figure}[ht]\ContinuedFloat
+    \centering
+    \begin{subfigure}{1.4\textwidth}
+        \includegraphics[page = 2,width=1\textwidth]{3172_Ultra_long_range_UAV-4.pdf}
+        %\subcaption{$Q^{*}$ values for arm 4}
+        \label{fig:gantt2}
+    \end{subfigure}
+    \vspace{-1cm}
+    \caption[]{Gantt Chart depicting timeline, key deliverables and milestones (cont.)}
+    % \label{fig:Gantt}
+\end{figure}
+
+
+
+\end{landscape}
+\restoregeometry
+
+\section{Quality Assurance}
+\label{app_quality}
+To achieve the overarching aim of producing a high efficiency, long range VTOL UAV for the emergency fire services, the quality of the project must be maintained continuously. This is achieved by regularly reviewing each project objective. For each objective, specific methods were devised to assess the outcome quality.\\
+
+Objectives pertaining to the design and manufacturing aspect of the project will undergo several quality reviews before being considered achieved. The first quality review will be conducted by the project team and be an assessment of the design concept to ensure it is a feasible design that meets the application specifications. The Mechanical Engineering Workshop Technicians would then be engaged to verify that the CAD drawings and the components that require manufacturing are appropriate and achievable. Once the build phase is complete, the quality of the manufacturing is to be assessed to ensure the design and tolerances are as specified by the provided drawings. This assessment would be done by the project team and any concerns would be worked through with the workshop technicians. A basic build quality test would also be conducted to assess the build integrity. If any quality aspects of a particular part or process are deemed insufficient, the concerns will be communicated with the relevant party and appropriate steps will be taken to improve either the design or manufacturing process. During the testing phase of the system, integrity tests are to be completed after each trial. This will allow any issues to be more effectively diagnosed as trials will be independent of each other.\\
+
+Regulatory based objectives will be continually monitored to ensure compliance throughout the project. This monitoring will be conducted by the project team, with reference to the relevant standards and regulatory bodies. Before testing, the compliance will be verified by the URAF. After verification, the URAF will be engaged to supervise any flights as required.\\
+
+Each objective will have quality reviews relevant to the specific capability. When assessing flight capabilities, these objectives will be a pass or fail assessment and be evaluated during testing. Outside of the specific objective definition, the quality will be assessed on long term performance, meaning that the system should have the ability to go beyond the objective scope. For example, Objective 3 states that the system should be able to fly at least 500 metres in a forward flight mode. To be deemed a high quality system, it should be able to fly far further than this. During the development of the system, engineering design decisions will be made in order to achieve these capabilities. Simulation techniques including CFD and dimensional analysis will be used by the project team to assess the quality of the design prior to finalisation. This testing of designs in a simulated environment will indicate the probability of achieving flight mode objectives without the need to physically implement them, saving time and resources.\\
+
+The timeline for this project extends to November 2020. However, further development can occur to explore the scope for improvements and different applications after this date. To make this possible, documentation, files, and physical systems will need to be effectively handed over. This documentation will include the following.
+\begin{itemize}
+    \item An overview of the project file structure and contents.
+    \item All reports detailing project motivation and aims.
+    \item Details of the processes used to develop the physical systems to ensure consistency and repeatability.
+    \item Details of any software developed, including system requirements, dependencies, and installation and running instructions.
+    \item Engineering workbooks, indicating the reasoning behind any decisions made.
+\end{itemize}
+A Google Drive folder is used for storing all electronic files related to this project. This folder is shared between the project members to ensure that all members are referencing the most up-to-date material. Although Google Drive has advanced version control functionality, fortnightly backups are being made to mitigate any risk of data loss. Upon handover, this Google Drive folder can be downloaded in its entirety, and can be provided to any group wishing to pursue this project further.\\
+
+Using these measures to ensure the project is of high quality throughout its development and implementation will result in a system that achieves the objectives and delivers on its intended aims.
+\clearpage
+\newpage
+
+\section{Risk Assessment}
+\label{app_riskassessment}
+
+\section{Budget}
+\label{app_budget}
+Table \ref{tab:Budget} details the expected expenditure for this project.
+
+\input{Appendix/BudgetTable}
+\clearpage
+\newpage
 
 \section{Objective Based Performance Criteria}
 \label{app_performance_criteria}
@@ -849,20 +1231,28 @@ Tables \ref{tab:obj_1_criteria} to \ref{tab:obj_6_criteria} detail the performan
 
 \input{Criteria}
 
+\newpage
+
+\section{Project management}
+
+\subsection{Status Update}
+Since the Project Charter, the objectives of the project have not changed. There have however been developments in the overarching intentions of the project.\\
+
+At project inception, the goal was to produce a prototype and final system capable of being delivered to the CFS. Given the challenges posed by COVID-19, the aim has been updated to include building a prototype and a shell of the final design. With the constrained timeframe required by the Mechanical Engineering Workshop, the prototype is to be manufactured based on the analysis performed up to the point when detailed designs are required by the workshop.
 
 
-\section{Project management (incl. stakeholders, status update)}
-\subsection{Stakeholders}
 
-\section{Budget}
-\input{Appendix/BudgetTable}
-\clearpage
+\input{Appendix/Stakeholders/Stakeholders}
 
-\section{WBS and Gantt Chart}
 
-\section{Risk Assessment}
+
+\newpage
 
 \section{CAD Drawings}
+\label{app_CAD}
+
+This section contains CAD drawings of the preliminary scaled tilt-wing mechanism. Figure \ref{fig:explode} depicts an exploded assembly (with a parts list) of the mechanism while Figure \ref{fig:assembly} shows its complete assembly. These drawings were used in conjunction with a 3D printed demonstration model to assist communications with the workshop. 
+
 \begin{figure}[H]
     \centering
     \includegraphics[width = \textwidth]{Tiltwing/Tilt Assembly Exploded View.pdf}
@@ -886,12 +1276,15 @@ Tables \ref{tab:obj_1_criteria} to \ref{tab:obj_6_criteria} detail the performan
 
 \label{StatDATA}
 
+Tables \ref{tab:my1} and \ref{tab:my2} detail the statistical analysis of batteries and motors in Section 5.1
+
+%\note{Tom}{This needs an intro and the tables need captions for this section to be meaningful}
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
 
 \begin{table}[H]
 \centering
-\caption{}
-\label{tab:my-table}
+\caption{Li-pi Battery Analysis}
+\label{tab:my1}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
 \hline
@@ -936,8 +1329,8 @@ Turnigy & Lipo & 12 & 6 & 22.2 & 16000 & 2015 & 2.015 & 3.7 \\ \hline
 
 \begin{table}[H]
 \centering
-\caption{}
-\label{tab:my-table}
+\caption{Electric DC Brushless Motor Analysis}
+\label{tab:my2}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{|l|c|c|}
 \hline
@@ -975,9 +1368,18 @@ Hobbywing XRotor Race Pro 2306-2700KV Brushless Motor & 651.7 & 27.5 \\ \hline
 
 \newpage
 
+% \section{Budget}
+% \label{Budget}
+% \input{Appendix/BudgetTable}
+
+\newpage
+
 
 \section{Preliminary Sizing Code}
 \label{appendixcalcs}
+
+Listings \ref{code} shows the code used to conduct the preliminary sizing analysis detailed in Section \ref{sec:prelim_sizing}.
+
 \lstinputlisting[language=Matlab,
 caption=Preliminary Sizing Code for variable estimation,
 label=code
@@ -987,14 +1389,135 @@ label=code
 
 \section{Code for Landing Pad Detection}
 
-The following listing shows the Python code written to detect the landing pad as described in Section \ref{sec:autonomous}.
+Listing \ref{code:landing_detection} shows the Python code written to detect the landing pad as described in Section \ref{sec:autonomous}.
 
 \lstinputlisting[language=Python,
 caption=Python OpenCV code for landing pad detection,
-label=code
+label=code:landing_detection
 ]{AutonomousSystems/detect_colour.py}
 
-\section{(Safety) risk assessments and SOPs}
+\section{SOPs and Risk Assessment}
+
+\includegraphics[page = 1,width=1\textwidth]{Figures/SOP.pdf}
+
+\includegraphics[page = 2,width=1\textwidth]{Figures/SOP.pdf}
+
+\includegraphics[page = 3,width=1\textwidth]{Figures/SOP.pdf}
+
+\includegraphics[page = 4,width=1\textwidth]{Figures/SOP.pdf}
+
+\clearpage
+
+The following section details the potential factors that could jeopardise the chance of success in this project. A project risk assessment was completed using the risk categorisation matrix shown in Table \ref{riskmatrix}. This table depicts given risk levels for corresponding likelihood and consequence ratings. Table \ref{tab:MatrixCategories} depicts the likelihood, impact and risk categories for each classification along with associated descriptions. Table \ref{riskmanagement} specifies the risks that this project faces and identifies appropriate mitigation strategies.
+
+% \note{Tom}{Rhys, Jake, Peter}
+
+\begin{table}[H]
+\small
+\caption{Risk Categorisation Matrix}
+\label{riskmatrix}
+\centering
+\resizebox{1\textwidth}{!}{
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\rowcolor[HTML]{FFFFFF} 
+\multicolumn{6}{|c|}{\cellcolor[HTML]{FFFFFF}Risk Matrix}\\ \hline\hline
+\rowcolor[HTML]{FFFFFF}
+Likelihood $\backslash$ Consequence
+    & Negligible                  & Minor                          & Modest                         & Major                          & Catastrophic                   \\ \hline
+\cellcolor[HTML]{FFFFFF}Probable        & \cellcolor[HTML]{D4FFD3}Low & \cellcolor[HTML]{FFFFC7}Medium & \cellcolor[HTML]{FFFFC7}Medium & \cellcolor[HTML]{FFCCC9}High   & \cellcolor[HTML]{FFCCC9}High   \\ \hline
+\cellcolor[HTML]{FFFFFF}Highly Likely   & \cellcolor[HTML]{D4FFD3}Low & \cellcolor[HTML]{FFFFC7}Medium & \cellcolor[HTML]{FFFFC7}Medium & \cellcolor[HTML]{FFCCC9}High   & \cellcolor[HTML]{FFCCC9}High   \\ \hline
+\rowcolor[HTML]{FFFFC7} 
+\cellcolor[HTML]{FFFFFF}Likely          & \cellcolor[HTML]{D4FFD3}Low & \cellcolor[HTML]{D4FFD3}Low    & Medium                         & Medium                         & Medium                         \\ \hline
+\rowcolor[HTML]{D4FFD3} 
+\cellcolor[HTML]{FFFFFF}Improbable      & Low                         & Low                            & Low                            & \cellcolor[HTML]{FFFFC7}Medium & \cellcolor[HTML]{FFFFC7}Medium \\ \hline
+\rowcolor[HTML]{D4FFD3} 
+\cellcolor[HTML]{FFFFFF}Rare            & Low                         & Low                            & Low                            & Low                            & Low                            \\ \hline
+\end{tabular}
+}
+\end{table}
+
+\begin{table}[H]
+    
+    \caption{Risk Matrix Categories}
+    \label{tab:MatrixCategories}
+    \resizebox{1\textwidth}{!}{
+    \centering
+    \begin{tabular}{|p{4cm}|p{12cm}|}
+        \hline
+        Likelihood Categories & \\\hline
+        Probable & Expect to occur during the project period, potentially more than once / frequently.\\
+        Highly likely & Expect to occur during the project period.\\
+        Likely & May occur during the project period.\\
+        Improbably & Might occur during the project period, but is not expected to.\\
+        Rare & Unlikely to occur during the project period.\\ \hline\hline
+    
+        Impact/Consequence Categories & \\ \hline
+        Negligible & Not going to affect project outcomes.\\
+        Minor & Inconvenience project outcomes.\\
+        Modest & May slow or alter project outcomes.\\
+        Major & Will impact project outcomes and require change in direction.\\
+        Catastrophic & No chance of project success.\\ \hline
+        \hline
+    
+        Risk Categories & \\\hline
+        \cellcolor[HTML]{D4FFD3}Low & Minimal impact on overall project. \\
+        \cellcolor[HTML]{D4FFD3}  &  \\
+        \cellcolor[HTML]{FFFFC7}Medium & Some impact on project, and productivity with some changes to project direction and success.\\
+        \cellcolor[HTML]{FFCCC9}High & Significant impact on project, potentially changing the project direction or stopping success.\\
+        \hline
+    \end{tabular}
+    }
+\end{table}
+
+\clearpage
+
+\begin{landscape}
+
+\begin{table}[H]
+  \centering
+  \caption{Project Risk Management Plan}
+  \label{riskmanagement}
+  \resizebox{1.5\textwidth}{!}{
+    \begin{tabular}{|c|p{4cm}|p{11cm}|c|c|c|p{11cm}|c|c|c|p{4cm}}
+    \hline
+    \#    & \multicolumn{1}{c|}{Risk Event} & \multicolumn{1}{c|}{Description} & Likelihood & Consequence & Risk  & \multicolumn{1}{c|}{Mitigation} & Likelihood & Consequence & Risk & \multicolumn{1}{c|}{Linked Objective} \\
+    \hline
+    1     & Unmanned Research Aircraft Facility (URAF) unable to provide support & URAF are not able to provide support, critical to achieving flight related objectives; such as flight permission and/or access to a pilot to test our system prototype. & Improbable  & Modest & Low   & Find and test the system external to the University. This can be done via sourcing an independent pilot. & Rare  & Minor & Low & OBJ 03, 04, 07, 08, 09, 10 \\
+    \hline
+    2     & Unable to procure clearance for autonomous testing & URAF and/or the University does not grant permission to test autonomous flight features of the system. & Likely & Major & Medium & Test unmanned flight segments within indoor enclosure with adequate room. By flying indoors we remove the need to meet CASA UAV regulations. & Rare  & Minor & Low & OBJ 08, 09\\
+    \hline
+    3     & Workshop unable to manufacture within specified tolerances & University Workshop are unable to manufacture key components to specific tolerances, such as tolerances required for aerodynamics. Due to time constraints, the workshop cannot manufacture components within the required time frame & Likely & Modest & Medium & Manufacture critical parts external to the workshop. Ensure design still operates within tolerances the university can provide. & Improbable & Modest & Low & OBJ 01\\
+    \hline
+    4     & System does not provide a meaningful service to emergency fire services & The system can not be used by emergency fire services due to its design and/or operation. Assuming the system can be operated by/for emergency fire services, it doesn't provide meaningful information or cannot provide any beneficial service. & Improbable & Modest & Low   & Ensure constant communication with emergency fire services such that system can be used in various applications. & Improbable & Minor & Low & OBJ 01, 02\\
+    \hline
+    5     & Significant Civil Aviation Safety Authority (CASA) drone regulations change & CASA regulations change which significantly impact testing the system, such as a change in small Remote Pilots License (RPL) preventing testing within 2.01-25 kilograms. & Rare  & Major & Low   & Ensure that regulations are checked on a regular basis. & Rare & Minor & Low & OBJ 02\\
+    \hline
+    6     & Catastrophic failure of system during testing & System undergoes a catastrophic failure during testing, leading to significant damage halting project progress. & Likely & Catastrophic & Medium & Manufacture auxiliary, time sensitive components for the replacement of potentially damaged parts & Likely & Minor & Low & OBJ 03, 04, 05, 07, 08\\
+    \hline
+    7     & Delay of components and manufacturing & Components and manufacturing is delayed as the result of various issues, such as; shipping delays, incorrect component, poor manufacturing.  & Highly likely & Major & High  & Ensure that components and parts are ordered in advance of when they are required. Create a detailed bill of materials. & Highly Likely & Minor & Medium & OBJ 01\\
+    \hline
+    8     & Unable to access essential resources & Unable to use and access resources essential to achieving key objectives, such as technical support when facing design issues or workshop staff.  & Improbable  & Modest & Low   & If unable to access resources, find external methods if needed. Manufacture parts and components ourselves. Alter design to mitigate the need of the unobtainable materials. & Improbable & Minor & Low & OBJ 01, 03, 04, 06\\
+    \hline
+    9     & COVID-19 limits access to University staff and services & The Government and/or University restricts student's access to staff and services by transitioning to 'online-structured' courses due to an increase in COVID-19 cases in SA. Other Universities in SA have made such transitions.  & Probable & Major & High  & If outbreak occurs, move all meetings and other administration to video calls. This allows for all aspects of project to continue with the exception of manufacture, assembly and testing.  & Probable  & Modest & Medium & OBJ 01, 02, 03, 04, 05, 06, 07, 08, 09, 10\\
+    \hline
+    10    & Design Weight doesn't fit within specified weight category  & Due to overlooked design considerations or unforeseen discrepancies in component weights, the overall weight of the system does not lie within the 'small' weight category of 2.01-25 kilograms.  & Highly likely & Major & High  & Weight tolerances can be included in design to allow for variability in component and airframe weights, thus reducing the risk of an unexpected system weight. An underweight system, is unlikely to have repercussions but can be shifted into the appropriate weight band by utilising ballast if required.  & Improbable & Modest & Low & OBJ 02\\
+    \hline
+    11    & Design cannot carry adequate payload & The final design cannot take-off or operate as expected with the intended payloads.  & Highly likely & Catastrophic & High  & Detailed research along with communication with emergency fire services to ensure all potential payloads are accounted for in the airframe design. & Improbable & Modest & Low & OBJ 01, 02, 06\\
+    \hline
+    12    & Scope Creep & The scope of the project extends beyond the original. Unmonitored scope creep can result in a project with unrealistic expectations and deviating/unrealistic timeframes. & Highly likely & Modest & High  & Ensure the S.M.A.R.T process is followed to ensure the objectives are detailed at the start of the project. Extension goals should also use this framework. If the scope is  & Improbable & Minor & Low & OBJ 01\\
+    \hline
+    13    & Sponsorship agreement not met & Sponsor does not adhere to sponsorship agreement and retracts or significantly decreases funding. & Improbable  & Catastrophic & Medium & Ensure student project agreement is signed as quickly as possible. Receive funding. & Improbable & Minor & Low & OBJ 01, 02, 03, 04, 05, 06, 07, 08, 09, 10\\
+    \hline
+    14    & False expectations from supervisor and sponsor & Supervisor and sponsor having false expectations of the project, such as misinterpreting the project aims and objectives.  & Improbable  & Catastrophic & Medium & Ensure both sponsor and supervisor are constantly updated throughout the project. Each party should be send copies of charter, preliminary report, final report, etc. & Improbable & Modest & Low & OBJ 01, 02, 03, 04, 05, 06, 07, 08, 09, 10 \\
+    \hline
+    15 &Failure to produce a system which is innovative & Due to workshop constraints and lack of time to develop meaningful theoretical analysis, manufactured system does not innovate in design or capabilities  & High & High & High & The project will be split into two major deliverables: (1) A manufactured working prototype which is not optimised but shows the practical capabilities of the system (2) A theoretically optimised system which through analysis, shows performance capabilities which are innovative. & Improbable & Modest &Medium & OBJ 01, 02, 03, 04, 05, 06, 07, 08, 09\\
+    \hline
+    \end{tabular}%
+    }
+%   \label{tab:risk}%
+\end{table}%
+\end{landscape}
 
 \end{appendices}
 

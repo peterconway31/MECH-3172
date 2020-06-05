@@ -1,0 +1,28 @@
+\begin{tikzpicture}[scale=0.28]
+\tikzstyle{vertex}=[fill,thick,circle,minimum size=5pt,inner sep=0pt]
+
+%axis
+\draw[thick,->,color=blue] (-1,-1.75) -- (43,-1.75) node[below]{$Mission\ Range\ (km)$};
+\draw[line width=1pt,densely dotted,<->,color=blue] (0,0.2) -- (0,12) node[above]{$Height\ (m)$};
+
+\draw[loosely dotted] (0,9) -- (40,9)node[above]{Cruise Altitude};
+
+\draw[thin,-] (0,0) to (5,9);
+\draw[thin,-,decorate,decoration={snake,amplitude=.6mm,segment length=2mm,pre length=1.5mm,post length=1mm}] (5,9) to (20,9);
+\draw[thin,-] (20,9) to (25,0);
+
+\fill (0,0) circle (5pt);
+\node[below] at (0,0) {$1$};
+
+\fill (5,9) circle (5pt);
+\node[below] at (5,9) {$2$};
+
+
+\fill (20,9) circle (5pt);
+\node[below] at (20,9) {$3$};
+
+\fill (25,0) circle (5pt);
+\node[below] at (25,0) {$4$};
+
+
+\end{tikzpicture}

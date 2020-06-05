@@ -1,0 +1,109 @@
+\usetikzlibrary{calc,positioning}
+\resizebox{0.95\textwidth}{!}{
+\tikzstyle{violet rectangle}=[rectangle,fill=purple!20,draw=violet,rounded corners,inner sep=15pt, ultra thick,minimum width=3cm, minimum height = 1.5cm]
+\tikzstyle{grey rectangle}=[rectangle,fill=black!20,ultra thick,draw=black,rounded corners,minimum width=5cm, minimum height = 3cm]
+\tikzstyle{orange line}=[line width=1.6pt]
+
+
+
+
+\begin{tikzpicture}[remember picture,
+  %simulator engine/.style={fill=black!10,rounded corners,inner sep=20pt},
+ % topology/.style={rounded corners,draw=violet!50,fill=violet!20,thick},
+  neuron/.style={fill=violet!10,draw=violet,rounded corners,inner sep=15pt, ultra thick},
+  synapse/.style={draw=violet,fill=purple!20,rounded corners,inner sep=5pt},
+  %empty synapse/.style={draw=violet!10,rounded corners,inner sep=5pt}
+  ]
+\node[violet rectangle] (1) at (10,10) {\textbf{Government}};
+\node[violet rectangle] (2) at (10,20) {\textbf{Emergency Fire Service}};
+\node[violet rectangle] (3) at (10,0) {\textbf{CASA}};
+
+%\node[grey rectangle] (4) at (0,0) {Supply Chain}; 
+%\node[grey rectangle] (5) at (0,10) {Honours Team}; 
+%\node[grey rectangle] (6) at (0,20) {Operators};
+%\node[grey rectangle] (7) at (20,0) {External};
+%\node[grey rectangle] (8) at (20,10) {Internal};
+%\node[grey rectangle] (9) at (20,20) {Observers};
+
+\node at(10,10) {
+    \begin{tikzpicture}
+      \node[topology] (topology1) {
+        \begin{tikzpicture}
+         \node[neuron] (4) at (0,0) (4)  {
+              \begin{tikzpicture}
+                  \node [synapse,draw=violet] (synapse1-1-0) {$\text{External Manufacturing}$};
+                  \node [synapse,draw=violet,below=0.1cm of synapse1-1-0] (synapse1-1-1) {$\text{External Part Suppliers}$};
+                  %\node [synapse,draw=violet,below=0.1cm of synapse1-1-1] (synapse1-1-2) {$\text{Honours Supervisor}$};
+              \end{tikzpicture}
+          };
+          \node[neuron] (5) at (0,10) (5)  {
+              \begin{tikzpicture}
+                  \node [synapse,draw=violet] (synapse1-1-0) {$\text{Internal Manufacturing}$};
+                  \node [synapse,draw=violet,below=0.1cm of synapse1-1-0] (synapse1-1-1) {$\text{Designers and Engineers}$};
+                  \node [synapse,draw=violet,below=0.1cm of synapse1-1-1] (synapse1-1-2) {$\text{Honours Supervisor}$};
+              \end{tikzpicture}
+          };
+          
+        \node[neuron] (6) at (0,20)  (6) {
+              \begin{tikzpicture}
+                  \node [synapse,draw=violet] (synapse1-2-0) {$\text{CFS Personnel}$};
+                  \node [synapse,draw=violet,below=0.1cm of synapse1-2-0] (synapse1-2-1) {$\text{Maintenance Crews}$};
+                  %\node [synapse,draw=violet,below=0.1cm of synapse1-2-1] (synapse1-2-2) {$\text{Synapse}_{2}$};
+                  %\node [synapse,draw=violet,below=0.1cm of synapse1-2-2] (synapse1-2-3) {$\text{Synapse}_{3}$};
+              \end{tikzpicture}
+          };
+          \node (7) at (20,0) [neuron] (7) {
+              \begin{tikzpicture}
+                  \node [synapse,draw=violet] (synapse1-3-0) {$\text{Lockheed Martin STELarLAB}$};
+                  \node [synapse,draw=violet,below=0.1cm of synapse1-3-0] (synapse1-3-1) {$\text{Engineering Body of Knowledge}$};
+                  %\node [synapse,draw=violet,below=0.1cm of synapse1-3-1] (synapse1-3-2) {$\text{Synapse}_{2}$};
+                  %\node [synapse,draw=violet,below=0.1cm of synapse1-3-2] (synapse1-3-3) {$\text{Synapse}_{3}$};
+              \end{tikzpicture}
+          };
+          \node (8) at (20,10) [neuron] (8) {
+              \begin{tikzpicture}
+                  \node [synapse,draw=violet] (synapse1-3-0) {$\text{The University of Adelaide}$};
+                  \node [synapse,draw=violet,below=0.1cm of synapse1-3-0] (synapse1-3-1) {$\text{UofA Workshop Staff}$};
+                  \node [synapse,draw=violet,below=0.1cm of synapse1-3-1] (synapse1-3-2) {$\text{URAF}$};
+                  %\node [synapse,draw=violet,below=0.1cm of synapse1-3-2] (synapse1-3-3) {$\text{Synapse}_{3}$};
+              \end{tikzpicture}
+          };
+          \node (9) at (20,20) [neuron] (9) {
+              \begin{tikzpicture}
+                  \node [synapse,draw=violet] (synapse1-3-0) {$\text{Communities at Risk}$};
+                  \node [synapse,draw=violet,below=0.1cm of synapse1-3-0] (synapse1-3-1) {$\text{Wildlife}$};
+                  %\node [synapse,draw=violet,below=0.1cm of synapse1-3-1] (synapse1-3-2) {$\text{Synapse}_{2}$};
+                  %\node [synapse,draw=violet,below=0.1cm of synapse1-3-2] (synapse1-3-3) {$\text{Synapse}_{3}$};
+              \end{tikzpicture}
+          };
+
+          \node [black,below] at (4.north)  {$\text{\textbf{Supply Chain}}$};
+          \node [black,below] at (5.north)  {$\text{\textbf{Honours Team}}$};
+          \node [black,below] at (6.north)  {$\text{\textbf{Operators}}$};
+          \node [black,below] at (7.north)  {$\text{\textbf{External}}$};
+          \node [black,below] at (8.north)  {$\text{\textbf{Internal}}$};
+          \node [black,below] at (9.north)  {$\text{\textbf{Observers}}$};
+        \end{tikzpicture}
+      };
+
+    \end{tikzpicture}
+    };
+ 
+
+\draw[<->,orange line] ($ (2) + (3,0) $) .. controls +(right:3cm) and +(left:3cm).. node[above,sloped] {\Large{a}} ($ (9) + (-3,0) $);
+\draw[<->,orange line] ($ (2) + (-3,0) $) .. controls +(left:3cm) and +(right:3cm).. node[above,sloped] {\Large{b}} ($ (6) + (2.15,0) $);
+\draw[->,orange line] ($ (9) + (-3,-1.) $) .. controls +(left:3cm) and +(right:3cm).. node[below right,sloped] {\Large{c}} ($(3)+(1.5,0.5)$);
+\draw[->,orange line] ($(5)+(0,1.8)$) .. controls +(up:3cm) and +(down:3cm).. node[above,sloped] {\Large{d}} ($ (2) + (-1,-0.75) $);
+\draw[<->,orange line] (1) .. controls +(up:1cm) and +(down:1cm).. node[above right,sloped] {\Large{e}} (2);
+\draw[->,orange line] (1) .. controls +(down:1cm) and +(up:1cm).. node[above,sloped] {\Large{f}} (3);
+\draw[->,orange line] ($(1)+(1.8,0)$) .. controls +(right:1cm) and +(left:2cm).. node[below,sloped] {\Large{g}} ($(8)+(-3.5,-0.5)$);
+\draw[->,orange line] (3) .. controls +(left:4cm) and +(down:3cm).. node[above,sloped] {\Large{h}} (5);
+\draw[->,orange line] (1) .. controls +(left:4cm) and +(right:5cm).. node[above left,sloped] {\Large{i}} ($(4)+(2.6,0)$);
+\draw[->,orange line] (3) .. controls +(right:3) and +(down:3cm).. node[above right ,sloped] {\Large{j}} (8);
+\draw[<->,orange line] ($ (5) + (1,1.8) $) .. controls +(up:4cm) and +(up:4cm).. node[below right,sloped] {\Large{k}} ($ (8) + (-1,1.8) $);
+\draw[<->,orange line] ($ (5) + (-1,1.8) $) .. controls +(up:3cm) and +(down:3cm).. node[above ,sloped] {\Large{l}} (6);
+\draw[<->,orange line] ($ (5) + (-1,-1.75) $) .. controls +(down:3cm) and +(up:3cm).. node[above,sloped] {\Large{m}} ($(4)+(0,1.4)$);
+\draw[<->,orange line] (7) .. controls +(up:3cm) and +(down:3cm).. node[above right,sloped] {\Large{n}} ($ (5) + (1,-1.75) $);
+
+\end{tikzpicture}
+}

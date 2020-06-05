@@ -1,0 +1,59 @@
+\begin{tikzpicture}[scale=0.28]
+\tikzstyle{vertex}=[fill,thick,circle,minimum size=5pt,inner sep=0pt]
+
+%axis
+\draw[thick,->,color=blue] (-1,-1.75) -- (43,-1.75) node[below]{$Mission\ Range\ (km)$};
+\draw[line width=1pt,densely dotted,<->,color=blue] (0,0.2) -- (0,12) node[above]{$Height\ (m)$};
+
+\draw[loosely dotted] (0,9) -- (40,9)node[above]{Cruise Altitude};
+
+\draw[thin,-] (0,0) to (2,3);
+\draw[thin,-] (2,3)  to (10,9);
+\draw[thin,-] (10,9) to (13,9);
+\draw[thin,-,decorate,decoration={snake,amplitude=.6mm,segment length=2mm,pre length=1.5mm,post length=1mm}] (13,9) to (18,9);
+\draw[thin,-] (18,9) to (20,3);
+\draw[thin,-,decorate,decoration={snake,amplitude=.6mm,segment length=2mm,pre length=1.5mm,post length=1mm}] (20,3) to (26,3);
+\draw[thin,-] (26,3) to (29,9);
+\draw[thin,-] (29,9) to (34,9);
+\draw[thin,-] (34,9) to (36,4);
+\draw[thin,-,decorate,decoration={snake,amplitude=.6mm,segment length=2mm,pre length=1.5mm,post length=1mm}] (36,4) to (40,4);
+\draw[thin,-] (40,4) to (42,0);
+
+\fill (0,0) circle (5pt);
+\node[below] at (0,0) {$1$};
+
+\fill (2,3) circle (5pt);
+\node[below] at (2,3) {$2$};
+
+
+\fill (10,9) circle (5pt);
+\node[below] at (10,9) {$3$};
+
+\fill (13,9) circle (5pt);
+\node[below] at (13,9) {$4$};
+
+\fill (18,9) circle (5pt);
+\node[below] at (18,9) {$5$};
+
+\fill (20,3) circle (5pt);
+\node[below] at (20,3) {$6$};
+
+\fill (26,3) circle (5pt);
+\node[below] at (26,3) {$7$};
+
+\fill (29,9) circle (5pt);
+\node[below] at (29,9) {$8$};
+
+\fill (34,9) circle (5pt);
+\node[below] at (34,9) {$9$};
+
+\fill (36,4) circle (5pt);
+\node[below] at (36,4) {$10$};
+
+\fill (40,4) circle (5pt);
+\node[below] at (40,4) {$11$};
+
+\fill (42,0) circle (5pt);
+\node[below] at (42,0) {$12$};
+
+\end{tikzpicture}

@@ -65,13 +65,17 @@ An initial exploration into colour and contour detection was conducted. Using bu
 \label{fig:landing_detection}
 \end{figure}
 
-This was achieved by specifying a colour range that the landing pad fell between, and given the colour was sufficiently distinct from the rest of the space, the system was able to differentiate it from its surroundings. From the mask created by the colour filter, a contour outlining the landing pad was drawn using the \texttt{cv2.findContours()} function. This returned the coordinates of the boundary, which was then coloured green. The code used to implement this is showing in Listing \ref{code}.
+This was achieved by specifying a colour range that the landing pad fell between, and given the colour was sufficiently distinct from the rest of the space, the system was able to differentiate it from its surroundings. From the mask created by this colour filter, a contour outlining the landing pad was drawn using the \texttt{cv2.findContours()} function. This returned the coordinates of the boundary, which was then coloured green. The code used to implement this is shown in Listing \ref{code}.
 
 \subsubsection{Discussion}
-This system worked well in the controlled environment of the laboratory, where it was possible to assume constant lighting colour palette. However, in scenarios more realistic to the application, this method alone is unlikely to be suitable due to variable environmental conditions. The landing pad needs to be more sophisticated in order to differentiate it based on more than just colour as it is unlikely that a single colour will be reliably distinct from its surroundings in all settings.
+This system worked well in the controlled environment of the laboratory, where it was possible to assume constant lighting and colour palette. However, in scenarios more realistic to the application, this method alone is unlikely to be suitable due to variable environmental conditions.\\
+
+To combat this, the landing pad should be more sophisticated. This allows it to be detected by more than its colour, which is important as it is unlikely that a single colour will be reliably distinct from its surroundings in all settings.
 
 
 % \subsubsection{Conclusions}
 \subsubsection{Future Work}
 
-Further literature will be reviewed to assess which algorithms are most appropriate for the application, and after testing, the processes will be integrated to form a complete subsystem enabling autonomous landing site detection and descending onboard the UAV. This will be complete and ready to test on the manufactured prototype.
+Further literature will be reviewed to assess which algorithms are most appropriate for the application, and after testing, the processes will be integrated to form a complete subsystem enabling autonomous landing site detection and descending onboard the UAV. This will be complete and ready to test on the manufactured prototype.\\
+
+To extend the functionality of the system, it may be possible to look at applications of machine learning to more than landing site detection. With further information on the application desired by the CFS, the team could look at how onboard camera and computing systems could be used streamline other aspects of their operations.

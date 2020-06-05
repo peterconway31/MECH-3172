@@ -20,17 +20,21 @@ The Naze 32 is smaller flight controller which is highly popular in the FPV mult
 \\
 \textbf{Matek Systems F405-STD:}\\
 The Matek Systems F405-STD is a highly commended flight controller given its abilities to support five UART ports and up to six PWM/Dshot outputs (REF HERE). This support makes this board ideal for GPS assisted position control while still having capabilities to support other external devices. \\
-\\
+
 \textbf{Pixhawk Cube:}\\
 The Pixhawk Cube is aimed at commercial systems where autopilot is a key requirement. This flight controller features three sets of IMU for triple redundancy, fourteen PWM outputs and five UART ports (REF HERE).\\
-\\
+
 \textbf{Navio2:}\\
 The Navio2 is vastly different from the common flight controller given its is paired with a Raspberry Pi 3 to function yielding the benefit of advanced computing power using 4 CPU cores. Furthermore, this controller promotes high end innovation such as computer vision based flight since the system is Linux based (REF HERE).\\
-\clearpage
+
+
 \subsubsection{Results}
+
+Table \ref{tab:controller} identifies the key attributes associated with the aforementioned popular COTS flight controllers.
+
 \begin{table}[H]
 \caption{Flight Controller Selection Matrix}
-\label{controller}
+\label{tab:controller}
 \resizebox{\textwidth}{!}{
 \begin{tabular}{|l|r|r|r|r|}
 \hline
@@ -41,14 +45,16 @@ The Navio2 is vastly different from the common flight controller given its is pa
 \textbf{No. UART Ports}         & 2          & 5                       & 5                       & 40                      \\ \hline
 \textbf{No. PWM/Dshot Ports}    & 6 PWM      & 6 PWM/Dshot             & 14 PWM                  & 13 PWM                  \\ \hline
 \textbf{Link to Objective}      & O3, O4     & O3, O4, O6, O7, O10     & O3, O4, O6, O7, O9, O10 & O3, O4, O6, O7, O9, O10 \\ \hline
-\textbf{Score /10}              & 4          & 7                       & 8                       & 9                       \\ \hline
 \textbf{Rank}                   & 4          & 3                       & 2                       & 1                       \\ \hline
 \end{tabular}}
 \end{table}
 \subsubsection{Discussion}
-\subsubsection{Conclusions}
-As displayed in Table \ref{tab:controller}, the optimal controller for the intended prototype is the Navio2. When considering the attributes listed in Table \ref{tab:controller}, this controller is dominant and is highly applicable to this project given that the Linux environment allows for a high level of innovation in control system design and data analyses.\\
+The ranking of FCs in Table~\ref{tab:controller} were determined through there suitability to the project objectives. The Naze32 FC ranked lowest given it is a heavily outdated ESC with low computational ability, thus it not suitable for high end autonomy. The Matek Systems F405-STD was more favourable given it is a later model flight controller with a higher computational speed. It was also desirable given this FCs compatibility with firmware which supports autonomous flight capabilities. Ultimately, this system provides high capabilities for a low initial costs.\\
 \\
+Both the Pixhawk Cube and Navio2 were closely comparable in regard to performance characteristics, however, the custom capabilities of the NAVIO32 for high end operations made this FC advantageous four this project.
+\subsubsection{Summary}
+As displayed in Table \ref{tab:controller}, the optimal controller for the intended prototype is the Navio2. When considering the attributes listed in Table \ref{tab:controller}, this controller is dominant and is highly applicable to this project given that the Linux environment allows for a high level of innovation in control system design and data analyses.\\
+
 While this board is optimal, initial control system testing will use the Matek System F405-STD. This is a low-cost and effective flight control system which will allow for system integration testing of the proposed concepts before purchasing the intended flight controller. This action intends to eliminate the possibility that any control system complexities are overseen which may affect the validity of the flight controller analysis conducted above. 
 
 \subsubsection{Future Work}

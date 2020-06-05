@@ -1,0 +1,61 @@
+\begin{figure}
+\centering
+\begin{minipage}{.6\textwidth}
+  \centering
+\begin{tikzpicture}
+\draw [->,very thick] (0,0) --(0,10.25);
+\draw [->,very thick] (0,0) --(10.25,0);
+\draw (0,5) --(10,5);
+\draw (5,0) --(5,10);
+
+\node[circle,fill=blue!20] (CASA) at (4,9) {\tiny{01}};
+\node[circle,fill=red!20] (Government) at (2,8) {\tiny{02}};
+\node[circle,fill=green!20] (UofA) at (7,7) {\tiny{03}};
+\node[circle,fill=yellow!20] (Emergency Fire Services) at (6,8.5) {\tiny{04}};
+\node[circle,fill=purple!20] (Communities at Risk) at (5.5,2) {\tiny{05}};
+\node[circle,fill=pink!20] (Wildlife) at (4.5,0.45) {\tiny{06}};
+\node[circle,fill=teal!20] (Suppliers) at (3,1) {\tiny{07}};
+\node[circle,fill=cyan!20] (External Manufacturers) at (8,1) {\tiny{08}};
+\node[circle,fill=orange!20] (Maintenance Crews) at (7,2) {\tiny{09}};
+\node[circle,fill=black!20] (Honours Supervisor) at (8,8) {\tiny{10}};
+\node[circle,fill=magenta!20] (Honours Team Members) at (9.5,8.5) {\tiny{11}};
+\node[circle,fill=violet!20] (Lockheed Martin STELarLAB) at (7.5,10) {\tiny{12}};
+\node[circle,fill=olive!20] (UoA Workshop) at (5,4) {\tiny{13}};
+\node[circle,fill=lime!20] (URAF) at (4,6) {\tiny{14}};
+
+\node (a) at (2.5,2.5) {Monitor};
+\node (b) at (2.5,7.5) {Keep Informed};
+\node (c) at (7.5,2.5) {Keep Satisfied};
+\node (d) at (7.5,7.5) {Manage Closely};
+
+\node (e) at (5,- 0.5) {\textbf{\large{Interest}}};
+\node[rotate=90] (f) at (-.5,5) {\textbf{\large{Influence}}};
+%\node[rotate=90] at (0,5) {Influence}
+\end{tikzpicture}   
+
+\end{minipage}%
+\begin{minipage}{.4\textwidth}
+ \begin{flushright}
+\resizebox{3.5cm}{!}{
+\begin{tikzpicture}
+\matrix [draw,below right] at (11,10) {
+  \node [circle,fill=blue!20,label=right:CASA] {01}; \\
+  \node [circle,fill=red!20,label=right:Government] {02}; \\
+  \node [circle,fill=green!20,label=right:University of Adelaide] {03}; \\
+  \node [circle,fill=yellow!20,label=right:Emergency Fire Services] {04}; \\
+  \node [circle,fill=purple!20,label=right:Communities at Risk] {05}; \\
+  \node [circle,fill=pink!20,label=right:Wildlife] {06}; \\
+  \node [circle,fill=teal!20,label=right:Suppliers] {07}; \\
+  \node [circle,fill=cyan!20,label=right:External Manufacturers] {08}; \\
+  \node [circle,fill=orange!20,label=right:Maintenance Crews] {09}; \\
+  \node [circle,fill=black!20,label=right:Honours Supervisor] {10}; \\
+  \node [circle,fill=magenta!20,label=right:Honours Team Members] {11}; \\
+  \node [circle,fill=violet!20,label=right:\parbox{4cm}{Lockheed Martin STELarLAB}] {12}; \\
+  \node [circle,fill=olive!20,label=right:UofA Workshop] {13}; \\
+  \node [circle,fill=lime!20,label=right:URAF] {14}; \\
+};
+\end{tikzpicture}   
+}
+\end{flushright}
+\end{minipage}
+\end{figure}

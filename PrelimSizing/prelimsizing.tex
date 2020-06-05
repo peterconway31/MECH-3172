@@ -1,6 +1,7 @@
 \section{Subsystem Design}
 
 \subsection{Preliminary Sizing}
+\label{sec:prelim_sizing}
 This chapter encompasses the preliminary sizing for the aircraft. Through this process, aircraft specific values will be found, which are crucial for future engineering design decisions. For the aircraft to meet the desired aims and objectives of this project, it must be specially designed to optimise for various efficiencies along with meeting mission and performance requirements. A custom design must therefore be utilised, embodying cutting edge technologies and manufacturing methods. It also must operate purely using stored electric power, this decision was made by the authors to ensure longevity of the product moving into the future. 
 
 \subsubsection{Theory}
@@ -17,7 +18,8 @@ Before the preliminary aircraft sizing can begin, statistical analysis of curren
 
 \begin{figure}[H]
     \centering
-    \subimport{../}{PrelimSizing/method.tex}
+    %\subimport{../}{PrelimSizing/method.tex}
+    \includegraphics[width = 1\textwidth]{PrelimSizing/method.png}
     \caption{Preliminary Aircraft Sizing Process}
     \label{fig:meth}
 \end{figure}
@@ -57,7 +59,7 @@ These values have a high degree of correlation allowing for a rough trend-line t
 \end{equation}
 
 
-For battery analysis, specific energy $e_{batt}$ forms the largest constraint to aircraft design. For the aircraft to complete a given mission, a fixed energy value is expended. Therefore, a battery with a greater specific energy will reduce overall weight of the drone, which in turn will reduce energy expended, increasing overall system efficiency. Another limitation of the battery is the tendency for loss of capacity over the intended life cycle. A method for prolonging battery life is to decrease the depth of discharge, however this effectively reduces the overall specific energy of the battery, therefore a battery with high specific energy and low capacity loss is preferred. For the initial sizing of this aircraft conventional lithium-ion polymer batteries (Li-po) will be selected. These have a modest specific energy of 100–265 W$\cdot$h/kg \note{CITE}{}. While this does provide some limitations, higher specific energy batteries developed in the future can be easily integrated into the existing design boosting both application and payload capabilities.  
+For battery analysis, specific energy $e_{batt}$ forms the largest constraint to aircraft design. For the aircraft to complete a given mission, a fixed energy value is expended. Therefore, a battery with a greater specific energy will reduce overall weight of the drone, which in turn will reduce energy expended, increasing overall system efficiency. Another limitation of the battery is the tendency for loss of capacity over the intended life cycle. A method for prolonging battery life is to decrease the depth of discharge, however this effectively reduces the overall specific energy of the battery, therefore a battery with high specific energy and low capacity loss is preferred. For the initial sizing of this aircraft conventional lithium-ion polymer batteries (Li-po) will be selected. These have a modest specific energy of 100–265 W$\cdot$h/kg \cite{elec2010}. While this does provide some limitations, higher specific energy batteries developed in the future can be easily integrated into the existing design boosting both application and payload capabilities.  
 
 \vspace{1cm}
 
@@ -118,18 +120,20 @@ Therefore each segments energy is given by Equation \ref{eq:segment}.
 During the hover configurations of flight this equation breaks down as free-stream velocity is negligible. Therefore we must account for induced velocity produced by the propulsors. Therefore, for hover components of the mission Equation \ref{eq:hovs} is used.
 
 \begin{equation}
-    E_{Req, i, hover} = \left[T_{Req, i} \cdot \sqrt{\dfrac{T_{Req, i}}{2*A*\rho}} + v_{\infty, i}*D\right] \cdot t_i
+    E_{Req, i, hover} = \left[T_{Req, i} \cdot \sqrt{\dfrac{T_{Req, i}}{2*A*\rho}} + v_{\infty, i}\cdot D\right] \cdot t_i
     \label{eq:hovs}
 \end{equation}
 
 
 
-Values for segment free-stream velocity and time are given by Technical Requirement in Section 3 of this report. To find segment thrust requirements, free body analysis was conducted. It was assumed that over the span of the mission, segment transitions would be negligible, aircraft is in steady state for all mission segments, motors would idle for descent stages of flight and are not considered to have additional energy requirements. Auxiliary calculations are provided within Appendix \ref{}.
+Values for segment free-stream velocity and time are given by Technical Requirement in Section 3 of this report. To find segment thrust requirements, free body analysis was conducted. It was assumed that over the span of the mission, segment transitions would be negligible, aircraft is in steady state for all mission segments, motors would idle for descent stages of flight and are not considered to have additional energy requirements.\\
+
+Through this analysis the conventional decent stages of the flight were negated. It was assumed that for these stages no power is required as the aircraft could glide down with propulsors windmilling to conserve energy.
+
 
 
 \paragraph{Empty Weight Analysis}
-\note{JAKE}{Peter to write, will only be a small paragraph}
-
+The aim of the empty weight analysis is to find a mass fraction of the empty weight in relation to take-off weight. Traditionally this was done through statistical analysis of existing, similar application air-craft. For optimisation, this fraction should be as low as possible, yet the structure should be sufficiently strong to handle internal and external forces. As the structure is to be made using carbon fibre reinforced plastics, insufficient data on existing designs are available. For this preliminary analysis a value of 0.35 was selected with the intention of updating this value after manufacturing of the air-frame is completed.
 
 \paragraph{Constraints Analysis}
 To obtain weight and power requirements found in previous sections, values for aerodynamic parameters must also be obtained. These values, such as wing area, aspect ratio, Oswald efficiency as well as lift and drag coefficients. To achieve this we need to relate weight, power and these aerodynamic parameters.\\
@@ -192,12 +196,12 @@ A & 0.5 & $m^2$ \\ \hline
 \end{tabular}%
 \end{table}
 
-\subsubsection{Conclusion}
-\note{PEter}{IDK What to put in here}
-
-
+\subsubsection{Summary}
+Through this section values for aircraft weights and aerodynamic requirements have been estimated for the scaled test air-frame, these values will allow for the detailed design to begin. It should be noted that these analysis will continue and be updated as our understanding of the final design increases. The scaled test air-frame will also further inform us allowing for a more detailed analysis to be conducted of the full scale air-fame in the future. 
 
 \subsubsection{Future Work}
-This process is to establish preliminary values for weights and aerodynamic parameters. Moving forward with the sizing of the aircraft, it is most likely that some these values will change with detailed design. With the selection of an airframe configuration, information gained through CAD of the system such as wetted area shall be introduced into the iteration process to get more detailed estimates. From this data, aerofoils and wing geometries can be selected along with COTS batteries and motors. Stability and control considerations will also effect the final geometry of the air-frame. \\
+Moving forward with the sizing of the aircraft, it is most likely that some these values will change with detailed design. With the selection of an air-frame configuration, information gained through CAD of the system such as wetted area shall be introduced into the iteration process to get more detailed estimates. From this data, aerofoils and wing geometries can be selected along with COTS batteries and motors. Stability and control considerations will also effect the final geometry of the air-frame. \\
 
-The area of development in battery design presents great promise for the future of electric aircraft with some studies presenting novel batteries with relatively high specific energy values. A majority of these batteries are not yet commercially available, are beyond the budget of this project, or have insufficient research to justify their use. Therefore can be integrated into the design in the future as technology improves.
+The area of development in battery design presents great promise for the future of electric aircraft with some studies presenting novel batteries with relatively high specific energy values. A majority of these batteries are not yet commercially available, are beyond the budget of this project, or have insufficient research to justify their use. Therefore can be integrated into the design in the future as technology improves. \\
+
+During the analysis it was stated that conventional decent stages were not considered as a part of the overall energy budget. In future it is worth investigation into regenerative charging through these segments converting potential energy into electrical energy, using the existing propulsors and motors as generators. 

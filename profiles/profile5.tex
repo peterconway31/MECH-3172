@@ -1,0 +1,61 @@
+\begin{tikzpicture}[scale=0.28]
+\tikzstyle{vertex}=[fill,thick,circle,minimum size=5pt,inner sep=0pt]
+
+%axis
+\draw[thick,->,color=blue] (-1,-1.75) -- (60,-1.75) node[below]{$Mission\ Range\ (km)$};
+\draw[line width=1pt,densely dotted,<->,color=blue] (0,0.2) -- (0,12) node[above]{$Height\ (m)$};
+
+\draw[loosely dotted] (0,9) -- (50,9)node[above]{Cruise Altitude};
+\draw[line width=1pt,loosely dotted,-] (44,-2.5)node[below]{Divert to Alternate} -- (44,10) ;
+
+\draw[thin,-] (0,0) to (1,3);
+\draw[thin,-] (1,3) to (8,9);
+\draw[thin,-] (8,9) to (14,9);
+\draw[thin,-,decorate,decoration={snake,amplitude=.6mm,segment length=2mm,pre length=1.5mm,post length=1mm}] (14,9) to (18,9);
+\draw[thin,-] (18,9) to (22,4);
+\draw[thin,-] (22,4) to (25,4);
+\draw[thin,-,decorate,decoration={snake,amplitude=.6mm,segment length=2mm,pre length=1.5mm,post length=1mm}] (25,4) to (29,4);
+\draw[thin,-] (29,4) to (35,9);
+\draw[thin,-] (35,9) to (40,9);
+\draw[thin,-] (40,9) to (44,2);
+\draw[thin,-] (44,2) to (46,5);
+\draw[thin,-] (46,5) to (50,5);
+\draw[thin,-,decorate,decoration={snake,amplitude=.6mm,segment length=2mm,pre length=1.5mm,post length=1mm}] (50,5) to (54,5);
+\draw[thin,-] (54,5) to (56,3);
+\draw[thin,-] (56,3) to (57,0);
+
+
+\fill (0,0) circle (5pt);
+\node[below] at (0,0) {$1$};
+\fill (1,3) circle (5pt);
+\node[below] at (1,3) {$2$};
+\fill (8,9) circle (5pt);
+\node[below] at (8,9) {$3$};
+\fill (14,9) circle (5pt);
+\node[below] at (14,9) {$4$};
+\fill (18,9) circle (5pt);
+\node[below] at (18,9) {$5$};
+\fill (22,4) circle (5pt);
+\node[below] at (22,4) {$6$};
+\fill (25,4) circle (5pt);
+\node[below] at (25,4) {$7$};
+\fill (29,4) circle (5pt);
+\node[below] at (29,4) {$8$};
+\fill (35,9) circle (5pt);
+\node[below] at (35,9) {$9$};
+\fill (40,9) circle (5pt);
+\node[below] at (40,9) {$10$};
+\fill (44,2) circle (5pt);
+\node[below] at (44,2) {$11$};
+\fill (46,5) circle (5pt);
+\node[below] at (46,5) {$12$};
+\fill (50,5) circle (5pt);
+\node[below] at (50,5) {$13$};
+\fill (54,5) circle (5pt);
+\node[below] at (54,5) {$14$};
+\fill (56,3) circle (5pt);
+\node[below] at (56,3) {$15$};
+\fill (57,0) circle (5pt);
+\node[below] at (57,0) {$16$};
+
+\end{tikzpicture}
